@@ -17,7 +17,7 @@ import com.example.practice.com.example.practice.ImageSliderAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class MainActivity2 : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var viewPager: ViewPager2
     private lateinit var runnable: Runnable
@@ -29,7 +29,7 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_home)
 
         // ✅ Initialize drawer & toolbar FIRST
         drawerLayout = findViewById(R.id.drawerLayout)
@@ -71,13 +71,13 @@ class MainActivity2 : AppCompatActivity() {
         val receivebtn = findViewById<Button>(R.id.receive)
 
         receivebtn.setOnClickListener {
-            val intent = Intent(this, MainActivity6::class.java)
+            val intent = Intent(this, ScanActivity::class.java)
             intent.putExtra("username", receivedName)
             startActivity(intent)
         }
 
         sendbtn.setOnClickListener {
-            startActivity(Intent(this, MainActivity5::class.java))
+            startActivity(Intent(this, SendActivity::class.java))
         }
 
         // Auto-scroll

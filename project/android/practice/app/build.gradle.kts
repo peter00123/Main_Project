@@ -51,4 +51,9 @@ dependencies {
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+<<<<<<< Updated upstream
+=======
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("com.google.mlkit:barcode-scanning:17.2.0")
+>>>>>>> Stashed changes
 }

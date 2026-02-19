@@ -4,25 +4,21 @@ package com.example.practice
 
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.widget.EditText
 import android.widget.Button
 import android.widget.TextView
 import android.view.View
 import android.content.Intent
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 
-class MainActivity4 : AppCompatActivity() {
+class ResetPassActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main4)
+        setContentView(R.layout.activity_resetpass)
 
         fun showAlert(title: String, message: String) {
             val builder = AlertDialog.Builder(this)
@@ -43,7 +39,7 @@ class MainActivity4 : AppCompatActivity() {
         val backToLogin = findViewById<TextView>(R.id.backToLogin)
 
         backToLogin.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, loginActivity::class.java)
             startActivity(intent)
         }
 
@@ -83,7 +79,7 @@ class MainActivity4 : AppCompatActivity() {
 
             }
 
-            val intent = Intent(this, MainActivity2::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }

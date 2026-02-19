@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 
-class MainActivity6 : AppCompatActivity() {
+class ScanActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
 
@@ -19,7 +19,7 @@ class MainActivity6 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // ✅ 1. FIRST set the layout
-        setContentView(R.layout.activity_main6)
+        setContentView(R.layout.activity_scan)
 
         val textView = findViewById<TextView>(R.id.textname)
         val receivedName = intent.getStringExtra("username") ?: ""
@@ -33,7 +33,7 @@ class MainActivity6 : AppCompatActivity() {
 
         val backbtn = findViewById<Button>(R.id.back)
         backbtn.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent) // ✅ REQUIRED
             finish()
         }

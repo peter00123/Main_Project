@@ -18,22 +18,22 @@
             android:name=".BackEndTest"
             android:exported="true" />
         <activity
-            android:name=".MainActivity6"
+            android:name=".ScanActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity5"
+            android:name=".SendActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity4"
+            android:name=".ResetPassActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".loginActivity"
             android:exported="true" />
 
         <activity

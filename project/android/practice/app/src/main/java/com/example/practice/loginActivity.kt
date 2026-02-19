@@ -11,13 +11,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class loginActivity : AppCompatActivity() {
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
@@ -44,12 +44,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         signup.setOnClickListener {
-            val intent = Intent(this, MainActivity3::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
 
         }
         resetPassword.setOnClickListener {
+<<<<<<< Updated upstream:project/android/practice/app/src/main/java/com/example/practice/MainActivity.kt
             val intent = Intent(this, BackEndTest::class.java)
+=======
+            val intent = Intent(this, ResetPassActivity::class.java)
+>>>>>>> Stashed changes:project/android/practice/app/src/main/java/com/example/practice/loginActivity.kt
             startActivity(intent)
         }
 
@@ -78,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
 
             if (/*userInput == correctUsername &&*/ passInput == correctPassword) {
-                val intent = Intent(this, MainActivity2::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 intent.putExtra("username", userInput)
                 Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
 
