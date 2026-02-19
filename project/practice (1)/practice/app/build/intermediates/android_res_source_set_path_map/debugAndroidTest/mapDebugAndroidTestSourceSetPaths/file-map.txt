@@ -1,0 +1,6 @@
+com.example.practice.test.app-core-1.7.0-0 C:\Users\KOUSHICK\.gradle\caches\9.1.0\transforms\0d64adf67230c12e4330023d4169bb3f\workspace\transformed\core-1.7.0\res
+com.example.practice.test.app-tracing-1.2.0-1 C:\Users\KOUSHICK\.gradle\caches\9.1.0\transforms\5bfb8e64090c154de4a5bf83be95eb43\workspace\transformed\tracing-1.2.0\res
+com.example.practice.test.app-updated_navigation_xml-2 C:\Users\KOUSHICK\AndroidStudioProjects\practice\app\build\generated\updated_navigation_xml\debugAndroidTest
+com.example.practice.test.app-packageDebugAndroidTestResources-3 C:\Users\KOUSHICK\AndroidStudioProjects\practice\app\build\intermediates\incremental\debugAndroidTest\packageDebugAndroidTestResources\merged.dir
+com.example.practice.test.app-packageDebugAndroidTestResources-4 C:\Users\KOUSHICK\AndroidStudioProjects\practice\app\build\intermediates\incremental\debugAndroidTest\packageDebugAndroidTestResources\stripped.dir
+com.example.practice.test.app-debugAndroidTest-5 C:\Users\KOUSHICK\AndroidStudioProjects\practice\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

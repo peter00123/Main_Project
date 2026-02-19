@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_image2.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\image2.webp"
+    },
+    {
+        "merged": "com.example.practice.app-debug-33:/layout_activity_main2.xml.flat",
+        "source": "com.example.practice.app-main-35:/layout/activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_tab_indicator.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\tab_indicator.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_main6.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_main6.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_edittext_bg.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\edittext_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_main2.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_slide_img.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\slide_img.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_image.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\image.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_item_file.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\item_file.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_main4.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_main4.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_main5.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_main5.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_main3.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_main3.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\menu_drawer_menu.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\menu\\drawer_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_imageone.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\imageone.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\drawable_image3.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\drawable\\image3.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-debug-33:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KOUSHICK\\.gradle\\daemon\\9.1.0\\com.example.practice.app-main-35:\\mipmap-hdpi\\ic_launcher.webp"
+    }
+]

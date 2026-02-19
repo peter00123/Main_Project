@@ -1,0 +1,2 @@
+02-17 11:25:12.827 17652 17666 I TestRunner: started: useAppContext(com.example.practice.ExampleInstrumentedTest)
+02-17 11:25:12.830 17652 17666 I TestRunner: finished: useAppContext(com.example.practice.ExampleInstrumentedTest)
