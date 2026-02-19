@@ -49,11 +49,7 @@ class loginActivity : AppCompatActivity() {
 
         }
         resetPassword.setOnClickListener {
-<<<<<<< Updated upstream:project/android/practice/app/src/main/java/com/example/practice/MainActivity.kt
             val intent = Intent(this, BackEndTest::class.java)
-=======
-            val intent = Intent(this, ResetPassActivity::class.java)
->>>>>>> Stashed changes:project/android/practice/app/src/main/java/com/example/practice/loginActivity.kt
             startActivity(intent)
         }
 
