@@ -5,6 +5,9 @@ android
 	for padding under notification bar
 
 
+no internet indentification .
+
+
 
 
 
