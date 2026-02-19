@@ -139,7 +139,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Explore"
+            android:text="Home"
             android:textColor="@color/blue" />
 
         <Space
@@ -147,19 +147,10 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/myfiles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My Files"
-            android:textColor="@color/black" />
-
-        <Space
-            android:layout_width="24dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stores"
             android:textColor="@color/black" />
 
         <Space

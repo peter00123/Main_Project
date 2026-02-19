@@ -36,6 +36,12 @@ class HomeActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        val myfilesbtn = findViewById<TextView>(R.id.myfiles)
+        myfilesbtn.setOnClickListener {
+            startActivity(Intent(this, MyFilesActivity::class.java))
+        }
+
+
         // Drawer toggle
         val toggle = ActionBarDrawerToggle(
             this,
