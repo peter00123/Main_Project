@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         resetPassword.setOnClickListener {
-            val intent = Intent(this, MainActivity4::class.java)
+            val intent = Intent(this, BackEndTest::class.java)
             startActivity(intent)
         }
 

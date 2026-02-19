@@ -1,0 +1,12 @@
+android
+
+.
+    android:fitsSystemWindows="true"
+	for padding under notification bar
+
+
+
+
+
+
+springboot
