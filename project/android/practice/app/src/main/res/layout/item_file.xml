@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="56dp"
     android:orientation="horizontal"
+    android:fitsSystemWindows="true"
     android:gravity="center_vertical"
     android:paddingHorizontal="12dp">
 

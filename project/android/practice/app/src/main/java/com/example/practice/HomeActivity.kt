@@ -50,6 +50,7 @@ class HomeActivity : AppCompatActivity() {
             R.string.open_drawer,
             R.string.close_drawer
         )
+
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
