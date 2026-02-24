@@ -2,19 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
-    <uses-permission android:name="android.hardware.CAMERA" />
-    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES"/>
-    <uses-permission android:name="android.hardware.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- Internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- WiFi -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission
         android:name="android.permission.NEARBY_WIFI_DEVICES"
         android:usesPermissionFlags="neverForLocation"/>
 
+    <!-- Bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+
+    <!-- Location (Required for scanning nearby devices) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- Storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+
+    <!-- Camera (Optional) -->
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -26,46 +40,25 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.Practice"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".TransferActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ReceiveActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FilePreviewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MyFilesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BackEndTest"
-            android:exported="true" />
-        <activity
-            android:name=".ScanActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SendActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ResetPassActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".loginActivity"
-            android:exported="true" />
+
+        <activity android:name=".TransferActivity" android:exported="false"/>
+        <activity android:name=".ReceiveActivity" android:exported="false"/>
+        <activity android:name=".FilePreviewActivity" android:exported="false"/>
+        <activity android:name=".MyFilesActivity" android:exported="false"/>
+        <activity android:name=".BackEndTest" android:exported="true"/>
+        <activity android:name=".ScanActivity" android:exported="false"/>
+        <activity android:name=".SendActivity" android:exported="false"/>
+        <activity android:name=".ResetPassActivity" android:exported="false"/>
+        <activity android:name=".RegisterActivity" android:exported="false"/>
+        <activity android:name=".HomeActivity" android:exported="false"/>
+        <activity android:name=".loginActivity" android:exported="true"/>
+
         <activity
             android:name=".splash"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
@@ -76,8 +69,9 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/file_paths"/>
         </provider>
+
     </application>
 
 </manifest>
