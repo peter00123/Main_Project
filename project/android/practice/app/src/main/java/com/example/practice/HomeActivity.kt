@@ -41,6 +41,13 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, MyFilesActivity::class.java))
         }
 
+        //--------------------------
+        val test = findViewById<TextView>(R.id.nav_testing)
+        test.setOnClickListener {
+            startActivity(Intent(this, BackEndTest::class.java))
+        }
+        //---------------------
+
 
         // Drawer toggle
         val toggle = ActionBarDrawerToggle(

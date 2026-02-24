@@ -39,7 +39,7 @@ class BackEndTest : AppCompatActivity() {
     private fun callBackend(txt: TextView) {
 
         val request = Request.Builder()
-            .url("http://10.92.211.95:8080/api/test")
+            .url("http://10.185.154.95:8080/api/test")
             .build()
 
         client.newCall(request).enqueue(object : okhttp3.Callback {
