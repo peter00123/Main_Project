@@ -61,5 +61,8 @@ dependencies {
 // CameraX PreviewView (THIS FIXES RED LINE)
     implementation("androidx.camera:camera-view:1.3.2")
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation("org.nanohttpd:nanohttpd:2.3.1")
+
 }
 

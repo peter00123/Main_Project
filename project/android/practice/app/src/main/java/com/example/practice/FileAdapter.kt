@@ -9,12 +9,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.practice.com.example.practice.FileItem
 
 class FileAdapter(
-    private val files: List<FileItem>
+    private val files: List<FileItem>,
+    private val onItemClick: (FileItem) -> Unit   // ✅ NEW
 ) : RecyclerView.Adapter<FileAdapter.FileViewHolder>() {
 
     inner class FileViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val fileName: TextView = view.findViewById(R.id.fileName)
         val checkBox: CheckBox = view.findViewById(R.id.checkBox)
+
+        init {
+            // ✅ Click on row → preview
+            view.setOnClickListener {
+                onItemClick(files[adapterPosition])
+            }
+
+            // ❌ Prevent checkbox click from triggering preview
+            checkBox.setOnClickListener { }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FileViewHolder {

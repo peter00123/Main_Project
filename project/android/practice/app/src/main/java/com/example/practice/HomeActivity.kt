@@ -78,7 +78,7 @@ class HomeActivity : AppCompatActivity() {
         val receivebtn = findViewById<Button>(R.id.receive)
 
         receivebtn.setOnClickListener {
-            val intent = Intent(this, ScanActivity::class.java)
+            val intent = Intent(this, ReceiveActivity::class.java)
             intent.putExtra("username", receivedName)
             startActivity(intent)
         }

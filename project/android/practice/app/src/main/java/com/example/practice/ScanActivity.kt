@@ -1,6 +1,7 @@
 package com.example.practice
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -10,14 +11,15 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.mlkit.vision.barcode.BarcodeScanning
+import org.json.JSONObject
 import com.google.mlkit.vision.common.InputImage
+import com.google.mlkit.vision.barcode.BarcodeScanning
 
 class ScanActivity : AppCompatActivity() {
 
     private lateinit var previewView: PreviewView
     private val CAMERA_PERMISSION_CODE = 1001
-    private var isScanned = false   // ✅ prevents multiple scans
+    private var isScanned = false   // ✅ prevent multiple triggers
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,30 +64,21 @@ class ScanActivity : AppCompatActivity() {
 
             val cameraProvider = cameraProviderFuture.get()
 
-            // 🔹 Camera Preview
-            val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(previewView.surfaceProvider)
+            // 🔹 Preview
+            val preview = Preview.Builder().build().apply {
+                setSurfaceProvider(previewView.surfaceProvider)
             }
 
-            // 🔹 Image Analysis (QR scanning)
+            // 🔹 Image Analysis (QR)
             val imageAnalysis = ImageAnalysis.Builder()
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
 
             imageAnalysis.setAnalyzer(
-                ContextCompat.getMainExecutor(this),
-                QRAnalyzer { qrText ->
-                    if (!isScanned) {
-                        isScanned = true
-                        Log.d("QR_RESULT", qrText)
-                        println("QR_RESULT: $qrText")
-
-                        // ✅ DO SOMETHING WITH RESULT
-                        // Example: send back to sender screen
-                        finish()
-                    }
-                }
-            )
+                ContextCompat.getMainExecutor(this)
+            ) { imageProxy ->
+                processImageProxy(imageProxy)
+            }
 
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
@@ -102,5 +95,61 @@ class ScanActivity : AppCompatActivity() {
             }
 
         }, ContextCompat.getMainExecutor(this))
+    }
+
+    private fun processImageProxy(imageProxy: ImageProxy) {
+        if (isScanned) {
+            imageProxy.close()
+            return
+        }
+
+        val mediaImage = imageProxy.image ?: run {
+            imageProxy.close()
+            return
+        }
+
+        val image = InputImage.fromMediaImage(
+            mediaImage,
+            imageProxy.imageInfo.rotationDegrees
+        )
+
+        val scanner = BarcodeScanning.getClient()
+
+        scanner.process(image)
+            .addOnSuccessListener { barcodes ->
+                barcodes.firstOrNull()?.rawValue?.let { qrText ->
+                    isScanned = true
+                    Log.d("QR_RESULT", qrText)
+
+                    handleQrResult(qrText)
+                }
+            }
+            .addOnFailureListener {
+                it.printStackTrace()
+            }
+            .addOnCompleteListener {
+                imageProxy.close()
+            }
+    }
+
+    private fun handleQrResult(qrText: String) {
+        try {
+            val json = JSONObject(qrText)
+
+            val expiresAt = json.getLong("expiresAt")
+
+            // ✅ Move to TransferActivity (Sender Mode)
+            startActivity(
+                Intent(this, TransferActivity::class.java).apply {
+                    putExtra("MODE", "SENDER")
+                    putExtra("EXPIRES_AT", expiresAt)
+                }
+            )
+
+            finish()
+
+        } catch (e: Exception) {
+            Log.e("SCAN", "Invalid QR data", e)
+        }
     }
 }

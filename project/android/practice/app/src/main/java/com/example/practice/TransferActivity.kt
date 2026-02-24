@@ -1,0 +1,69 @@
+package com.example.practice
+
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+
+class TransferActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: TransferViewModel
+    private var expiresAt: Long = 0L
+    private val handler = Handler(Looper.getMainLooper())
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_transfer)
+
+        viewModel = ViewModelProvider(this)[TransferViewModel::class.java]
+
+        val mode = intent.getStringExtra("MODE") ?: "RECEIVER"
+        expiresAt = intent.getLongExtra("EXPIRES_AT", 0L)
+
+        observeUi()
+        startSessionTimer()
+
+        viewModel.status.value =
+            if (mode == "RECEIVER") "Waiting for sender..."
+            else "Sending files..."
+    }
+
+    private fun observeUi() {
+        viewModel.status.observe(this) { status ->
+            findViewById<TextView>(R.id.txtStatus).text = status
+        }
+
+        viewModel.timeLeft.observe(this) { time ->
+            findViewById<TextView>(R.id.txtTimer).text = formatTime(time)
+        }
+    }
+
+    private fun startSessionTimer() {
+        handler.post(object : Runnable {
+            override fun run() {
+                val left = expiresAt - System.currentTimeMillis()
+
+                if (left <= 0) {
+                    finish()
+                } else {
+                    viewModel.timeLeft.value = left
+                    handler.postDelayed(this, 1000)
+                }
+            }
+        })
+    }
+
+    private fun formatTime(ms: Long): String {
+        val totalSeconds = ms / 1000
+        val minutes = totalSeconds / 60
+        val seconds = totalSeconds % 60
+        return String.format("%02d:%02d", minutes, seconds)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacksAndMessages(null)
+    }
+}
