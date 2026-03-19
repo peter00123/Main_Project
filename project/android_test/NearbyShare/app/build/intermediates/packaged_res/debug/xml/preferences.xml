@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=============================================================================
+FILE: res/xml/preferences.xml
+=============================================================================
+OBJECTIVE:
+  Preference screen XML used by SettingsFragment (PreferenceFragmentCompat).
+  Defines two categories: "Your device" (name + visibility) and "Data"
+  (Wi-Fi only toggle, notifications). Values are auto-saved to SharedPreferences
+  using the android:key attributes defined in SettingsFragment.kt constants.
+=============================================================================
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ── Category 1: Your Device ── -->
+    <PreferenceCategory
+        android:title="@string/pref_category_device">
+
+        <!-- Device name shown to nearby peers during discovery -->
+        <EditTextPreference
+            android:key="pref_device_name"
+            android:title="@string/pref_device_name_title"
+            android:summary="@string/pref_device_name_summary"
+            android:dialogTitle="@string/pref_device_name_title"
+            app:useSimpleSummaryProvider="true"
+            android:inputType="textPersonName"/>
+
+        <!-- Visibility mode: Everyone / Contacts / Hidden -->
+        <ListPreference
+            android:key="pref_visibility_mode"
+            android:title="@string/pref_visibility_title"
+            android:entries="@array/visibility_entries"
+            android:entryValues="@array/visibility_values"
+            android:defaultValue="everyone"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+    <!-- ── Category 2: Data usage ── -->
+    <PreferenceCategory
+        android:title="@string/pref_category_data">
+
+        <!-- Toggle: use only Wi-Fi for transfers (no mobile data) -->
+        <SwitchPreferenceCompat
+            android:key="pref_wifi_only"
+            android:title="@string/pref_wifi_only_title"
+            android:summary="@string/pref_wifi_only_summary"
+            android:defaultValue="true"/>
+
+        <!-- Toggle: show transfer progress in notification shade -->
+        <SwitchPreferenceCompat
+            android:key="pref_show_notification"
+            android:title="@string/pref_notifications_title"
+            android:summary="@string/pref_notifications_summary"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

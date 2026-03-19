@@ -1,0 +1,400 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3=============================================================================
+4FILE: AndroidManifest.xml
+5=============================================================================
+6INDEX OF CONTENTS:
+7  1. Required permissions (Bluetooth, Wi-Fi, Location, Nearby Devices)
+8  2. Application node with Hilt application class
+9  3. Activity declarations (MainActivity, ShareActivity, ReceiveActivity)
+10  4. Service declaration (NearbyShareService)
+11  5. File provider for secure URI sharing
+12
+13OBJECTIVE:
+14  Declares all Android system-level requirements for NearbyShare.
+15  Permissions are carefully chosen per API level:
+16    - ACCESS_FINE_LOCATION needed for Wi-Fi/BLE discovery on API < 31
+17    - BLUETOOTH_SCAN / BLUETOOTH_CONNECT / BLUETOOTH_ADVERTISE for API >= 31
+18    - NEARBY_WIFI_DEVICES for Wi-Fi peer discovery on API >= 33
+19  The app is marked hardware-feature optional so it installs on devices
+20  without specific hardware (graceful degradation).
+21=============================================================================
+22-->
+23<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+24    package="com.nearbyshare.debug"
+25    android:versionCode="1"
+26    android:versionName="1.0.0" >
+27
+28    <uses-sdk
+29        android:minSdkVersion="23"
+30        android:targetSdkVersion="34" />
+31
+32    <!-- ================================================================== -->
+33    <!-- PERMISSIONS -->
+34    <!-- ================================================================== -->
+35
+36
+37    <!-- Internet access for socket-based file transfer -->
+38    <uses-permission android:name="android.permission.INTERNET" />
+38-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:31:5-67
+38-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:31:22-64
+39    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+39-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:32:5-79
+39-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:32:22-76
+40    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+40-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:33:5-79
+40-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:33:22-76
+41
+42    <!-- Wi-Fi Direct / hotspot for peer-to-peer transfer -->
+43    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+43-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:36:5-76
+43-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:36:22-73
+44    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+44-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:37:5-76
+44-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:37:22-73
+45    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+45-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:36:5-76
+45-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:36:22-73
+46
+47    <!-- Wi-Fi peer discovery (API 33+) -->
+48    <uses-permission
+48-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:41:5-43:38
+49        android:name="android.permission.NEARBY_WIFI_DEVICES"
+49-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:41:22-75
+50        android:usesPermissionFlags="neverForLocation" />
+50-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:42:9-55
+51
+52    <!-- Location needed for BLE/Wi-Fi scanning on API < 31 -->
+53    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+53-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:46:5-79
+53-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:46:22-76
+54    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+54-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:47:5-81
+54-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:47:22-78
+55
+56    <!-- Classic Bluetooth (API < 31) -->
+57    <uses-permission
+57-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:50:5-51:38
+58        android:name="android.permission.BLUETOOTH"
+58-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:50:22-65
+59        android:maxSdkVersion="30" />
+59-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:51:9-35
+60    <uses-permission
+60-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:52:5-53:38
+61        android:name="android.permission.BLUETOOTH_ADMIN"
+61-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:52:22-71
+62        android:maxSdkVersion="30" />
+62-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:53:9-35
+63
+64    <!-- Modern Bluetooth (API >= 31) -->
+65    <uses-permission
+65-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:56:5-58:31
+66        android:name="android.permission.BLUETOOTH_SCAN"
+66-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:56:22-70
+67        android:usesPermissionFlags="neverForLocation" />
+67-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:57:9-55
+68    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+68-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:59:5-60:31
+68-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:59:22-73
+69    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+69-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:61:5-62:31
+69-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:61:22-75
+70
+71    <!-- Read/write storage for sharing files -->
+72    <uses-permission
+72-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:65:5-66:38
+73        android:name="android.permission.READ_EXTERNAL_STORAGE"
+73-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:65:22-77
+74        android:maxSdkVersion="32" />
+74-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:66:9-35
+75    <uses-permission
+75-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:67:5-69:40
+76        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+76-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:67:22-78
+77        android:maxSdkVersion="28" />
+77-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:68:9-35
+78
+79    <!-- Granular media permissions (API 33+) -->
+80    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+80-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:72:5-73:38
+80-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:72:22-73
+81    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+81-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:74:5-75:38
+81-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:74:22-72
+82    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+82-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:76:5-77:38
+82-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:76:22-72
+83
+84    <!-- Foreground service for ongoing transfers -->
+85    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+85-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:80:5-77
+85-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:80:22-74
+86    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+86-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:81:5-82:46
+86-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:81:22-91
+87
+88    <!-- Vibration for transfer complete feedback -->
+89    <uses-permission android:name="android.permission.VIBRATE" />
+89-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:85:5-66
+89-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:85:22-63
+90
+91    <!-- Wake lock to keep transfer alive when screen off -->
+92    <uses-permission android:name="android.permission.WAKE_LOCK" />
+92-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:88:5-68
+92-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:88:22-65
+93
+94    <!-- ================================================================== -->
+95    <!-- OPTIONAL HARDWARE FEATURES (allows install on all devices) -->
+96    <!-- ================================================================== -->
+97    <uses-feature
+97-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:93:5-94:36
+98        android:name="android.hardware.bluetooth_le"
+98-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:93:19-63
+99        android:required="false" />
+99-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:94:9-33
+100    <uses-feature
+100-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:95:5-96:36
+101        android:name="android.hardware.wifi.direct"
+101-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:95:19-62
+102        android:required="false" />
+102-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:96:9-33
+103    <uses-feature
+103-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:97:5-98:36
+104        android:name="android.hardware.location"
+104-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:97:19-59
+105        android:required="false" />
+105-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:98:9-33
+106
+107    <permission
+107-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+108        android:name="com.nearbyshare.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+108-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+109        android:protectionLevel="signature" />
+109-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+110
+111    <uses-permission android:name="com.nearbyshare.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- ================================================================== -->
+111-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+111-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+112    <!-- APPLICATION -->
+113    <!-- ================================================================== -->
+114    <application
+114-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:103:5-176:19
+115        android:name="com.nearbyshare.NearbyShareApp"
+115-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:104:9-39
+116        android:allowBackup="true"
+116-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:105:9-35
+117        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+117-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+118        android:dataExtractionRules="@xml/data_extraction_rules"
+118-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:106:9-65
+119        android:debuggable="true"
+120        android:extractNativeLibs="false"
+121        android:fullBackupContent="@xml/backup_rules"
+121-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:107:9-54
+122        android:icon="@mipmap/ic_launcher"
+122-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:108:9-43
+123        android:label="@string/app_name"
+123-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:109:9-41
+124        android:roundIcon="@mipmap/ic_launcher_round"
+124-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:110:9-54
+125        android:supportsRtl="true"
+125-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:111:9-35
+126        android:theme="@style/Theme.NearbyShare" >
+126-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:112:9-49
+127
+128        <!-- Main launcher activity -->
+129        <activity
+129-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:116:9-125:20
+130            android:name="com.nearbyshare.ui.activities.MainActivity"
+130-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:117:13-55
+131            android:exported="true"
+131-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:118:13-36
+132            android:screenOrientation="portrait"
+132-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:120:13-49
+133            android:windowSoftInputMode="adjustResize" >
+133-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:119:13-55
+134            <intent-filter>
+134-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:121:13-124:29
+135                <action android:name="android.intent.action.MAIN" />
+135-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:122:17-69
+135-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:122:25-66
+136
+137                <category android:name="android.intent.category.LAUNCHER" />
+137-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:123:17-77
+137-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:123:27-74
+138            </intent-filter>
+139        </activity>
+140
+141        <!-- Activity shown when user initiates a share from another app -->
+142        <activity
+142-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:128:9-143:20
+143            android:name="com.nearbyshare.ui.activities.ShareActivity"
+143-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:129:13-56
+144            android:exported="true"
+144-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:130:13-36
+145            android:theme="@style/Theme.NearbyShare.BottomSheet"
+145-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:131:13-65
+146            android:windowSoftInputMode="adjustResize" >
+146-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:132:13-55
+147            <intent-filter>
+147-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:133:13-137:29
+148                <action android:name="android.intent.action.SEND" />
+148-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:134:17-69
+148-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:134:25-66
+149
+150                <category android:name="android.intent.category.DEFAULT" />
+150-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:135:17-76
+150-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:135:27-73
+151
+152                <data android:mimeType="*/*" />
+152-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:136:17-48
+152-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:136:23-45
+153            </intent-filter>
+154            <intent-filter>
+154-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:138:13-142:29
+155                <action android:name="android.intent.action.SEND_MULTIPLE" />
+155-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:139:17-78
+155-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:139:25-75
+156
+157                <category android:name="android.intent.category.DEFAULT" />
+157-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:135:17-76
+157-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:135:27-73
+158
+159                <data android:mimeType="*/*" />
+159-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:136:17-48
+159-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:136:23-45
+160            </intent-filter>
+161        </activity>
+162
+163        <!-- Activity to show incoming transfer requests to the receiver -->
+164        <activity
+164-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:146:9-151:43
+165            android:name="com.nearbyshare.ui.activities.ReceiveActivity"
+165-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:147:13-58
+166            android:exported="false"
+166-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:148:13-37
+167            android:showOnLockScreen="true"
+167-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:150:13-44
+168            android:theme="@style/Theme.NearbyShare.BottomSheet"
+168-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:149:13-65
+169            android:turnScreenOn="true" />
+169-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:151:13-40
+170
+171        <!-- Settings activity -->
+172        <activity
+172-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:154:9-157:72
+173            android:name="com.nearbyshare.ui.activities.SettingsActivity"
+173-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:155:13-59
+174            android:exported="false"
+174-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:156:13-37
+175            android:parentActivityName="com.nearbyshare.ui.activities.MainActivity" />
+175-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:157:13-69
+176
+177        <!-- Foreground service handling BLE advertising + Wi-Fi transfer -->
+178        <service
+178-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:160:9-163:63
+179            android:name="com.nearbyshare.service.NearbyShareService"
+179-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:161:13-55
+180            android:exported="false"
+180-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:162:13-37
+181            android:foregroundServiceType="connectedDevice" />
+181-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:163:13-60
+182
+183        <!-- FileProvider for sharing file URIs securely between apps -->
+184        <provider
+185            android:name="androidx.core.content.FileProvider"
+185-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:167:13-62
+186            android:authorities="com.nearbyshare.debug.fileprovider"
+186-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:168:13-64
+187            android:exported="false"
+187-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:169:13-37
+188            android:grantUriPermissions="true" >
+188-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:170:13-47
+189            <meta-data
+189-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:171:13-173:54
+190                android:name="android.support.FILE_PROVIDER_PATHS"
+190-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:172:17-67
+191                android:resource="@xml/file_paths" />
+191-->E:\final year project\project\android_test\NearbyShare\app\src\main\AndroidManifest.xml:173:17-51
+192        </provider>
+193        <provider
+193-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+194            android:name="androidx.startup.InitializationProvider"
+194-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+195            android:authorities="com.nearbyshare.debug.androidx-startup"
+195-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+196            android:exported="false" >
+196-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+197            <meta-data
+197-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+198                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+198-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+199                android:value="androidx.startup" />
+199-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\transforms-3\7ca791356d65489572b278664e972da4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+200            <meta-data
+200-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\bazi\.gradle\caches\transforms-3\efe9a59c456fbd4154075f10d0c383d7\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+201                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+201-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\bazi\.gradle\caches\transforms-3\efe9a59c456fbd4154075f10d0c383d7\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+202                android:value="androidx.startup" />
+202-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\bazi\.gradle\caches\transforms-3\efe9a59c456fbd4154075f10d0c383d7\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+203            <meta-data
+203-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+204                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+204-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+205                android:value="androidx.startup" />
+205-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+206        </provider>
+207
+208        <uses-library
+208-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\transforms-3\9b873b7d021fa4a2caffb10cbad8d619\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+209            android:name="androidx.window.extensions"
+209-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\transforms-3\9b873b7d021fa4a2caffb10cbad8d619\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+210            android:required="false" />
+210-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\transforms-3\9b873b7d021fa4a2caffb10cbad8d619\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+211        <uses-library
+211-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\transforms-3\9b873b7d021fa4a2caffb10cbad8d619\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+212            android:name="androidx.window.sidecar"
+212-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\transforms-3\9b873b7d021fa4a2caffb10cbad8d619\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+213            android:required="false" />
+213-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\transforms-3\9b873b7d021fa4a2caffb10cbad8d619\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+214
+215        <receiver
+215-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+216            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+216-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+217            android:directBootAware="false"
+217-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+218            android:enabled="true"
+218-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+219            android:exported="true"
+219-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+220            android:permission="android.permission.DUMP" >
+220-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+221            <intent-filter>
+221-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+222                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+222-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+222-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+223            </intent-filter>
+224            <intent-filter>
+224-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+225                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+225-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+225-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+226            </intent-filter>
+227            <intent-filter>
+227-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+228                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+228-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+228-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+229            </intent-filter>
+230            <intent-filter>
+230-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+231                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+231-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+231-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\bazi\.gradle\caches\transforms-3\2ec17c64fbe0284c426628be6c0ce31f\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+232            </intent-filter>
+233        </receiver>
+234    </application>
+235
+236</manifest>

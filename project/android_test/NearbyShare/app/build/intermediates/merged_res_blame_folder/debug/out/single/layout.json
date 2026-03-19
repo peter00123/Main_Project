@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/item_device_card.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/item_device_card.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/bottomsheet_device_picker.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/bottomsheet_device_picker.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/fragment_home.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/bottomsheet_incoming_transfer.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/bottomsheet_incoming_transfer.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/activity_main.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/activity_share.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_share.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/bottomsheet_transfer.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/bottomsheet_transfer.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/activity_receive.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_receive.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/fragment_transfer.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/fragment_transfer.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-mergeDebugResources-52:/layout/activity_settings.xml",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_settings.xml"
+    }
+]

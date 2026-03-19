@@ -35,26 +35,39 @@
         android:theme="@style/Base.Theme.Practice"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".TransferActivity" android:exported="false"/>
-        <activity android:name=".ReceiveActivity" android:exported="false"/>
-        <activity android:name=".FilePreviewActivity" android:exported="false"/>
-        <activity android:name=".MyFilesActivity" android:exported="false"/>
-        <activity android:name=".BackEndTest" android:exported="true"/>
-        <activity android:name=".ScanActivity" android:exported="false"/>
-        <activity android:name=".SendActivity" android:exported="false"/>
-        <activity android:name=".ResetPassActivity" android:exported="false"/>
-        <activity android:name=".RegisterActivity" android:exported="false"/>
-        <activity android:name=".HomeActivity" android:exported="false"/>
-        <activity android:name=".loginActivity" android:exported="true"/>
-
-        <activity
-            android:name=".splash"
-            android:exported="true">
+        <!-- Activities from com.example.practice -->
+        <activity android:name=".splash" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".loginActivity" android:exported="true"/>
+        <activity android:name=".RegisterActivity" android:exported="false"/>
+        <activity android:name=".HomeActivity" android:exported="false"/>
+        <activity android:name=".archives.wifi.SendActivity" android:exported="false"/>
+        <activity android:name=".ReceiveActivity" android:exported="false"/>
+        <activity android:name=".MyFilesActivity" android:exported="false"/>
+        <activity android:name=".ResetPassActivity" android:exported="false"/>
+        <activity android:name=".BackEndTest" android:exported="true"/>
+
+        <!-- Activities from com.example.practice.archives.wifi -->
+        <activity android:name=".archives.wifi.TransferActivity" android:exported="false"/>
+        <activity android:name=".archives.wifi.FilePreviewActivity" android:exported="false"/>
+        <activity android:name=".archives.wifi.ScanActivity" android:exported="false"/>
+
+        <!-- Activities from com.example.practice.qrshare.activities -->
+        <activity android:name=".qrshare.activities.MainActivity" android:label="QR Share Home" />
+        <activity android:name=".qrshare.activities.SendActivity" android:label="Send Files" />
+        <activity android:name=".qrshare.activities.ReceiveActivity" android:label="Receive Files" />
+        <activity android:name=".qrshare.activities.QRScanActivity" android:label="Scan QR Code" />
+        <activity android:name=".qrshare.activities.TransferActivity" android:label="Transfer" />
+        <activity android:name=".qrshare.activities.QRPairDisplayActivity" android:label="Pairing" />
+
+        <service
+            android:name=".qrshare.network.FileTransferService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

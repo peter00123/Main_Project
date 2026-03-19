@@ -1,15 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62a0418f-9a41-4b47-a858-d62a2bd2d427" name="Changes" comment="" />
+    <list default="true" id="2d51ba78-4093-48b7-9cee-6f5f748f48bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/FileAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/network/FileTransferService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/bg_card.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/bg_circle_blue_light.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/bg_icon_circle_blue_light.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/bg_icon_circle_error_light.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/bg_icon_circle_success.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/bg_icon_circle_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_back.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_check_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_folder_open.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_qr_scan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_qrshare_logo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_receive.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_send.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/progress_bar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/progress_bar_drawable.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/qr_scan_overlay.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_qr_pair_display.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_qr_scan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_qr_scanner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/item_selected_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/item_transfer_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/FileAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/FileItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/FileItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/FilePreviewActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/FilePreviewActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/FileServer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/FileServer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/LoginModels.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/LoginModels.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/LoginRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/LoginRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/QRAnalyzer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/QRAnalyzer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/ReceiveActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/ScanActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/ScanActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/SendActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/TransferActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/TransferActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/TransferViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/TransferViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/loginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/loginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/model/FileItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/model/FileItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/network/ApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/network/ApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/wifi/WifiDirectManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/WifiDirectManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/wifi/WifiDirectReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/archives/wifi/WifiDirectReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_receive.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_receive.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_send.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_send.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_transfer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/layout/activity_transfer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.0-milestone-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deviceManager.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/studiobot.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/activities/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/activities/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/activities/QRPairDisplayActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/activities/QRPairDisplayActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/activities/QRScanActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/activities/QRScanActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/activities/ReceiveActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/activities/ReceiveActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/activities/SendActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/activities/SendActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/activities/TransferActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/activities/TransferActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/network/FileTransferService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/network/NetworkModels.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/network/NetworkModels.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/network/SocketClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/network/SocketClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/network/SocketServer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/network/SocketServer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/network/WiFiDirectBroadcastReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/network/WiFiDirectBroadcastReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/network/WiFiDirectManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/network/WiFiDirectManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/sharing/DownloadDirectoryHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/sharing/DownloadDirectoryHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/sharing/FilePickerHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/sharing/FilePickerHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/sharing/QRCodeHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/sharing/QRCodeHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/ui/QRScanOverlayView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/ui/QRScanOverlayView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/ui/SelectedFilesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/ui/SelectedFilesAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/qrshare/ui/TransferItemAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/practice/app/src/main/java/com/example/practice/qrshare/ui/TransferItemAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_circle_blue_light.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_icon_circle_blue_light.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_icon_circle_error_light.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_icon_circle_success.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_icon_circle_white.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_folder_open.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_qr_scan.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_qrshare_logo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/progress_bar_drawable.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/qr_scan_overlay.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_qr_pair_display.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_qr_scan.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_receive.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_send.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_selected_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_transfer_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,136 +168,34 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=P7SSVOCMGIDQOJ6D]" />
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
-  </component>
   <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
   "associatedIndex": 4
 }]]></component>
-  <component name="ProjectId" id="3B9MqaXjXXVGMUhuuimdyLbo9th" />
+  <component name="ProjectId" id="3B9lb1XTCruEsY1UUjakbblLLfC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/final year project/project/android_test/QRShare",
-    "settings.editor.selected.configurable": "com.android.studio.ml.bot.mainConfigurable"
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="QRShare" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="QRShare.app" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="true" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="false" />
-      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
-      <option name="CLEAR_APP_STORAGE" value="false" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="RESTORE_ENABLED" value="false" />
-      <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Hybrid>
-      <Java>
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Java>
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
-      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="62a0418f-9a41-4b47-a858-d62a2bd2d427" name="Changes" comment="" />
-      <created>1773897024248</created>
+      <changelist id="2d51ba78-4093-48b7-9cee-6f5f748f48bb" name="Changes" comment="" />
+      <created>1773909238789</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1773897024248</updated>
+      <updated>1773909238789</updated>
     </task>
     <servers />
-  </component>
-  <component name="play_dynamic_filters_status">
-    <option name="appIdToCheckInfo">
-      <map>
-        <entry key="com.qrshare">
-          <value>
-            <CheckInfo lastCheckTimestamp="1773897992013" />
-          </value>
-        </entry>
-        <entry key="com.qrshare.test">
-          <value>
-            <CheckInfo lastCheckTimestamp="1773897992023" />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

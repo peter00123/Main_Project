@@ -1,0 +1,190 @@
+[
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_activity_main.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/anim_fade_in.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/anim/fade_in.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_device_tablet.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_device_tablet.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/color_nav_item_color.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/color/nav_item_color.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_generic.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_generic.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_settings.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_image.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_image.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_text.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_text.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_activity_share.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_share.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_device_phone.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_device_phone.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/anim_fade_out.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/anim/fade_out.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/navigation_nav_graph.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_bottomsheet_incoming_transfer.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/bottomsheet_incoming_transfer.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_activity_settings.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_activity_receive.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/activity_receive.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_item_device_card.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/item_device_card.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_share.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_share.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_visibility.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_visibility.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/anim_slide_in_up.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/anim/slide_in_up.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/xml_backup_rules.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_bottomsheet_transfer.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/bottomsheet_transfer.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_fragment_home.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_archive.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_archive.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_progress_ring.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/progress_ring.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_bg_bottom_sheet.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/bg_bottom_sheet.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_nearby_share.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_nearby_share.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_device_watch.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_device_watch.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_devices_off.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_devices_off.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_video.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_video.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/anim_slide_out_down.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/anim/slide_out_down.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/xml_file_paths.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/xml_preferences.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/xml/preferences.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_home.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_bottomsheet_device_picker.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/bottomsheet_device_picker.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_apk.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_apk.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_check_circle.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_check_circle.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_bg_drag_handle.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/bg_drag_handle.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_audio.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_audio.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/layout_fragment_transfer.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/layout/fragment_transfer.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_refresh.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_refresh.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_device_laptop.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_device_laptop.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/xml_data_extraction_rules.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_file_pdf.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_file_pdf.xml"
+    },
+    {
+        "merged": "com.nearbyshare.app-merged_res-53:/drawable_ic_error_circle.xml.flat",
+        "source": "com.nearbyshare.app-main-55:/drawable/ic_error_circle.xml"
+    }
+]

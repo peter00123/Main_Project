@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=============================================================================
+FILE: res/xml/backup_rules.xml
+=============================================================================
+OBJECTIVE:
+  Specifies which data is included/excluded from Android Auto Backup.
+  We exclude transfer history and temp files (no point restoring in-progress
+  transfers) but allow user preferences (device name, visibility settings).
+=============================================================================
+-->
+<full-backup-content xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Exclude any cached/temp transfer files -->
+    <exclude domain="cache" path="."/>
+    <exclude domain="external" path="Download/NearbyShare/"/>
+</full-backup-content>

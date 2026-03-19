@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-55:/layout/activity_receive.xml",
+        "source": "com.atezhare.app-main-58:/layout/activity_receive.xml"
+    },
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-55:/layout/activity_share.xml",
+        "source": "com.atezhare.app-main-58:/layout/activity_share.xml"
+    },
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-55:/layout/activity_main.xml",
+        "source": "com.atezhare.app-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-55:/layout/activity_send.xml",
+        "source": "com.atezhare.app-main-58:/layout/activity_send.xml"
+    },
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-55:/layout/item_file.xml",
+        "source": "com.atezhare.app-main-58:/layout/item_file.xml"
+    }
+]

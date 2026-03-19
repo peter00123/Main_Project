@@ -1,0 +1,36 @@
+// =============================================================================
+// FILE: settings.gradle
+// =============================================================================
+// INDEX OF CONTENTS:
+//   1. Plugin management repositories
+//   2. Dependency resolution repositories
+//   3. Root project naming
+//   4. Module inclusion
+//
+// OBJECTIVE:
+//   Defines the Gradle settings for the entire NearbyShare project.
+//   Declares where Gradle should look for plugins and dependencies,
+//   and registers the :app module as part of this build.
+// =============================================================================
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// The root project name shown in Android Studio
+rootProject.name = "NearbyShare"
+
+// Include the :app module
+include ':app'

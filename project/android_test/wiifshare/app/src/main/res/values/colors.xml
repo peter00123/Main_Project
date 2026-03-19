@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- colors.xml — App color palette. -->
+<resources>
+    <color name="primary">#1B73E8</color>
+    <color name="primary_dark">#1558B0</color>
+    <color name="primary_light">#D2E3FC</color>
+    <color name="accent">#00C853</color>
+    <color name="background">#F8F9FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_background">#202124</color>
+    <color name="on_surface">#3C4043</color>
+    <color name="divider">#DADCE0</color>
+    <color name="error">#D93025</color>
+</resources>

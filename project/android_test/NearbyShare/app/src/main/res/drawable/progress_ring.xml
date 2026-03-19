@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  progress_ring.xml
+  Layer-list drawable used as the progressDrawable for the transfer
+  circular ProgressBar in fragment_transfer.xml.
+  Layer 0 = background ring (dim), Layer 1 = foreground progress arc.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background ring — always visible at full opacity -->
+    <item android:id="@android:id/background">
+        <shape
+            android:shape="ring"
+            android:innerRadiusRatio="2.8"
+            android:thicknessRatio="14"
+            android:useLevel="false">
+            <solid android:color="?attr/colorSurfaceVariant"/>
+        </shape>
+    </item>
+
+    <!-- Progress arc — fills clockwise as progress increases -->
+    <item android:id="@android:id/progress">
+        <rotate
+            android:fromDegrees="0"
+            android:toDegrees="360"
+            android:pivotX="50%"
+            android:pivotY="50%">
+            <shape
+                android:shape="ring"
+                android:innerRadiusRatio="2.8"
+                android:thicknessRatio="14"
+                android:useLevel="true">
+                <solid android:color="?attr/colorPrimary"/>
+            </shape>
+        </rotate>
+    </item>
+
+</layer-list>

@@ -1,24 +1,19 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Practice" parent="Theme.Material3.DayNight.NoActionBar">
-         <!-- Primary colors -->
-            <item name="colorPrimary">@color/blue</item>
-            <item name="colorPrimaryContainer">@color/blue</item>
-
-            <!-- Secondary colors -->
-            <item name="colorSecondary">@color/blue</item>
-
-            <!-- Background -->
-            <item name="android:windowBackground">@color/white</item>
-
-            <!-- Text -->
-            <item name="android:textColorPrimary">@color/black</item>
-
-       <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.QRShare" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 
-
-
-
+    <style name="TextAppearance.QRShare.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
 </resources>

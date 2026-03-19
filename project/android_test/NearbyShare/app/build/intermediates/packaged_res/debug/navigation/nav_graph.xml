@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=============================================================================
+FILE: res/navigation/nav_graph.xml
+=============================================================================
+OBJECTIVE:
+  Navigation graph for the Navigation Component.
+  Declares all Fragment destinations and the actions (transitions) between them.
+  The start destination is homeFragment.
+  transferFragment is reached via the navigateToTransfer action triggered
+  from MainViewModel when a transfer session starts.
+=============================================================================
+-->
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- ── Home: device discovery ── -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nearbyshare.ui.fragments.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Action: go to transfer screen when a session starts -->
+        <action
+            android:id="@+id/action_home_to_transfer"
+            app:destination="@id/transferFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_down"/>
+    </fragment>
+
+    <!-- ── Transfer: progress / accept / done screen ── -->
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="com.nearbyshare.ui.fragments.TransferFragment"
+        android:label="@string/nav_transfer"
+        tools:layout="@layout/fragment_transfer"/>
+
+</navigation>

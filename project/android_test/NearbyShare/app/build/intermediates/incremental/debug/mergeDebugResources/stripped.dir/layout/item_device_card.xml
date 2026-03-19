@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=============================================================================
+FILE: res/layout/item_device_card.xml
+=============================================================================
+OBJECTIVE:
+  Single device card used in the 2-column grid on HomeFragment and the
+  vertical list in DevicePickerBottomSheet.
+  Shows: avatar circle with initials, device name, type icon, signal label,
+  connection state overlay (spinner, progress bar, or checkmark).
+=============================================================================
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Avatar circle with device initials -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_avatar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:cardCornerRadius="28dp"
+            app:cardBackgroundColor="@color/avatar_blue"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tv_avatar_initials"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="PX"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Connecting spinner — overlays the avatar during connection -->
+        <ProgressBar
+            android:id="@+id/progress_connecting"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:visibility="gone"
+            android:indeterminateTint="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="@id/cv_avatar"
+            app:layout_constraintBottom_toBottomOf="@id/cv_avatar"
+            app:layout_constraintStart_toStartOf="@id/cv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/cv_avatar"/>
+
+        <!-- Result icon (checkmark or error) — shown after terminal state -->
+        <ImageView
+            android:id="@+id/iv_state_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            android:contentDescription="@string/transfer_status"
+            app:layout_constraintBottom_toBottomOf="@id/cv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/cv_avatar"
+            tools:src="@drawable/ic_check_circle"/>
+
+        <!-- Device type icon (small, bottom-right of avatar) -->
+        <ImageView
+            android:id="@+id/iv_device_type_icon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:contentDescription="@string/device_type"
+            app:tint="?attr/colorOnSurfaceVariant"
+            app:layout_constraintBottom_toBottomOf="@id/cv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/cv_avatar"
+            tools:src="@drawable/ic_device_phone"/>
+
+        <!-- Device name -->
+        <TextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?attr/colorOnSurface"
+            tools:text="Pixel 8 Pro"
+            app:layout_constraintTop_toBottomOf="@id/cv_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Signal label (Close / Nearby / Far) -->
+        <TextView
+            android:id="@+id/tv_signal_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="?attr/colorPrimary"
+            tools:text="Close"
+            app:layout_constraintTop_toBottomOf="@id/tv_device_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Transfer progress bar — shown during active transfers -->
+        <ProgressBar
+            android:id="@+id/progress_transfer"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:visibility="gone"
+            android:progressTint="?attr/colorPrimary"
+            android:progressBackgroundTint="?attr/colorSurfaceVariant"
+            app:layout_constraintTop_toBottomOf="@id/tv_signal_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,56 @@
+com.nearbyshare.app-emoji2-1.2.0-0 C:\Users\bazi\.gradle\caches\transforms-3\0378e295eb2c9695d88ff484cab737c9\transformed\emoji2-1.2.0\res
+com.nearbyshare.app-slidingpanelayout-1.2.0-1 C:\Users\bazi\.gradle\caches\transforms-3\039c77322fa8e03800f259e5fd8d5a8c\transformed\slidingpanelayout-1.2.0\res
+com.nearbyshare.app-navigation-runtime-ktx-2.7.6-2 C:\Users\bazi\.gradle\caches\transforms-3\0769723e6dcbf64670d0b56944f605f6\transformed\navigation-runtime-ktx-2.7.6\res
+com.nearbyshare.app-lifecycle-viewmodel-savedstate-2.7.0-3 C:\Users\bazi\.gradle\caches\transforms-3\0c8feae99cf7051afb1d4272db1909d6\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.nearbyshare.app-preference-1.2.1-4 C:\Users\bazi\.gradle\caches\transforms-3\0f2fc5a656ae977d2f589318c2ae3ed4\transformed\preference-1.2.1\res
+com.nearbyshare.app-window-1.0.0-5 C:\Users\bazi\.gradle\caches\transforms-3\1e8272f7afcfbd8500e8fc3928d0abf4\transformed\window-1.0.0\res
+com.nearbyshare.app-drawerlayout-1.1.1-6 C:\Users\bazi\.gradle\caches\transforms-3\1f98807f63b408881db25ac83f668e15\transformed\drawerlayout-1.1.1\res
+com.nearbyshare.app-preference-ktx-1.2.1-7 C:\Users\bazi\.gradle\caches\transforms-3\299af3a3ec0c5169079eeff24e68c361\transformed\preference-ktx-1.2.1\res
+com.nearbyshare.app-lifecycle-livedata-2.7.0-8 C:\Users\bazi\.gradle\caches\transforms-3\2a30ebe8a218c0fc35d288610c9c3beb\transformed\lifecycle-livedata-2.7.0\res
+com.nearbyshare.app-transition-1.4.1-9 C:\Users\bazi\.gradle\caches\transforms-3\3da0aca7e0dd723f71c8fe6b869cd4d6\transformed\transition-1.4.1\res
+com.nearbyshare.app-recyclerview-1.3.2-10 C:\Users\bazi\.gradle\caches\transforms-3\3e076fd1d860c8e39b486c5c48c86c8a\transformed\recyclerview-1.3.2\res
+com.nearbyshare.app-lottie-6.3.0-11 C:\Users\bazi\.gradle\caches\transforms-3\467762ddf38c108c52d8490c820a1f50\transformed\lottie-6.3.0\res
+com.nearbyshare.app-savedstate-1.2.1-12 C:\Users\bazi\.gradle\caches\transforms-3\47fbb2e7a9e1870399b6a7cdf5ab842f\transformed\savedstate-1.2.1\res
+com.nearbyshare.app-fragment-1.6.2-13 C:\Users\bazi\.gradle\caches\transforms-3\4abe019f3b816fe46c61dfbfc0a5a7cd\transformed\fragment-1.6.2\res
+com.nearbyshare.app-annotation-experimental-1.3.1-14 C:\Users\bazi\.gradle\caches\transforms-3\4affc14fd0f9ea0a0cd7b6bbbfbcdb4f\transformed\annotation-experimental-1.3.1\res
+com.nearbyshare.app-customview-poolingcontainer-1.0.0-15 C:\Users\bazi\.gradle\caches\transforms-3\5caedd9c5135e8d368356ec9ca065014\transformed\customview-poolingcontainer-1.0.0\res
+com.nearbyshare.app-lifecycle-livedata-core-2.7.0-16 C:\Users\bazi\.gradle\caches\transforms-3\648c04a4cea82b959845aa921577117a\transformed\lifecycle-livedata-core-2.7.0\res
+com.nearbyshare.app-navigation-ui-ktx-2.7.6-17 C:\Users\bazi\.gradle\caches\transforms-3\6629c49f9c601f6e7d8c09918746e8c0\transformed\navigation-ui-ktx-2.7.6\res
+com.nearbyshare.app-core-runtime-2.2.0-18 C:\Users\bazi\.gradle\caches\transforms-3\75ba18b1801b8ef206035b469ac47830\transformed\core-runtime-2.2.0\res
+com.nearbyshare.app-material-1.11.0-19 C:\Users\bazi\.gradle\caches\transforms-3\769a7c1172c399c6427577ed48f10191\transformed\material-1.11.0\res
+com.nearbyshare.app-lifecycle-process-2.7.0-20 C:\Users\bazi\.gradle\caches\transforms-3\7f050eeae9f0b33cb608480014408a36\transformed\lifecycle-process-2.7.0\res
+com.nearbyshare.app-lifecycle-runtime-ktx-2.7.0-21 C:\Users\bazi\.gradle\caches\transforms-3\8b54120d20fe99b492928e074b03e18a\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.nearbyshare.app-navigation-common-ktx-2.7.6-22 C:\Users\bazi\.gradle\caches\transforms-3\909f3bda06c4a1b34663c81169bef712\transformed\navigation-common-ktx-2.7.6\res
+com.nearbyshare.app-activity-1.8.2-23 C:\Users\bazi\.gradle\caches\transforms-3\92fea02d589b1ab03a6b1a2022449c11\transformed\activity-1.8.2\res
+com.nearbyshare.app-navigation-ui-2.7.6-24 C:\Users\bazi\.gradle\caches\transforms-3\986650029f2dbb79c4ad47fb041d15fe\transformed\navigation-ui-2.7.6\res
+com.nearbyshare.app-appcompat-resources-1.6.1-25 C:\Users\bazi\.gradle\caches\transforms-3\9eade429c513befe1d960c7aae2933af\transformed\appcompat-resources-1.6.1\res
+com.nearbyshare.app-navigation-common-2.7.6-26 C:\Users\bazi\.gradle\caches\transforms-3\a0a5077a084bf5b970aa71560aa719c7\transformed\navigation-common-2.7.6\res
+com.nearbyshare.app-lifecycle-livedata-core-ktx-2.7.0-27 C:\Users\bazi\.gradle\caches\transforms-3\a35771b20d8011e532407d8803821a77\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.nearbyshare.app-emoji2-views-helper-1.2.0-28 C:\Users\bazi\.gradle\caches\transforms-3\b203c51c35c93f05f889f55c43a70687\transformed\emoji2-views-helper-1.2.0\res
+com.nearbyshare.app-core-1.12.0-29 C:\Users\bazi\.gradle\caches\transforms-3\b45e2d6df1a51425a46eab66aaaa4fcb\transformed\core-1.12.0\res
+com.nearbyshare.app-activity-ktx-1.8.2-30 C:\Users\bazi\.gradle\caches\transforms-3\bc849e4fc155ee399f077156725d3f1c\transformed\activity-ktx-1.8.2\res
+com.nearbyshare.app-fragment-ktx-1.6.2-31 C:\Users\bazi\.gradle\caches\transforms-3\bd51a6e9135ccfaaf3abd4894028906b\transformed\fragment-ktx-1.6.2\res
+com.nearbyshare.app-lifecycle-viewmodel-2.7.0-32 C:\Users\bazi\.gradle\caches\transforms-3\c249b76ac134e269d8ca4fdcae7a8416\transformed\lifecycle-viewmodel-2.7.0\res
+com.nearbyshare.app-startup-runtime-1.1.1-33 C:\Users\bazi\.gradle\caches\transforms-3\c3ea03b4c538f36d354a48a43dcd8be0\transformed\startup-runtime-1.1.1\res
+com.nearbyshare.app-core-ktx-1.12.0-34 C:\Users\bazi\.gradle\caches\transforms-3\c6a2f7f9c6e63f5c09821ef35c6b57cf\transformed\core-ktx-1.12.0\res
+com.nearbyshare.app-navigation-runtime-2.7.6-35 C:\Users\bazi\.gradle\caches\transforms-3\cba5342eb754c8ae590cfab5ce95df9b\transformed\navigation-runtime-2.7.6\res
+com.nearbyshare.app-coordinatorlayout-1.1.0-36 C:\Users\bazi\.gradle\caches\transforms-3\d0d46d42bb41d70d7936000ba5420901\transformed\coordinatorlayout-1.1.0\res
+com.nearbyshare.app-viewpager2-1.1.0-beta02-37 C:\Users\bazi\.gradle\caches\transforms-3\d9af37e75e39223f724b45f540b210ea\transformed\viewpager2-1.1.0-beta02\res
+com.nearbyshare.app-lifecycle-viewmodel-ktx-2.7.0-38 C:\Users\bazi\.gradle\caches\transforms-3\db8e0a3a1969dc6f5d895df5f4c23489\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.nearbyshare.app-navigation-fragment-ktx-2.7.6-39 C:\Users\bazi\.gradle\caches\transforms-3\dcb7b59f5db97e1098bebf9ad04cb840\transformed\navigation-fragment-ktx-2.7.6\res
+com.nearbyshare.app-cardview-1.0.0-40 C:\Users\bazi\.gradle\caches\transforms-3\ddaa2c7c26e94e2a866cb0740a27ef6f\transformed\cardview-1.0.0\res
+com.nearbyshare.app-appcompat-1.6.1-41 C:\Users\bazi\.gradle\caches\transforms-3\e07b03242afef551e700fd39c85bb3d3\transformed\appcompat-1.6.1\res
+com.nearbyshare.app-lifecycle-runtime-2.7.0-42 C:\Users\bazi\.gradle\caches\transforms-3\e236a7030bad45360e74d1bc6ebfd733\transformed\lifecycle-runtime-2.7.0\res
+com.nearbyshare.app-lifecycle-livedata-ktx-2.7.0-43 C:\Users\bazi\.gradle\caches\transforms-3\e67fd77faeb0f034fc58e2fd7903c550\transformed\lifecycle-livedata-ktx-2.7.0\res
+com.nearbyshare.app-savedstate-ktx-1.2.1-44 C:\Users\bazi\.gradle\caches\transforms-3\e7d2b6e3d949ffbd0c96358e93bcac6c\transformed\savedstate-ktx-1.2.1\res
+com.nearbyshare.app-navigation-fragment-2.7.6-45 C:\Users\bazi\.gradle\caches\transforms-3\eca74b626cdc39c654f57d452bf18013\transformed\navigation-fragment-2.7.6\res
+com.nearbyshare.app-glide-4.16.0-46 C:\Users\bazi\.gradle\caches\transforms-3\f1216ebd10eecd36036f7bc1398d430a\transformed\glide-4.16.0\res
+com.nearbyshare.app-profileinstaller-1.3.0-47 C:\Users\bazi\.gradle\caches\transforms-3\f7af8e2e81490186bd361f6c627a8e0a\transformed\profileinstaller-1.3.0\res
+com.nearbyshare.app-constraintlayout-2.1.4-48 C:\Users\bazi\.gradle\caches\transforms-3\fffee58c8cf57a69ae1fadfb1796ccbd\transformed\constraintlayout-2.1.4\res
+com.nearbyshare.app-pngs-49 E:\final year project\project\android_test\NearbyShare\app\build\generated\res\pngs\debug
+com.nearbyshare.app-resValues-50 E:\final year project\project\android_test\NearbyShare\app\build\generated\res\resValues\debug
+com.nearbyshare.app-packageDebugResources-51 E:\final year project\project\android_test\NearbyShare\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.nearbyshare.app-packageDebugResources-52 E:\final year project\project\android_test\NearbyShare\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.nearbyshare.app-merged_res-53 E:\final year project\project\android_test\NearbyShare\app\build\intermediates\merged_res\debug
+com.nearbyshare.app-debug-54 E:\final year project\project\android_test\NearbyShare\app\src\debug\res
+com.nearbyshare.app-main-55 E:\final year project\project\android_test\NearbyShare\app\src\main\res

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=============================================================================
+FILE: res/xml/data_extraction_rules.xml
+=============================================================================
+OBJECTIVE:
+  Android 12+ data extraction rules. Controls what data is transferred
+  during device-to-device migration and cloud backups.
+  Transfer temp files and received files are excluded to keep backups small.
+=============================================================================
+-->
+<data-extraction-rules xmlns:android="http://schemas.android.com/apk/res/android">
+    <cloud-backup>
+        <exclude domain="cache" path="."/>
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="cache" path="."/>
+    </device-transfer>
+</data-extraction-rules>

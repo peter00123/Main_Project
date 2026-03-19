@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- strings.xml — All user-facing string resources for the app. -->
+<resources>
+    <string name="app_name">AteZhare</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_receive">Receive</string>
+    <string name="title_home">Home</string>
+    <string name="title_directory">Directory</string>
+    <string name="title_profile">Profile</string>
+    <string name="btn_share">Share</string>
+    <string name="add_files">Add Files</string>
+    <string name="no_files">No files added yet. Tap + to add files.</string>
+    <string name="scanning_qr">Scan receiver\'s QR code</string>
+    <string name="waiting_for_scan">Waiting for sender to scan…</string>
+    <string name="transfer_complete">Transfer complete!</string>
+    <string name="your_qr_code">Your QR Code</string>
+    <string name="profile_title">Profile</string>
+    <string name="device_name">Device Name</string>
+
+    <!-- <string name="app_name">Old Name</string> -->
+</resources>

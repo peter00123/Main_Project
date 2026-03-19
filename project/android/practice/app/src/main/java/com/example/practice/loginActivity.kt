@@ -3,15 +3,12 @@ package com.example.practice
 
 import android.os.Bundle
 import android.content.Intent
-import android.view.View
 import android.widget.EditText
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import android.widget.TextView
-import com.example.practice.network.RetrofitClient
-import com.example.practice.network.ApiService
+import com.example.practice.archives.wifi.LoginRequest
 
 class loginActivity : AppCompatActivity() {
 

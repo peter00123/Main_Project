@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.example.practice.com.example.practice.ImageSliderAdapter
+import com.example.practice.qrshare.activities.MainActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -91,7 +92,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         sendbtn.setOnClickListener {
-            startActivity(Intent(this, SendActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         // Auto-scroll

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Custom drawable used as an overlay on the QR scanner.
+  A solid dark background with a lighter rounded-rect window in the center
+  is drawn purely in code via a custom Drawable defined in QRScanOverlayDrawable.
+  This file provides a simple dark overlay as fallback for the XML reference.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#00000000" />
+</shape>

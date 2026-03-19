@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=============================================================================
+FILE: res/xml/file_paths.xml
+=============================================================================
+OBJECTIVE:
+  Defines the directories that the FileProvider is allowed to share URIs for.
+  FileProvider converts File paths into content:// URIs so they can be passed
+  to other apps without requiring WRITE_EXTERNAL_STORAGE permission.
+  All received files are saved to the Downloads/NearbyShare folder.
+=============================================================================
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internal app files directory: /data/data/com.nearbyshare/files/ -->
+    <files-path name="internal_files" path="."/>
+
+    <!-- External files dir (app-specific, scoped storage): -->
+    <external-files-path name="external_files" path="."/>
+
+    <!-- Public downloads folder (for received files) -->
+    <external-path name="downloads" path="Download/NearbyShare/"/>
+
+    <!-- Cache directory (for temp files during transfer) -->
+    <cache-path name="cache" path="."/>
+</paths>

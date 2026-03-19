@@ -1,10 +1,9 @@
 package com.example.practice.network
 
-import com.example.practice.LoginRequest
-import com.example.practice.LoginResponse
+import com.example.practice.archives.wifi.LoginRequest
+import com.example.practice.archives.wifi.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.GET
 import retrofit2.http.POST
 
 

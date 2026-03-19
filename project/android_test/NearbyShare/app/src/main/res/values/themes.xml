@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+    Base theme — inherits from Material3 DayNight so the system
+    automatically switches between light and dark variants.
+    -->
+    <style name="Theme.NearbyShare" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorPrimaryVariant">@color/blue_700</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <!-- Background and surface -->
+        <item name="android:windowBackground">?attr/colorSurface</item>
+
+        <!-- Status bar transparent so the layout extends under it -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+    </style>
+
+    <!--
+    Bottom-sheet activity theme — translucent background so the
+    screen behind shows through when the bottom sheet is partially open.
+    Used by ShareActivity and ReceiveActivity.
+    -->
+    <style name="Theme.NearbyShare.BottomSheet" parent="Theme.NearbyShare">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+</resources>
