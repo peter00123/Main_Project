@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvTransferFileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                tools:text="holiday_video_2024.mp4" />
+
+            <TextView
+                android:id="@+id/tvTransferMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/text_hint"
+                android:layout_marginStart="8dp"
+                tools:text="256 MB" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarFile"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:progressDrawable="@drawable/progress_bar_drawable"
+            android:max="100"
+            tools:progress="60" />
+
+        <TextView
+            android:id="@+id/tvTransferStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/primary_blue"
+            android:layout_marginTop="6dp"
+            tools:text="60%  4.2 MB/s" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

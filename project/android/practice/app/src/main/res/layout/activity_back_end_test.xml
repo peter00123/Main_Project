@@ -6,6 +6,12 @@
     android:gravity="center"
     android:padding="24dp">
 
+
+    <Button
+        android:id="@+id/btnlogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="logout" />
     <Button
         android:id="@+id/btnCall"
         android:layout_width="match_parent"

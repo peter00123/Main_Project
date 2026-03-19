@@ -2,154 +2,97 @@ package com.example.practice
 
 import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.net.wifi.p2p.WifiP2pConfig
+import android.net.wifi.p2p.WifiP2pManager
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
+import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
-import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.camera.view.PreviewView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import org.json.JSONObject
-import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.barcode.BarcodeScanning
+import com.google.zxing.integration.android.IntentIntegrator
 
 class ScanActivity : AppCompatActivity() {
 
-    private lateinit var previewView: PreviewView
-    private val CAMERA_PERMISSION_CODE = 1001
-    private var isScanned = false   // ✅ prevent multiple triggers
+    private lateinit var manager: WifiP2pManager
+    private lateinit var channel: WifiP2pManager.Channel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scan)
 
-        previewView = findViewById(R.id.cameraPreview)
+        manager = getSystemService(WIFI_P2P_SERVICE) as WifiP2pManager
+        channel = manager.initialize(this, mainLooper, null)
 
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            startCamera()
-        } else {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.CAMERA),
-                CAMERA_PERMISSION_CODE
-            )
-        }
+        // QR Scanner Setup
+        val integrator = IntentIntegrator(this)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+        integrator.setPrompt("Scan QR Code")
+        integrator.setBeepEnabled(false)
+        integrator.setOrientationLocked(true)
+        integrator.initiateScan()
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    @RequiresPermission(allOf = [
+        Manifest.permission.ACCESS_FINE_LOCATION,
+        Manifest.permission.NEARBY_WIFI_DEVICES
+    ])
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
-        if (requestCode == CAMERA_PERMISSION_CODE &&
-            grantResults.isNotEmpty() &&
-            grantResults[0] == PackageManager.PERMISSION_GRANTED
-        ) {
-            startCamera()
-        }
-    }
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
 
-    private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
+        if (result != null && result.contents != null) {
 
-        cameraProviderFuture.addListener({
+            val deviceAddress = result.contents
 
-            val cameraProvider = cameraProviderFuture.get()
-
-            // 🔹 Preview
-            val preview = Preview.Builder().build().apply {
-                setSurfaceProvider(previewView.surfaceProvider)
+            val config = WifiP2pConfig().apply {
+                this.deviceAddress = deviceAddress
             }
 
-            // 🔹 Image Analysis (QR)
-            val imageAnalysis = ImageAnalysis.Builder()
-                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-                .build()
+            manager.connect(channel, config, object : WifiP2pManager.ActionListener {
 
-            imageAnalysis.setAnalyzer(
-                ContextCompat.getMainExecutor(this)
-            ) { imageProxy ->
-                processImageProxy(imageProxy)
-            }
+                override fun onSuccess() {
+                    Toast.makeText(
+                        this@ScanActivity,
+                        "Connecting...",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+                    // IMPORTANT: wait for connection info
+                    manager.requestConnectionInfo(channel) { info ->
 
-            try {
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(
-                    this,
-                    cameraSelector,
-                    preview,
-                    imageAnalysis
-                )
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+                        if (info.groupFormed) {
 
-        }, ContextCompat.getMainExecutor(this))
-    }
+                            val hostAddress =
+                                info.groupOwnerAddress.hostAddress
 
-    private fun processImageProxy(imageProxy: ImageProxy) {
-        if (isScanned) {
-            imageProxy.close()
-            return
-        }
+                            Toast.makeText(
+                                this@ScanActivity,
+                                "Connected!",
+                                Toast.LENGTH_SHORT
+                            ).show()
 
-        val mediaImage = imageProxy.image ?: run {
-            imageProxy.close()
-            return
-        }
+                            startActivity(
+                                Intent(
+                                    this@ScanActivity,
+                                    TransferActivity::class.java
+                                )
+                                    .putExtra("MODE", "SENDER")
+                                    .putExtra("HOST", hostAddress)
+                            )
 
-        val image = InputImage.fromMediaImage(
-            mediaImage,
-            imageProxy.imageInfo.rotationDegrees
-        )
-
-        val scanner = BarcodeScanning.getClient()
-
-        scanner.process(image)
-            .addOnSuccessListener { barcodes ->
-                barcodes.firstOrNull()?.rawValue?.let { qrText ->
-                    isScanned = true
-                    Log.d("QR_RESULT", qrText)
-
-                    handleQrResult(qrText)
+                            finish()
+                        }
+                    }
                 }
-            }
-            .addOnFailureListener {
-                it.printStackTrace()
-            }
-            .addOnCompleteListener {
-                imageProxy.close()
-            }
-    }
 
-    private fun handleQrResult(qrText: String) {
-        try {
-            val json = JSONObject(qrText)
-
-            val expiresAt = json.getLong("expiresAt")
-
-            // ✅ Move to TransferActivity (Sender Mode)
-            startActivity(
-                Intent(this, TransferActivity::class.java).apply {
-                    putExtra("MODE", "SENDER")
-                    putExtra("EXPIRES_AT", expiresAt)
+                override fun onFailure(reason: Int) {
+                    Toast.makeText(
+                        this@ScanActivity,
+                        "Connection failed: $reason",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            )
-
-            finish()
-
-        } catch (e: Exception) {
-            Log.e("SCAN", "Invalid QR data", e)
+            })
         }
+
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

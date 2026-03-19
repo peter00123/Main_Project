@@ -1,18 +1,24 @@
 package com.example.practice.network
 
 
+import com.example.practice.WebURL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
+
+
 object RetrofitClient {
 
-    private const val BASE_URL = "http://10.185.154.95:8080/"
+    private const val BASE_URL = WebURL.message
 
-    val instance: Retrofit by lazy {
+
+
+    val api: ApiService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+            .create(ApiService::class.java)
     }
 }

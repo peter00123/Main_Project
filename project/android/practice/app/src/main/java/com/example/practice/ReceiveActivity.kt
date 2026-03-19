@@ -23,7 +23,6 @@ class ReceiveActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receive)
 
-        imgQr = findViewById(R.id.imgQr)
 
         createSessionAndShowQr()
     }

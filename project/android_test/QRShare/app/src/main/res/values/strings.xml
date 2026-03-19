@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QRShare</string>
+    <string name="send_files">Send Files</string>
+    <string name="receive_files">Receive Files</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="generate_qr">Generate QR</string>
+    <string name="add_files">Add Files</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="connecting">Connecting…</string>
+    <string name="transfer_complete">Transfer Complete</string>
+    <string name="saved_to_downloads">Saved to Downloads/QRShare</string>
+</resources>

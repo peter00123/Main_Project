@@ -25,7 +25,7 @@ class SendActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send)
 
-        val sendButton = findViewById<Button>(R.id.button2)
+
         val recyclerView = findViewById<RecyclerView>(R.id.fileList)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -44,10 +44,7 @@ class SendActivity : ComponentActivity() {
         loadAppStoredFiles()
 
         // Open QR Scanner
-        sendButton.setOnClickListener {
-            val intent = Intent(this, ScanActivity::class.java)
-            startActivityForResult(intent, QR_REQUEST_CODE)
-        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

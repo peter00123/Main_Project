@@ -31,14 +31,14 @@ class TransferActivity : AppCompatActivity() {
     }
 
     private fun observeUi() {
-        viewModel.status.observe(this) { status ->
-            findViewById<TextView>(R.id.txtStatus).text = status
-        }
 
-        viewModel.timeLeft.observe(this) { time ->
-            findViewById<TextView>(R.id.txtTimer).text = formatTime(time)
-        }
+
+        print("hi")
     }
+
+
+
+
 
     private fun startSessionTimer() {
         handler.post(object : Runnable {

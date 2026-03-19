@@ -1,0 +1,81 @@
+https://main-project-cdol.onrender.com/api/test
+
+
+
+
+postgresql:
+//postgres:madearmj@supa1@db.nnxychgfgfzbjfrbltht.supabase.co:5432/postgres
+
+
+spring.datasource.url=jdbc:postgres:madearmj@supa1@db.nnxychgfgfzbjfrbltht.supabase.co:5432/postgres
+spring.datasource.username=postgresofpeter
+spring.datasource.password=pass123ofpeter
+
+
+
+Perfect! Once you set the environment variables in Render and redeploy your Spring Boot app, you can check the connection in a few ways:
+
+---
+
+## 1️⃣ Check logs on Render
+
+* Go to your **Render dashboard → Web Service → Logs**
+* Look for messages like:
+
+```
+HikariPool-1 - Starting...
+HikariPool-1 - Start completed.
+```
+
+If you see that **Hikari (Spring Boot’s DB connection pool) started successfully**, it means your app has connected to the database.
+
+* If there’s an error like `Failed to determine a suitable driver class` or `Access denied`, then the credentials or URL are wrong.
+
+---
+
+## 2️⃣ Test a REST endpoint that queries the DB
+
+* Create a simple API in Spring Boot like:
+
+```java
+@GetMapping("/dbtest")
+public String testDb() {
+    try {
+        jdbcTemplate.queryForObject("SELECT 1", Integer.class);
+        return "Database Connected ✅";
+    } catch (Exception e) {
+        return "Database Connection Failed ❌: " + e.getMessage();
+    }
+}
+```
+
+* Deploy it and visit:
+
+```
+https://main-project-cdol.onrender.com/dbtest
+```
+
+* If it returns **“Database Connected ✅”**, everything is fine.
+
+---
+
+## 3️⃣ Check in Supabase
+
+* Go to **SQL Editor → Run a simple query**:
+
+```sql
+SELECT * FROM your_table_name LIMIT 1;
+```
+
+* Insert a test row from your Spring Boot app and see if it appears here.
+* This proves the app is actually writing to the cloud DB.
+
+---
+
+💡 **Tip:** Always keep `SPRING_JPA_HIBERNATE_DDL_AUTO=update` in the environment variables during testing — it auto-creates tables from your Spring entities.
+
+---
+
+If you want, I can give you a **ready-to-use Spring Boot configuration for Supabase** that works immediately — just drop your DB URL, username, and password in Render. It will handle images and any other tables.
+
+Do you want me to prepare that?
