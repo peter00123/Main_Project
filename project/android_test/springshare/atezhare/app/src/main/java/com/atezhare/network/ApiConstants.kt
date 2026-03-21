@@ -9,7 +9,7 @@ object ApiConstants {
 
     // Base URL for the Spring Boot backend
     // Replace with actual server IP for physical device testing (e.g., http://192.168.1.x:8080/atezhare/)
-    const val BASE_URL = "http://10.0.2.2:8080/atezhare/"  // 10.0.2.2 = localhost from Android emulator
+    const val BASE_URL = "http://192.168.10.34:8080/atezhare/"  // 10.0.2.2 = localhost from Android emulator
 
     // --- Auth Endpoints ---
     const val ENDPOINT_LOGIN = "auth/login"

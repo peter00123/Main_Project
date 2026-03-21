@@ -85,6 +85,8 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
      * Endpoint: POST /pair/submit-code — see network/ApiService.submitCode()
      * This notifies the sender (backend pushes status), which triggers sender confirm popup.
      */
+
+    
     fun submitCode(code: String) {
         viewModelScope.launch {
             _isLoading.value = true
