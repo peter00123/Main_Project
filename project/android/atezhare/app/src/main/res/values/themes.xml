@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    values/themes.xml
+    App themes and custom styles for Atezhare.
+    CodeInputBox style used by the 6 digit boxes in fragment_receive.xml
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Main app theme -->
+    <style name="Theme.Atezhare" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_background</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+    </style>
+
+    <!-- No-ActionBar variant used by SendActivity -->
+    <style name="Theme.Atezhare.NoActionBar" parent="Theme.Atezhare">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!-- Splash screen theme — shown briefly during SplashActivity -->
+    <style name="Theme.Atezhare.Splash" parent="Theme.Atezhare">
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+
+    <!--
+        CodeInputBox style
+        Used by the 6 individual digit EditText boxes in fragment_receive.xml.
+        Square boxes, centered text, number input, max 1 char.
+    -->
+    <style name="CodeInputBox">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/on_background</item>
+        <item name="android:background">@drawable/code_box_bg</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+</resources>

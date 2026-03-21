@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    values/strings.xml
+    All user-facing string resources for Atezhare.
+-->
+<resources>
+    <string name="app_name">Atezhare</string>
+
+    <!-- Navigation -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Auth -->
+    <string name="login_title">Login</string>
+    <string name="hint_user_id">User ID</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="error_empty_fields">Please fill in all fields</string>
+    <string name="error_invalid_credentials">Invalid credentials</string>
+
+    <!-- Home -->
+    <string name="btn_send">Send Files</string>
+    <string name="btn_receive">Receive Files</string>
+
+    <!-- Directory -->
+    <string name="btn_add_file">Add File</string>
+    <string name="btn_send_files">Send Selected Files</string>
+    <string name="empty_directory">No files added yet.\nTap + to add files.</string>
+
+    <!-- Send -->
+    <string name="scan_instruction">Point camera at receiver\'s QR code</string>
+    <string name="or_share_code">Or share this code with receiver:</string>
+    <string name="confirm_send_title">Receiver Connected</string>
+    <string name="confirm_send_message">A receiver has paired. Do you want to send the selected files?</string>
+
+    <!-- Receive -->
+    <string name="show_qr_title">Show this QR to the sender</string>
+    <string name="enter_code_title">Enter the sender\'s 6-digit code</string>
+    <string name="btn_submit_code">Submit Code</string>
+
+    <!-- Dialogs -->
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_send_confirm">Send</string>
+
+    <!-- Drawer -->
+    <string name="nav_about">About</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Logout</string>
+</resources>

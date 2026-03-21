@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml
+    Declares all activities, permissions, and app metadata for Atezhare.
+    Permissions: INTERNET (Retrofit calls), CAMERA (QR scanning in SendFragment),
+    READ_EXTERNAL_STORAGE / READ_MEDIA_* (file picking in DirectoryFragment)
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Network permission — required for all Retrofit calls in network/ApiService -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Camera permission — required for QR scanning in ui/send/SendFragment -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- Storage permissions — required for file picking in ui/directory/DirectoryFragment -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Atezhare"
+        android:usesCleartextTraffic="true">
+
+        <!-- SplashActivity — entry point, checks session via utils/SessionManager -->
+        <activity
+            android:name=".ui.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Atezhare.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LoginActivity — shown if user is not logged in -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+
+        <!-- MainActivity — hosts NavController, BottomNav, Toolbar, DrawerLayout -->
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:exported="false" />
+
+        <!-- SendActivity — standalone QR scanner screen (no toolbar/bottom nav) -->
+        <activity
+            android:name=".ui.send.SendActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

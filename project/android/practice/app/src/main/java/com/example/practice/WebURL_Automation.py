@@ -38,7 +38,7 @@ if mode == "L":
     url="package com.example.practice"+"\n"+"object WebURL {var message: String = \"http://"+url+":8080/api/test\"}"
     
 elif mode == "W":
-    url = "https://main-project-cdol.onrender.com/api/test"
+    url = "https://main-project-cdol.onrender.com"
 
 
 
