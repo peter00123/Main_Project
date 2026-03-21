@@ -1480,6 +1480,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -2323,6 +2327,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen button_height
 dimen card_corner_radius
 dimen card_elevation
@@ -3368,6 +3374,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id btn_close
 id btn_filter_all
 id btn_filter_docs
@@ -3376,6 +3387,7 @@ id btn_filter_videos
 id btn_login
 id btn_receive
 id btn_send
+id btn_sign_up
 id btn_submit_code
 id buttonPanel
 id cache_measures
@@ -3469,8 +3481,11 @@ id et_code_3
 id et_code_4
 id et_code_5
 id et_code_6
+id et_confirm_password
+id et_email
 id et_password
 id et_user_id
+id et_username
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3812,6 +3827,8 @@ id tv_empty_state
 id tv_file_count
 id tv_file_name
 id tv_file_size
+id tv_go_to_login
+id tv_go_to_sign_up
 id tv_new_badge
 id tv_new_count
 id tv_no_camera_permission
@@ -3977,6 +3994,9 @@ layout abc_tooltip
 layout activity_login
 layout activity_main
 layout activity_send
+layout activity_sign_up
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -4152,6 +4172,7 @@ string clear_text_end_icon_content_description
 string confirm_send_message
 string confirm_send_title
 string copy
+string copy_toast_msg
 string define_zxingandroidembedded
 string dest_title
 string empty_directory
@@ -4164,6 +4185,9 @@ string expand_button_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string hide_bottom_view_on_scroll_behavior
 string hint_password
 string hint_user_id
@@ -5652,3 +5676,4 @@ styleable zxing_camera_preview zxing_framing_rect_height zxing_framing_rect_widt
 styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_viewfinder_laser zxing_viewfinder_laser_visibility zxing_viewfinder_mask
 styleable zxing_view zxing_scanner_layout
 xml file_paths
+xml image_share_filepaths

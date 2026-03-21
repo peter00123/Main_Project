@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    activity_login.xml
-    Login screen layout with userId and password fields.
-    Used by: ui/auth/LoginActivity
--->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -19,38 +14,35 @@
         android:padding="32dp"
         android:layout_gravity="center_vertical">
 
-        <!-- App logo / icon area -->
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:src="@drawable/ic_share_logo"
             android:contentDescription="Atezhare logo"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="12dp" />
 
-        <!-- App title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textSize="32sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:fontFamily="@font/app_font_bold"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Secure Document Sharing"
+            android:text="Sign in to continue"
             android:textSize="14sp"
             android:textColor="@color/text_secondary"
-            android:layout_marginBottom="48dp" />
+            android:layout_marginBottom="40dp" />
 
-        <!-- User ID input -->
+        <!-- Email field — hint changed from "User ID" to "Email" -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User ID"
+            android:hint="Email"
             app:startIconDrawable="@drawable/ic_person"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_marginBottom="16dp">
@@ -59,11 +51,11 @@
                 android:id="@+id/et_user_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:imeOptions="actionNext" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Password input -->
+        <!-- Password field -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +63,7 @@
             app:startIconDrawable="@drawable/ic_lock"
             app:endIconMode="password_toggle"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="24dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
@@ -81,7 +73,6 @@
                 android:imeOptions="actionDone" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Login button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -91,12 +82,36 @@
             app:cornerRadius="12dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Progress indicator -->
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Link to Sign Up -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? "
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tv_go_to_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-59:/values-v16/values-v16.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-60:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\a8b34b2d8b8bb1060e169d14863c0c04\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\34772ec278a2e3965879aff80590e659\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\9a137d4aed66b43add98a8458860f5f1\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\5a818d335f2257349fbb6cfee30cd07f\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

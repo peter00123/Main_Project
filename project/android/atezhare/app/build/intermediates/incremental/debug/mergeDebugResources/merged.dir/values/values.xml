@@ -667,6 +667,10 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+    <color name="browser_actions_bg_grey">#F5F5F5</color>
+    <color name="browser_actions_divider_color">#1E000000</color>
+    <color name="browser_actions_text_color">#DE000000</color>
+    <color name="browser_actions_title_color">#646464</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="call_notification_answer_color">#1d873b</color>
@@ -1091,6 +1095,8 @@
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="appcompat_dialog_background_inset">16dp</dimen>
+    <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
+    <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
     <dimen name="button_height">56dp</dimen>
     <dimen name="card_corner_radius">12dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
@@ -2091,6 +2097,7 @@
     <string name="confirm_send_message">A receiver has paired. Do you want to send the selected files?</string>
     <string name="confirm_send_title">Receiver Connected</string>
     <string name="copy">Copy</string>
+    <string name="copy_toast_msg">Link copied to clipboard</string>
     <string name="define_zxingandroidembedded" translatable="false"/>
     <string name="dest_title">destination title</string>
     <string name="empty_directory">No files added yet.\nTap + to add files.</string>
@@ -2105,6 +2112,9 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fallback_menu_item_copy_link">Copy link</string>
+    <string name="fallback_menu_item_open_in_browser">Open in browser</string>
+    <string name="fallback_menu_item_share_link">Share link</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string name="hint_password">Password</string>
     <string name="hint_user_id">User ID</string>

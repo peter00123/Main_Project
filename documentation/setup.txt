@@ -5,6 +5,28 @@ db
 supa base
 https://supabase.com/dashboard/project/nnxychgfgfzbjfrbltht
 
+legacy jwt super key secret key
+rurEDUEoxJwYMSlDsrTX8mtwK05dnXMIzLIC6sn77KzOeVDnYSdlytvfn8rznxPCBhn9zThSGhNzKEDR3UK3xQ==
+
+project url
+https://nnxychgfgfzbjfrbltht.supabase.co
+
+Project URL
+https://nnxychgfgfzbjfrbltht.supabase.co
+
+
+Publishable Key
+sb_publishable_sk5UPmFO7U-1aTj0JJsF5Q_ZaMlMBY2
+
+
+Anon Key (Legacy)
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ueHljaGdmZ2Z6YmpmcmJsdGh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5MzAwMTIsImV4cCI6MjA4NzUwNjAxMn0.4T0SGwGpHIFDYpHT9fuENBrZtJh-nNOEVGG0FPxch-c
+
+db password
+madearmj@supa1
+
+
+
 hosting
 render
 https://dashboard.render.com/project/prj-d6eopb4r85hc73frrf9g

@@ -3,6 +3,7 @@ package com.atezhare.controller;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -27,15 +28,31 @@ public class SessionController {
     public static Map<String, String> getCodeToSession() { return codeToSession; }
 
     @PostMapping("/create")
-    public ResponseEntity<Map<String, Object>> createSession(@RequestBody Map<String, Object> body) {
-        String userId = (String) body.getOrDefault("userId", "unknown");
+    public ResponseEntity<Map<String, Object>> createSession(
+            @RequestBody Map<String, Object> body,
+            Authentication authentication  // ← injected by Spring from JWT
+    ) {
+        // userId comes from the verified JWT token, not the request body
+        // This prevents one user from creating sessions on behalf of another
+        String userId = authentication.getName();
+
         String sessionId = UUID.randomUUID().toString();
         String code = generateUniqueCode();
         ShareSession session = new ShareSession();
-        session.sessionId = sessionId; session.code = code; session.senderId = userId;
-        session.status = "WAITING"; session.createdAt = LocalDateTime.now();
-        sessions.put(sessionId, session); codeToSession.put(code, sessionId);
-        return ResponseEntity.ok(Map.of("sessionId", sessionId, "code", code, "status", "WAITING", "message", "Session created."));
+        session.sessionId = sessionId;
+        session.code = code;
+        session.senderId = userId;   // ← real verified userId
+        session.status = "WAITING";
+        session.createdAt = LocalDateTime.now();
+        sessions.put(sessionId, session);
+        codeToSession.put(code, sessionId);
+
+        return ResponseEntity.ok(Map.of(
+            "sessionId", sessionId,
+            "code", code,
+            "status", "WAITING",
+            "message", "Session created."
+        ));
     }
 
     @PostMapping("/join")
@@ -60,11 +77,27 @@ public class SessionController {
     }
 
     @PostMapping("/confirm")
-    public ResponseEntity<Map<String, Object>> confirmSend(@RequestBody Map<String, Object> body) {
+    public ResponseEntity<Map<String, Object>> confirmSend(
+            @RequestBody Map<String, Object> body,
+            Authentication authentication
+    ) {
         String sessionId = (String) body.get("sessionId");
-        if (sessionId == null) return ResponseEntity.badRequest().body(Map.of("success", false, "message", "sessionId required"));
+        String userId = authentication.getName(); // from JWT
+    
+        if (sessionId == null) {
+            return ResponseEntity.badRequest().body(Map.of("success", false, "message", "sessionId required"));
+        }
+    
         ShareSession s = sessions.get(sessionId);
-        if (s == null) return ResponseEntity.status(404).body(Map.of("success", false, "message", "Not found"));
+        if (s == null) {
+            return ResponseEntity.status(404).body(Map.of("success", false, "message", "Not found"));
+        }
+    
+        // Make sure only the sender can confirm their own session
+        if (!s.senderId.equals(userId)) {
+            return ResponseEntity.status(403).body(Map.of("success", false, "message", "Not your session"));
+        }
+    
         s.status = "TRANSFERRING";
         return ResponseEntity.ok(Map.of("success", true, "message", "Confirmed. Upload the files now."));
     }

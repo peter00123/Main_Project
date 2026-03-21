@@ -1,5 +1,8 @@
 package com.atezhare.controller;
 
+import java.util.Map;
+import java.util.UUID;
+
 // PairController.java
 // Handles the two pairing flows between sender and receiver:
 //
@@ -18,10 +21,11 @@ package com.atezhare.controller;
 // which the sender detects via GET /session/status polling.
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
-import java.util.UUID;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/pair")
@@ -37,22 +41,21 @@ public class PairController {
     // Returns: { sessionId, qrData, code, message }
     // =========================================================
     @PostMapping("/receiver-qr")
-    public ResponseEntity<Map<String, Object>> getReceiverQr(@RequestBody Map<String, Object> body) {
-        String receiverUserId = (String) body.getOrDefault("receiverUserId", "unknown");
+    public ResponseEntity<Map<String, Object>> getReceiverQr(
+            @RequestBody Map<String, Object> body,
+            Authentication authentication   // ← from JWT
+    ) {
+        // Use verified userId from token instead of trusting request body
+        String receiverUserId = authentication.getName();
         String existingSessionId = (String) body.get("sessionId");
-
-        // Reuse existing session if provided, otherwise create a fresh one
+    
         String sessionId = (existingSessionId != null && !existingSessionId.isBlank())
             ? existingSessionId
             : UUID.randomUUID().toString();
-
-        // Build the session in SessionController's store
+    
         String code = registerReceiverSession(sessionId, receiverUserId);
-
-        // QR data format: "atezhare://pair?session=<sessionId>&receiver=<userId>"
-        // This string is what the sender's camera decodes and sends back via /pair/scan-qr
         String qrData = "atezhare://pair?session=" + sessionId + "&receiver=" + receiverUserId;
-
+    
         return ResponseEntity.ok(Map.of(
             "sessionId", sessionId,
             "qrData", qrData,
@@ -71,10 +74,12 @@ public class PairController {
     // Returns: { sessionId, code, status, message }
     // =========================================================
     @PostMapping("/scan-qr")
-    public ResponseEntity<Map<String, Object>> scanQr(@RequestBody Map<String, Object> body) {
-        String senderId = (String) body.getOrDefault("senderId", "unknown");
+    public ResponseEntity<Map<String, Object>> scanQr(
+            @RequestBody Map<String, Object> body,
+            Authentication authentication
+    ) {
+        String senderId = authentication.getName(); // from JWT
         String qrContent = (String) body.get("qrContent");
-
         if (qrContent == null || qrContent.isBlank()) {
             return ResponseEntity.badRequest().body(Map.of(
                 "sessionId", "",
@@ -128,10 +133,12 @@ public class PairController {
     // Returns: { sessionId, code, status, message }
     // =========================================================
     @PostMapping("/submit-code")
-    public ResponseEntity<Map<String, Object>> submitCode(@RequestBody Map<String, Object> body) {
+    public ResponseEntity<Map<String, Object>> submitCode(
+            @RequestBody Map<String, Object> body,
+            Authentication authentication
+    ) {
+        String receiverUserId = authentication.getName(); // from JWT
         String code = (String) body.get("code");
-        String receiverUserId = (String) body.getOrDefault("receiverUserId", "unknown");
-
         if (code == null || code.length() != 6) {
             return ResponseEntity.badRequest().body(Map.of(
                 "sessionId", "",

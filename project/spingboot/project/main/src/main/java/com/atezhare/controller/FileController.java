@@ -17,6 +17,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -69,13 +70,18 @@ public class FileController {
     @PostMapping("/upload")
     public ResponseEntity<Map<String, Object>> uploadFiles(
             @RequestParam("sessionId") String sessionId,
-            @RequestParam("files") List<MultipartFile> files
+            @RequestParam("files") List<MultipartFile> files,
+            Authentication authentication   // ← from JWT
     ) {
-        if (sessionId == null || sessionId.isBlank()) {
-            return ResponseEntity.badRequest().body(Map.of(
-                "success", false,
-                "message", "sessionId is required"
-            ));
+        String senderUserId = authentication.getName(); // verified from token
+    
+        // Validate that sender owns this session
+        SessionController.ShareSession session = SessionController.getSessions().get(sessionId);
+        if (session == null) {
+            return ResponseEntity.status(404).body(Map.of("success", false, "message", "Session not found"));
+        }
+        if (!session.senderId.equals(senderUserId)) {
+            return ResponseEntity.status(403).body(Map.of("success", false, "message", "Not your session"));
         }
 
         List<String> savedFileIds = new ArrayList<>();

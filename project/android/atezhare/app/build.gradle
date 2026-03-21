@@ -8,6 +8,7 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
     id 'com.google.devtools.ksp' version '1.9.0-1.0.13'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.0'
 }
 
 android {
@@ -97,6 +98,25 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.6.1'
     implementation 'androidx.room:room-ktx:2.6.1'
     ksp 'androidx.room:room-compiler:2.6.1'
+
+    // Supabase
+    implementation platform('io.github.jan-tennert.supabase:bom:3.0.0')
+    implementation 'io.github.jan-tennert.supabase:auth-kt'
+    implementation 'io.github.jan-tennert.supabase:postgrest-kt'
+    implementation 'io.github.jan-tennert.supabase:storage-kt'
+
+    // Ktor (networking engine required by Supabase SDK)
+    def ktor_version = "3.0.0"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-android:$ktor_version"
+    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
+    implementation "io.ktor:ktor-client-content-negotiation:$ktor_version"
+    implementation "io.ktor:ktor-serialization-kotlinx-json:$ktor_version"
+    implementation "io.ktor:ktor-client-logging:$ktor_version"
+    implementation "io.ktor:ktor-client-auth:$ktor_version"
+
+    // Kotlin serialization (required by Supabase SDK)
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2'
 
     // Testing
     testImplementation 'junit:junit:4.13.2'

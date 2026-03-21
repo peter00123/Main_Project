@@ -1,10 +1,10 @@
-// ui/auth/LoginActivity.kt
-// Login screen with userId and password fields.
-// Credentials hardcoded as admin/1234 for current phase.
-// On success: saves session via SessionManager and navigates to MainActivity.
-// Depends on: ui/auth/LoginViewModel, utils/SessionManager, network/ApiService (login call)
-
 package com.atezhare.ui.auth
+
+// LoginActivity.kt
+// Login screen. Email + password fields.
+// Shows "Don't have an account? Sign up" link at the bottom.
+// On success → saves session and navigates to MainActivity
+// Depends on: LoginViewModel, utils/SessionManager
 
 import android.content.Intent
 import android.os.Bundle
@@ -19,64 +19,51 @@ import com.atezhare.utils.SessionManager
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-
-    // ViewModel handles login logic and API call — see LoginViewModel
     private val viewModel: LoginViewModel by viewModels()
-
     private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         sessionManager = SessionManager(this)
-
         setupClickListeners()
         observeViewModel()
     }
 
     private fun setupClickListeners() {
         binding.btnLogin.setOnClickListener {
-            val userId = binding.etUserId.text.toString().trim()
+            val email    = binding.etUserId.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
-            if (userId.isEmpty() || password.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Delegate to ViewModel — see LoginViewModel.login()
-            viewModel.login(userId, password)
+            // Calls LoginViewModel.login() → Supabase Auth
+            viewModel.login(email, password)
+        }
+
+        // Navigate to SignUpActivity
+        binding.tvGoToSignUp.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
         }
     }
 
     private fun observeViewModel() {
-        // Loading state
-        viewModel.isLoading.observe(this) { isLoading ->
-            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-            binding.btnLogin.isEnabled = !isLoading
+        viewModel.isLoading.observe(this) { loading ->
+            binding.progressBar.visibility = if (loading) View.VISIBLE else View.GONE
+            binding.btnLogin.isEnabled = !loading
         }
 
-        // Login result — see LoginViewModel.loginResult LiveData
         viewModel.loginResult.observe(this) { result ->
             if (result.success) {
-                // Save session — see utils/SessionManager.saveSession()
-                sessionManager.saveSession(
-                    userId = result.userId ?: binding.etUserId.text.toString(),
-                    token = result.token
-                )
+                sessionManager.saveSession(result.userId ?: "", result.token)
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, result.message ?: "Login failed", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // Error handling
-        viewModel.errorMessage.observe(this) { error ->
-            if (error != null) {
-                Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
             }
         }
     }

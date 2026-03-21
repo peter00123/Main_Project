@@ -46,6 +46,11 @@
             android:name=".ui.auth.LoginActivity"
             android:exported="false" />
 
+        <!-- SignUpActivity — register new users via Supabase Auth -->
+        <activity
+            android:name=".ui.auth.SignUpActivity"
+            android:exported="false" />
+
         <!-- MainActivity — hosts NavController, BottomNav, Toolbar, DrawerLayout -->
         <activity
             android:name=".ui.home.MainActivity"
