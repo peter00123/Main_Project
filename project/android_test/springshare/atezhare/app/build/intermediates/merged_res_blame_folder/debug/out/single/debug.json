@@ -1,0 +1,178 @@
+[
+    {
+        "merged": "com.atezhare.app-merged_res-57:/font_app_font_bold.xml.flat",
+        "source": "com.atezhare.app-main-59:/font/app_font_bold.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-mdpi_ic_launcher_round.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-mdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/navigation_nav_graph.xml.flat",
+        "source": "com.atezhare.app-main-59:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_lock.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_lock.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_close.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_close.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/anim_slide_in_right.xml.flat",
+        "source": "com.atezhare.app-main-59:/anim/slide_in_right.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_fragment_receive.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/fragment_receive.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-hdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_fragment_home.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_activity_send.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/activity_send.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.atezhare.app-main-59:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-xhdpi_ic_launcher_round.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-xhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_fragment_profile.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-xxxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/anim_slide_in_left.xml.flat",
+        "source": "com.atezhare.app-main-59:/anim/slide_in_left.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_fragment_directory.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/fragment_directory.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_item_file.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/item_file.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/anim_slide_out_left.xml.flat",
+        "source": "com.atezhare.app-main-59:/anim/slide_out_left.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-xxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_qr_scan_overlay.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/qr_scan_overlay.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_activity_login.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_receive_file.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_receive_file.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_logout.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_logout.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-xhdpi_ic_launcher.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-xhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-mdpi_ic_launcher.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-mdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_bottom_sheet_bg.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/bottom_sheet_bg.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/menu_drawer_menu.xml.flat",
+        "source": "com.atezhare.app-main-59:/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_fragment_settings.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_settings.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-hdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_info.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_info.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_home.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_circle_button_bg.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/circle_button_bg.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_code_box_bg.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/code_box_bg.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_nav_header.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/nav_header.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-xxxhdpi_ic_launcher_round.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-xxxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_person.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_arrow_right.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_arrow_right.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_share_logo.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_share_logo.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_send_file.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_send_file.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/layout_activity_main.xml.flat",
+        "source": "com.atezhare.app-main-59:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "com.atezhare.app-main-59:/mipmap-xxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/anim_slide_out_right.xml.flat",
+        "source": "com.atezhare.app-main-59:/anim/slide_out_right.xml"
+    },
+    {
+        "merged": "com.atezhare.app-merged_res-57:/drawable_ic_folder.xml.flat",
+        "source": "com.atezhare.app-main-59:/drawable/ic_folder.xml"
+    }
+]

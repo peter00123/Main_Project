@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-54:/values-da/values-da.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\440a64c1659b3784956be1ef27019da1\\transformed\\core-1.12.0\\res\\values-da\\values-da.xml",
@@ -18,6 +18,23 @@
                         "startOffsets": "3383,3479,3581,3678,3776,3883,3992,11591",
                         "endColumns": "95,101,96,97,106,108,117,100",
                         "endOffsets": "3474,3576,3673,3771,3878,3987,4105,11687"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\5bae5ef1b9b1699e683a9a2124c85e6b\\transformed\\zxing-android-embedded-4.3.0\\res\\values-da\\values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,307",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "109,156,302,412"
+                    },
+                    "to": {
+                        "startLines": "130,131,132,133",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "11692,11751,11798,11944",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "11746,11793,11939,12049"
                     }
                 },
                 {

@@ -4,6 +4,7 @@ package com.atezhare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,15 +26,20 @@ public final class ActivityShareBinding implements ViewBinding {
   public final PreviewView previewView;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final MaterialToolbar toolbar;
 
   @NonNull
   public final TextView tvStatus;
 
   private ActivityShareBinding(@NonNull ConstraintLayout rootView, @NonNull PreviewView previewView,
-      @NonNull MaterialToolbar toolbar, @NonNull TextView tvStatus) {
+      @NonNull ProgressBar progressBar, @NonNull MaterialToolbar toolbar,
+      @NonNull TextView tvStatus) {
     this.rootView = rootView;
     this.previewView = previewView;
+    this.progressBar = progressBar;
     this.toolbar = toolbar;
     this.tvStatus = tvStatus;
   }
@@ -71,6 +77,12 @@ public final class ActivityShareBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -83,7 +95,8 @@ public final class ActivityShareBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityShareBinding((ConstraintLayout) rootView, previewView, toolbar, tvStatus);
+      return new ActivityShareBinding((ConstraintLayout) rootView, previewView, progressBar,
+          toolbar, tvStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

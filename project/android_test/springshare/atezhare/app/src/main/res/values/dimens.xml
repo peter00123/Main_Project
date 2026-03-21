@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    values/dimens.xml
+    Dimension constants for consistent spacing across the app.
+-->
+<resources>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <dimen name="qr_code_size">280dp</dimen>
+    <dimen name="code_box_width">44dp</dimen>
+    <dimen name="code_box_height">52dp</dimen>
+</resources>

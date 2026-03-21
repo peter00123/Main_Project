@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    menu/bottom_nav_menu.xml
+    Bottom navigation bar items: Home | Directory | Profile
+    Used by: res/layout/activity_main.xml (BottomNavigationView)
+    Menu item IDs must match Fragment IDs in nav_graph.xml for setupWithNavController to work
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/directoryFragment"
+        android:icon="@drawable/ic_folder"
+        android:title="Directory" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+
+</menu>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-54:/values-af/values-af.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-af/values-af.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\79cd38334d780683eb3ac3017a90668e\\transformed\\play-services-base-18.1.0\\res\\values-af\\values.xml",

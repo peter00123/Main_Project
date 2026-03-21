@@ -1,143 +1,139 @@
 package com.atezhare.ui.share
 
 import android.net.Uri
-import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.annotation.OptIn
+import android.os.*
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
-import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.content.ContextCompat
-import com.google.mlkit.vision.barcode.BarcodeScanning
-import com.google.mlkit.vision.common.InputImage
-import com.atezhare.databinding.ActivityShareBinding
+import com.atezhare.R
+import com.atezhare.ui.send.FileSender
 import com.atezhare.util.WifiDirectManager
-import java.util.concurrent.Executors
-import kotlin.concurrent.thread
+
+
+
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.google.zxing.integration.android.IntentIntegrator
+import com.google.zxing.integration.android.IntentResult
 
 class ShareActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityShareBinding
     private lateinit var wifiDirectManager: WifiDirectManager
-    private var fileUris: List<Uri> = emptyList()
-    private var isProcessing = false
+    private lateinit var progressBar: ProgressBar
 
-    companion object {
-        private const val TAG = "ShareActivity"
-    }
+    private lateinit var fileUri: Uri
+    private var fileSize: Long = 1
+
+    private val CAMERA_PERMISSION_CODE = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShareBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_share)
 
-        binding.toolbar.setNavigationOnClickListener { finish() }
-
-        val uriStrings = intent.getStringArrayListExtra("file_uris") ?: arrayListOf()
-        fileUris = uriStrings.map { Uri.parse(it) }
+        progressBar = findViewById(R.id.progressBar)
 
         wifiDirectManager = WifiDirectManager(this)
-        wifiDirectManager.register()
+        wifiDirectManager.registerReceiver()
+        wifiDirectManager.discoverPeers()
 
-        wifiDirectManager.onConnectionInfoAvailable = { info ->
-            val hostAddress = info.groupOwnerAddress?.hostAddress
-            if (info.groupFormed && hostAddress != null) {
-                binding.tvStatus.text = "Connected! Sending files…"
+        checkCameraPermission()
 
-                thread {
-                    wifiDirectManager.sendFiles(
-                        host = hostAddress,
-                        port = WifiDirectManager.TRANSFER_PORT,
-                        fileUris = fileUris,
-                        onProgress = { progress ->
+        wifiDirectManager.connectionListener =
+            object : WifiDirectManager.ConnectionInfoListener {
+                override fun onConnectionReady(
+                    isGroupOwner: Boolean,
+                    hostAddress: String
+                ) {
+                    if (!isGroupOwner) {
+                        FileSender().sendFile(
+                            hostAddress,
+                            fileUri,
+                            this@ShareActivity,
+                            fileSize
+                        ) { progress ->
                             runOnUiThread {
-                                binding.tvStatus.text = "Sending… $progress%"
+                                progressBar.progress = progress
                             }
                         }
-                    )
-                    runOnUiThread {
-                        binding.tvStatus.text = "Transfer complete!"
-                        Toast.makeText(this, "Files sent successfully!", Toast.LENGTH_LONG).show()
                     }
                 }
             }
-        }
-
-        startCamera()
     }
 
-    private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
-
-        cameraProviderFuture.addListener({
-            val cameraProvider = cameraProviderFuture.get()
-
-            val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(binding.previewView.surfaceProvider)
-            }
-
-            val imageAnalysis = ImageAnalysis.Builder()
-                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-                .build()
-
-            imageAnalysis.setAnalyzer(Executors.newSingleThreadExecutor()) { imageProxy ->
-                processImage(imageProxy)
-            }
-
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-
-            try {
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalysis)
-            } catch (e: Exception) {
-                Log.e(TAG, "Camera binding failed", e)
-            }
-        }, ContextCompat.getMainExecutor(this))
-    }
-
-    @OptIn(ExperimentalGetImage::class)
-    private fun processImage(imageProxy: ImageProxy) {
-        if (isProcessing) {
-            imageProxy.close()
-            return
-        }
-
-        val mediaImage = imageProxy.image
-        if (mediaImage != null) {
-            val inputImage = InputImage.fromMediaImage(
-                mediaImage,
-                imageProxy.imageInfo.rotationDegrees
+    // 🔥 CHECK PERMISSION
+    private fun checkCameraPermission() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_CODE
             )
-
-            val scanner = BarcodeScanning.getClient()
-            scanner.process(inputImage)
-                .addOnSuccessListener { barcodes ->
-                    for (barcode in barcodes) {
-                        val rawValue = barcode.rawValue ?: continue
-
-                        if (rawValue.startsWith("WIFISHARE:")) {
-                            isProcessing = true
-                            val deviceAddress = rawValue.removePrefix("WIFISHARE:")
-
-                            runOnUiThread {
-                                binding.tvStatus.text = "QR found! Connecting…"
-                            }
-
-                            wifiDirectManager.connectToDevice(deviceAddress)
-                        }
-                    }
-                }
-                .addOnCompleteListener {
-                    imageProxy.close()
-                }
         } else {
-            imageProxy.close()
+            startQRScanner()
         }
+    }
+
+    // 🔥 HANDLE PERMISSION RESULT
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.isNotEmpty() &&
+                grantResults[0] == PackageManager.PERMISSION_GRANTED
+            ) {
+                startQRScanner()
+            } else {
+                Toast.makeText(this, "Camera permission required", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    // 🔥 START CAMERA
+    private fun startQRScanner() {
+        val integrator = IntentIntegrator(this)
+        integrator.setPrompt("Scan Receiver QR")
+        integrator.setBeepEnabled(true)
+        integrator.setOrientationLocked(true)
+        integrator.initiateScan()
+    }
+
+    // 🔥 HANDLE SCAN RESULT
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?
+    ) {
+        val result: IntentResult =
+            IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        if (result.contents != null) {
+
+            val scanned = result.contents
+            val deviceAddress = scanned.replace("WIFISHARE:", "")
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                wifiDirectManager.connectToDevice(deviceAddress)
+            }, 3000)
+
+        } else {
+            Toast.makeText(this, "Scan cancelled", Toast.LENGTH_SHORT).show()
+        }
+
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        wifiDirectManager.unregister()
+        wifiDirectManager.unregisterReceiver()
     }
 }

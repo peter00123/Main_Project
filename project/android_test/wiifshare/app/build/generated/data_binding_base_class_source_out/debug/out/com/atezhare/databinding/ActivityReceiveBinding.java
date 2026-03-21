@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -23,29 +21,16 @@ public final class ActivityReceiveBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView ivQrCode;
-
-  @NonNull
-  public final ProgressBar progressBar;
+  public final ImageView qrImage;
 
   @NonNull
   public final MaterialToolbar toolbar;
 
-  @NonNull
-  public final TextView tvQrLabel;
-
-  @NonNull
-  public final TextView tvStatus;
-
-  private ActivityReceiveBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView ivQrCode,
-      @NonNull ProgressBar progressBar, @NonNull MaterialToolbar toolbar,
-      @NonNull TextView tvQrLabel, @NonNull TextView tvStatus) {
+  private ActivityReceiveBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView qrImage,
+      @NonNull MaterialToolbar toolbar) {
     this.rootView = rootView;
-    this.ivQrCode = ivQrCode;
-    this.progressBar = progressBar;
+    this.qrImage = qrImage;
     this.toolbar = toolbar;
-    this.tvQrLabel = tvQrLabel;
-    this.tvStatus = tvStatus;
   }
 
   @Override
@@ -75,15 +60,9 @@ public final class ActivityReceiveBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.ivQrCode;
-      ImageView ivQrCode = ViewBindings.findChildViewById(rootView, id);
-      if (ivQrCode == null) {
-        break missingId;
-      }
-
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
+      id = R.id.qrImage;
+      ImageView qrImage = ViewBindings.findChildViewById(rootView, id);
+      if (qrImage == null) {
         break missingId;
       }
 
@@ -93,20 +72,7 @@ public final class ActivityReceiveBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvQrLabel;
-      TextView tvQrLabel = ViewBindings.findChildViewById(rootView, id);
-      if (tvQrLabel == null) {
-        break missingId;
-      }
-
-      id = R.id.tvStatus;
-      TextView tvStatus = ViewBindings.findChildViewById(rootView, id);
-      if (tvStatus == null) {
-        break missingId;
-      }
-
-      return new ActivityReceiveBinding((ConstraintLayout) rootView, ivQrCode, progressBar, toolbar,
-          tvQrLabel, tvStatus);
+      return new ActivityReceiveBinding((ConstraintLayout) rootView, qrImage, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

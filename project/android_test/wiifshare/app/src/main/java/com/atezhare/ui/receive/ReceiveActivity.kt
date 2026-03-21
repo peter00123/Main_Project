@@ -1,89 +1,108 @@
 package com.atezhare.ui.receive
 
-import android.annotation.SuppressLint
-import android.net.wifi.p2p.WifiP2pManager
-import android.os.Bundle
-import android.os.Looper
-import android.util.Log
-import android.view.View
-import android.widget.Toast
+
+import android.graphics.Bitmap
+import android.os.*
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.atezhare.databinding.ActivityReceiveBinding
-import com.atezhare.util.QrCodeHelper
-import com.atezhare.util.WifiDirectManager
-import kotlin.concurrent.thread
+import com.atezhare.R
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.qrcode.QRCodeWriter
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 class ReceiveActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityReceiveBinding
-    private lateinit var wifiDirectManager: WifiDirectManager
+    private lateinit var qrImage: ImageView
+    private val client = OkHttpClient()
 
-    companion object {
-        private const val TAG = "ReceiveActivity"
-    }
-
-    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityReceiveBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_receive)
 
-        binding.toolbar.setNavigationOnClickListener { finish() }
+        qrImage = findViewById(R.id.qrImage)
 
-        wifiDirectManager = WifiDirectManager(this)
-        wifiDirectManager.register()
-
-        val p2pManager = getSystemService(WIFI_P2P_SERVICE) as WifiP2pManager
-        val channel = p2pManager.initialize(this, Looper.getMainLooper(), null)
-
-        p2pManager.requestDeviceInfo(channel) { device ->
-            if (device != null) {
-                val deviceAddress = device.deviceAddress
-                val qrData = "WIFISHARE:$deviceAddress"
-
-                val qrBitmap = QrCodeHelper.generateQrCode(qrData, 512)
-                binding.ivQrCode.setImageBitmap(qrBitmap)
-
-                Log.d(TAG, "QR generated for device: $deviceAddress")
-            } else {
-                Toast.makeText(this, "Could not get device info", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        wifiDirectManager.onConnectionInfoAvailable = { info ->
-            if (info.groupFormed && info.isGroupOwner) {
-                binding.tvStatus.text = "Connected! Receiving files…"
-                binding.progressBar.visibility = View.VISIBLE
-
-                thread {
-                    wifiDirectManager.receiveFiles(
-                        onFileReceived = { fileName ->
-                            runOnUiThread {
-                                binding.tvStatus.text = "Received: $fileName"
-                            }
-                        },
-                        onComplete = {
-                            runOnUiThread {
-                                binding.tvStatus.text = "All files received!"
-                                binding.progressBar.visibility = View.GONE
-                                Toast.makeText(
-                                    this,
-                                    "Transfer complete!",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
-                        }
-                    )
-                }
-            }
-        }
-
-        wifiDirectManager.discoverPeers()
+        createSession()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        wifiDirectManager.unregister()
-        wifiDirectManager.disconnect()
+    private fun createSession() {
+        Thread {
+            val request = Request.Builder()
+                .url("https://YOUR_SERVER/api/session")
+                .build()
+
+            val response = client.newCall(request).execute()
+            val sessionId = response.body?.string() ?: return@Thread
+
+            runOnUiThread {
+                val qrData = "WIFISHARE:$sessionId"
+                qrImage.setImageBitmap(generateQR(qrData))
+
+                startPolling(sessionId)
+            }
+        }.start()
+    }
+
+    private fun generateQR(text: String): Bitmap {
+        val size = 512
+        val bits = QRCodeWriter().encode(text, BarcodeFormat.QR_CODE, size, size)
+        val bmp = Bitmap.createBitmap(size, size, Bitmap.Config.RGB_565)
+
+        for (x in 0 until size) {
+            for (y in 0 until size) {
+                bmp.setPixel(x, y, if (bits[x, y]) android.graphics.Color.BLACK else android.graphics.Color.WHITE)
+            }
+        }
+        return bmp
+    }
+
+    private fun startPolling(sessionId: String) {
+        val handler = Handler(Looper.getMainLooper())
+
+        val runnable = object : Runnable {
+            override fun run() {
+                checkFile(sessionId)
+                handler.postDelayed(this, 2000)
+            }
+        }
+
+        handler.post(runnable)
+    }
+
+    private fun checkFile(sessionId: String) {
+        Thread {
+            val request = Request.Builder()
+                .url("https://YOUR_SERVER/api/download/$sessionId")
+                .build()
+
+            val response = client.newCall(request).execute()
+
+            if (response.isSuccessful) {
+                downloadFile(sessionId)
+            }
+        }.start()
+    }
+
+    private fun downloadFile(sessionId: String) {
+        Thread {
+            val request = Request.Builder()
+                .url("https://YOUR_SERVER/api/download/$sessionId")
+                .build()
+
+            val response = client.newCall(request).execute()
+            val input = response.body?.byteStream()
+
+            val file = java.io.File(getExternalFilesDir(null), "received.jpg")
+            val output = java.io.FileOutputStream(file)
+
+            val buffer = ByteArray(4096)
+            var bytes: Int
+
+            while (input!!.read(buffer).also { bytes = it } != -1) {
+                output.write(buffer, 0, bytes)
+            }
+
+            output.close()
+        }.start()
     }
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-54:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\43200f79b40f77d4c1c5a9fc5f25e5cd\\transformed\\play-services-basement-18.1.0\\res\\values-en-rGB\\values.xml",

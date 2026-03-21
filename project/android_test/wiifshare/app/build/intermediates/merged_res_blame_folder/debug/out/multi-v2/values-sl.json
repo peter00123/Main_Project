@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-54:/values-sl/values-sl.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-sl/values-sl.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\5bae5ef1b9b1699e683a9a2124c85e6b\\transformed\\zxing-android-embedded-4.3.0\\res\\values-sl\\values-sl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,165,318",
+                        "endColumns": "58,50,152,99",
+                        "endOffsets": "109,160,313,413"
+                    },
+                    "to": {
+                        "startLines": "132,133,134,135",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "12050,12109,12160,12313",
+                        "endColumns": "58,50,152,99",
+                        "endOffsets": "12104,12155,12308,12408"
+                    }
+                },
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\43200f79b40f77d4c1c5a9fc5f25e5cd\\transformed\\play-services-basement-18.1.0\\res\\values-sl\\values.xml",
                     "from": {

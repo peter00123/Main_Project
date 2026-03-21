@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-54:/values-iw/values-iw.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\e7653fabb187afad4f90534952147e21\\transformed\\navigation-ui-2.7.6\\res\\values-iw\\values-iw.xml",
@@ -52,6 +52,23 @@
                         "startOffsets": "5385",
                         "endColumns": "117",
                         "endOffsets": "5498"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\transforms-3\\5bae5ef1b9b1699e683a9a2124c85e6b\\transformed\\zxing-android-embedded-4.3.0\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    },
+                    "to": {
+                        "startLines": "131,132,133,134",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "11459,11515,11565,11700",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "11510,11560,11695,11785"
                     }
                 },
                 {

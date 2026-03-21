@@ -4,6 +4,7 @@ package com.atezhare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,18 +34,22 @@ public final class ActivitySendBinding implements ViewBinding {
   public final RecyclerView rvFiles;
 
   @NonNull
+  public final Button scanBtn;
+
+  @NonNull
   public final MaterialToolbar toolbar;
 
   @NonNull
   public final TextView tvEmpty;
 
   private ActivitySendBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton btnShare,
-      @NonNull FloatingActionButton fabAdd, @NonNull RecyclerView rvFiles,
+      @NonNull FloatingActionButton fabAdd, @NonNull RecyclerView rvFiles, @NonNull Button scanBtn,
       @NonNull MaterialToolbar toolbar, @NonNull TextView tvEmpty) {
     this.rootView = rootView;
     this.btnShare = btnShare;
     this.fabAdd = fabAdd;
     this.rvFiles = rvFiles;
+    this.scanBtn = scanBtn;
     this.toolbar = toolbar;
     this.tvEmpty = tvEmpty;
   }
@@ -94,6 +99,12 @@ public final class ActivitySendBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.scanBtn;
+      Button scanBtn = ViewBindings.findChildViewById(rootView, id);
+      if (scanBtn == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -107,7 +118,7 @@ public final class ActivitySendBinding implements ViewBinding {
       }
 
       return new ActivitySendBinding((ConstraintLayout) rootView, btnShare, fabAdd, rvFiles,
-          toolbar, tvEmpty);
+          scanBtn, toolbar, tvEmpty);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

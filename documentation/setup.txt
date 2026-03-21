@@ -1,0 +1,14 @@
+
+
+
+db
+supa base
+https://supabase.com/dashboard/project/nnxychgfgfzbjfrbltht
+
+hosting
+render
+https://dashboard.render.com/project/prj-d6eopb4r85hc73frrf9g
+
+
+local hosting
+localhost:8080/atezhare
