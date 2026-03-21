@@ -39,7 +39,7 @@ if mode == "L":
 
 elif mode == "W":
    # url = "https://main-project-cdol.onrender.com"
-    url="package com.atezhare.network"+"\n"+"object WebURL {const val MAINURL: String = \"http://"+"https://main-project-cdol.onrender.com"+":8080/api/test\"}"
+    url="package com.atezhare.network"+"\n"+"object WebURL {const val MAINURL: String = \"http://"+"https://main-project-cdol.onrender.com/"}"
 
 
 
