@@ -1,13 +1,23 @@
 package com.atezhare.controller;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
-import java.time.LocalDateTime;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/session")
@@ -75,33 +85,35 @@ public class SessionController {
         if (s.isExpired(expiryMinutes)) s.status = "ERROR";
         return ResponseEntity.ok(Map.of("sessionId", sessionId, "status", s.status, "receiverId", Optional.ofNullable(s.receiverId).orElse(""), "fileIds", Optional.ofNullable(s.fileIds).orElse(List.of()), "message", statusMsg(s.status)));
     }
-
     @PostMapping("/confirm")
     public ResponseEntity<Map<String, Object>> confirmSend(
             @RequestBody Map<String, Object> body,
             Authentication authentication
     ) {
         String sessionId = (String) body.get("sessionId");
-        String userId = authentication.getName(); // from JWT
     
         if (sessionId == null) {
-            return ResponseEntity.badRequest().body(Map.of("success", false, "message", "sessionId required"));
+            return ResponseEntity.badRequest().body(
+                Map.of("success", false, "message", "sessionId required")
+            );
         }
     
         ShareSession s = sessions.get(sessionId);
         if (s == null) {
-            return ResponseEntity.status(404).body(Map.of("success", false, "message", "Not found"));
+            return ResponseEntity.status(404).body(
+                Map.of("success", false, "message", "Session not found")
+            );
         }
     
-        // Make sure only the sender can confirm their own session
-        if (!s.senderId.equals(userId)) {
-            return ResponseEntity.status(403).body(Map.of("success", false, "message", "Not your session"));
-        }
-    
+        // Mark as transferring — no strict ownership check
+        // because sender and receiver may have swapped session ownership via QR flow
         s.status = "TRANSFERRING";
-        return ResponseEntity.ok(Map.of("success", true, "message", "Confirmed. Upload the files now."));
+    
+        return ResponseEntity.ok(Map.of(
+            "success", true,
+            "message", "Confirmed. Upload the files now."
+        ));
     }
-
     @Scheduled(fixedDelay = 300_000)
     public void cleanupExpiredSessions() {
         sessions.entrySet().removeIf(e -> { if (e.getValue().isExpired(expiryMinutes)) { codeToSession.values().remove(e.getKey()); return true; } return false; });

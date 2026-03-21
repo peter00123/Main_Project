@@ -5,6 +5,7 @@
 
 package com.atezhare.network
 
+import io.github.jan.supabase.auth.auth
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -24,11 +25,30 @@ object RetrofitClient {
             .connectTimeout(ApiConstants.CONNECT_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(ApiConstants.READ_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(ApiConstants.WRITE_TIMEOUT, TimeUnit.SECONDS)
-            // Auth token interceptor — reads token from SessionManager if available
+            // Auth token interceptor — refreshes Supabase session before every request
             .addInterceptor { chain ->
                 val original = chain.request()
-                // Token is added here if session is active; SessionManager is accessed statically
+
+                // Refresh Supabase session if token is expired or about to expire
+                try {
+                    kotlinx.coroutines.runBlocking {
+                        com.atezhare.utils.SupabaseClient.client.auth.refreshCurrentSession()
+                        val freshSession = com.atezhare.utils.SupabaseClient.client.auth.currentSessionOrNull()
+                        if (freshSession != null) {
+                            SessionTokenHolder.token = freshSession.accessToken
+                        }
+                    }
+                } catch (e: Exception) {
+                    // Session refresh failed — token may already be valid, continue anyway
+                    android.util.Log.d("ATEZHARE_TOKEN", "Session refresh skipped: ${e.message}")
+                }
+
                 val token = SessionTokenHolder.token
+
+                // Temporary debug log — remove after fixing
+                android.util.Log.d("ATEZHARE_TOKEN", "Sending request to: ${original.url}")
+                android.util.Log.d("ATEZHARE_TOKEN", "Token is: $token")
+
                 val request = if (token != null) {
                     original.newBuilder()
                         .header("Authorization", "Bearer $token")

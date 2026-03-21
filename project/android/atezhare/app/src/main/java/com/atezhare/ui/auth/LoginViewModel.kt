@@ -47,6 +47,9 @@ class LoginViewModel : ViewModel() {
                 val user    = SupabaseClient.client.auth.currentUserOrNull()
 
                 if (user != null && session != null) {
+                    // ADD THIS LINE TEMPORARILY
+                    android.util.Log.d("ATEZHARE", "Token: ${session.accessToken}")
+
                     _loginResult.value = LoginResponse(
                         success = true,
                         token   = session.accessToken,

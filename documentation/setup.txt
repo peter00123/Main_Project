@@ -8,7 +8,7 @@ https://supabase.com/dashboard/project/nnxychgfgfzbjfrbltht
 legacy jwt super key secret key
 rurEDUEoxJwYMSlDsrTX8mtwK05dnXMIzLIC6sn77KzOeVDnYSdlytvfn8rznxPCBhn9zThSGhNzKEDR3UK3xQ==
 
-project url
+project url | superbase project ref
 https://nnxychgfgfzbjfrbltht.supabase.co
 
 Project URL
@@ -21,6 +21,9 @@ sb_publishable_sk5UPmFO7U-1aTj0JJsF5Q_ZaMlMBY2
 
 Anon Key (Legacy)
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ueHljaGdmZ2Z6YmpmcmJsdGh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5MzAwMTIsImV4cCI6MjA4NzUwNjAxMn0.4T0SGwGpHIFDYpHT9fuENBrZtJh-nNOEVGG0FPxch-c
+
+service role key
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ueHljaGdmZ2Z6YmpmcmJsdGh0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MTkzMDAxMiwiZXhwIjoyMDg3NTA2MDEyfQ.utc4aCrA2JOEWdYWhT03Ubv7bb6ZS33jG3XPi-zsy4I
 
 db password
 madearmj@supa1
