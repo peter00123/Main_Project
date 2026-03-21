@@ -37,6 +37,7 @@ dimen spacing_sm
 dimen spacing_xl
 dimen spacing_xs
 dimen toolbar_height
+drawable badge_bg
 drawable bottom_sheet_bg
 drawable circle_button_bg
 drawable code_box_bg
@@ -44,6 +45,7 @@ drawable ic_arrow_right
 drawable ic_close
 drawable ic_folder
 drawable ic_home
+drawable ic_inbox
 drawable ic_info
 drawable ic_launcher_foreground
 drawable ic_lock
@@ -59,6 +61,10 @@ id action_home_to_directory
 id action_home_to_receive
 id bottom_nav
 id btn_close
+id btn_filter_all
+id btn_filter_docs
+id btn_filter_images
+id btn_filter_videos
 id btn_login
 id btn_receive
 id btn_send
@@ -78,7 +84,9 @@ id et_user_id
 id fab_add_file
 id homeFragment
 id iv_file_icon
+id iv_file_type_icon
 id iv_qr_code
+id layout_empty_state
 id nav_about
 id nav_graph
 id nav_host_fragment
@@ -89,14 +97,21 @@ id profileFragment
 id progress_bar
 id receiveFragment
 id recycler_files
+id recycler_shared_files
 id settingsFragment
+id sharedDataFragment
 id toolbar
 id tv_app_version
 id tv_empty_state
+id tv_file_count
 id tv_file_name
 id tv_file_size
+id tv_new_badge
+id tv_new_count
 id tv_no_camera_permission
 id tv_qr_label
+id tv_received_at
+id tv_sender
 id tv_share_code
 id tv_status
 id tv_user_id
@@ -108,7 +123,9 @@ layout fragment_home
 layout fragment_profile
 layout fragment_receive
 layout fragment_settings
+layout fragment_shared_data
 layout item_file
+layout item_received_file
 layout nav_header
 menu bottom_nav_menu
 menu drawer_menu
@@ -146,3 +163,4 @@ style CodeInputBox
 style Theme.Atezhare
 style Theme.Atezhare.NoActionBar
 style Theme.Atezhare.Splash
+xml file_paths

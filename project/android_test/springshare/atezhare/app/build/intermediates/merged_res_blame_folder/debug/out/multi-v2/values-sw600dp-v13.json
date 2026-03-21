@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-59:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\02fd0406f42a424970dd5c0018485ac7\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\9a137d4aed66b43add98a8458860f5f1\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\f6675c20ece2d7cdb1e2b30a4cc9ebb6\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\39a23aff869d1d7083e26fdf8d95574b\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",

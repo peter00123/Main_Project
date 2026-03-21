@@ -95,6 +95,16 @@
             android:exported="false"
             android:theme="@style/Theme.Atezhare.NoActionBar" />
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.atezhare.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <service
             android:name="androidx.camera.core.impl.MetadataHolderService"
             android:enabled="false"
@@ -125,6 +135,11 @@
         <uses-library
             android:name="androidx.window.sidecar"
             android:required="false" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
 
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

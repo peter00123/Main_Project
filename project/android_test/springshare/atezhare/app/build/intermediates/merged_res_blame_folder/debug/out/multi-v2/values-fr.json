@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-55:/values-fr/values-fr.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-59:/values-fr/values-fr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\d57d9a32f3635fd25d27eaaeae07848e\\transformed\\navigation-ui-2.7.6\\res\\values-fr\\values-fr.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,158",
-                        "endColumns": "102,125",
-                        "endOffsets": "153,279"
-                    },
-                    "to": {
-                        "startLines": "109,110",
-                        "startColumns": "4,4",
-                        "startOffsets": "9528,9631",
-                        "endColumns": "102,125",
-                        "endOffsets": "9626,9752"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\02fd0406f42a424970dd5c0018485ac7\\transformed\\appcompat-1.6.1\\res\\values-fr\\values-fr.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\9a137d4aed66b43add98a8458860f5f1\\transformed\\appcompat-1.6.1\\res\\values-fr\\values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,41 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\02d802554ec9a2e9fe635bc3a9849bcd\\transformed\\preference-1.2.1\\res\\values-fr\\values-fr.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\77510b23b8bd21f6bd48c800db44862b\\transformed\\zxing-android-embedded-4.3.0\\res\\values-fr\\values-fr.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,175,272,350,492,661,747",
-                        "endColumns": "69,96,77,141,168,85,79",
-                        "endOffsets": "170,267,345,487,656,742,822"
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,327",
+                        "endColumns": "58,46,165,108",
+                        "endOffsets": "109,156,322,431"
                     },
                     "to": {
-                        "startLines": "48,50,111,113,116,117,118",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4563,4699,9757,9924,10254,10423,10509",
-                        "endColumns": "69,96,77,141,168,85,79",
-                        "endOffsets": "4628,4791,9830,10061,10418,10504,10584"
+                        "startLines": "119,120,121,122",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "10589,10648,10695,10861",
+                        "endColumns": "58,46,165,108",
+                        "endOffsets": "10643,10690,10856,10965"
                     }
                 },
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\5b331c2ca5d1968b871d309d9d1af46b\\transformed\\core-1.12.0\\res\\values-fr\\values-fr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,354,456,560,664,782",
-                        "endColumns": "97,101,98,101,103,103,117,100",
-                        "endOffsets": "148,250,349,451,555,659,777,878"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44,115",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3523,3621,3723,3822,3924,4028,4132,10153",
-                        "endColumns": "97,101,98,101,103,103,117,100",
-                        "endOffsets": "3616,3718,3817,3919,4023,4127,4245,10249"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\f6675c20ece2d7cdb1e2b30a4cc9ebb6\\transformed\\material-1.11.0\\res\\values-fr\\values-fr.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\39a23aff869d1d7083e26fdf8d95574b\\transformed\\material-1.11.0\\res\\values-fr\\values-fr.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,20 +57,54 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\f6a871eae7cf145098c2455c4c9eec06\\transformed\\zxing-android-embedded-4.3.0\\res\\values-fr\\values-fr.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\8091c627e51fad981a9c182f5f98efd4\\transformed\\navigation-ui-2.7.6\\res\\values-fr\\values-fr.xml",
                     "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,114,161,327",
-                        "endColumns": "58,46,165,108",
-                        "endOffsets": "109,156,322,431"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,158",
+                        "endColumns": "102,125",
+                        "endOffsets": "153,279"
                     },
                     "to": {
-                        "startLines": "119,120,121,122",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "10589,10648,10695,10861",
-                        "endColumns": "58,46,165,108",
-                        "endOffsets": "10643,10690,10856,10965"
+                        "startLines": "109,110",
+                        "startColumns": "4,4",
+                        "startOffsets": "9528,9631",
+                        "endColumns": "102,125",
+                        "endOffsets": "9626,9752"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\a8b34b2d8b8bb1060e169d14863c0c04\\transformed\\core-1.12.0\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,354,456,560,664,782",
+                        "endColumns": "97,101,98,101,103,103,117,100",
+                        "endOffsets": "148,250,349,451,555,659,777,878"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,115",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3523,3621,3723,3822,3924,4028,4132,10153",
+                        "endColumns": "97,101,98,101,103,103,117,100",
+                        "endOffsets": "3616,3718,3817,3919,4023,4127,4245,10249"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\932c40fdec05c9810207d1c8d3e27f48\\transformed\\preference-1.2.1\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,175,272,350,492,661,747",
+                        "endColumns": "69,96,77,141,168,85,79",
+                        "endOffsets": "170,267,345,487,656,742,822"
+                    },
+                    "to": {
+                        "startLines": "48,50,111,113,116,117,118",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "4563,4699,9757,9924,10254,10423,10509",
+                        "endColumns": "69,96,77,141,168,85,79",
+                        "endOffsets": "4628,4791,9830,10061,10418,10504,10584"
                     }
                 }
             ]

@@ -1,42 +1,50 @@
 [
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/fragment_settings.xml",
-        "source": "com.atezhare.app-main-59:/layout/fragment_settings.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/fragment_profile.xml",
+        "source": "com.atezhare.app-main-63:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/fragment_home.xml",
-        "source": "com.atezhare.app-main-59:/layout/fragment_home.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/fragment_home.xml",
+        "source": "com.atezhare.app-main-63:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/fragment_profile.xml",
-        "source": "com.atezhare.app-main-59:/layout/fragment_profile.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/activity_send.xml",
+        "source": "com.atezhare.app-main-63:/layout/activity_send.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/fragment_receive.xml",
-        "source": "com.atezhare.app-main-59:/layout/fragment_receive.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/fragment_directory.xml",
+        "source": "com.atezhare.app-main-63:/layout/fragment_directory.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/item_file.xml",
-        "source": "com.atezhare.app-main-59:/layout/item_file.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/nav_header.xml",
+        "source": "com.atezhare.app-main-63:/layout/nav_header.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/activity_login.xml",
-        "source": "com.atezhare.app-main-59:/layout/activity_login.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/activity_main.xml",
+        "source": "com.atezhare.app-main-63:/layout/activity_main.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/activity_main.xml",
-        "source": "com.atezhare.app-main-59:/layout/activity_main.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/fragment_settings.xml",
+        "source": "com.atezhare.app-main-63:/layout/fragment_settings.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/activity_send.xml",
-        "source": "com.atezhare.app-main-59:/layout/activity_send.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/activity_login.xml",
+        "source": "com.atezhare.app-main-63:/layout/activity_login.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/nav_header.xml",
-        "source": "com.atezhare.app-main-59:/layout/nav_header.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/item_file.xml",
+        "source": "com.atezhare.app-main-63:/layout/item_file.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-56:/layout/fragment_directory.xml",
-        "source": "com.atezhare.app-main-59:/layout/fragment_directory.xml"
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/fragment_shared_data.xml",
+        "source": "com.atezhare.app-main-63:/layout/fragment_shared_data.xml"
+    },
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/fragment_receive.xml",
+        "source": "com.atezhare.app-main-63:/layout/fragment_receive.xml"
+    },
+    {
+        "merged": "com.atezhare.app-mergeDebugResources-60:/layout/item_received_file.xml",
+        "source": "com.atezhare.app-main-63:/layout/item_received_file.xml"
     }
 ]

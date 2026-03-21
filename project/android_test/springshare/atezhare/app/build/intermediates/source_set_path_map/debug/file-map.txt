@@ -1,60 +1,64 @@
-com.atezhare.app-preference-1.2.1-0 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\02d802554ec9a2e9fe635bc3a9849bcd\transformed\preference-1.2.1\res
-com.atezhare.app-appcompat-1.6.1-1 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\02fd0406f42a424970dd5c0018485ac7\transformed\appcompat-1.6.1\res
-com.atezhare.app-navigation-runtime-ktx-2.7.6-2 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\03adf3b5fb5c8752708b182dce6b70c5\transformed\navigation-runtime-ktx-2.7.6\res
-com.atezhare.app-navigation-common-ktx-2.7.6-3 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\03b5118bbbdec0bf7762056271b910e6\transformed\navigation-common-ktx-2.7.6\res
-com.atezhare.app-cardview-1.0.0-4 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\074ffd2bd5c90cf5322b88715cd3d93a\transformed\cardview-1.0.0\res
-com.atezhare.app-appcompat-resources-1.6.1-5 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\08d2f3a177f6180cb0051b96730ce509\transformed\appcompat-resources-1.6.1\res
-com.atezhare.app-emoji2-views-helper-1.2.0-6 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\1c3c8813bd50a1f2d9a20f850ff40a65\transformed\emoji2-views-helper-1.2.0\res
-com.atezhare.app-drawerlayout-1.1.1-7 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\261784119422b3175235c6f82681e3e9\transformed\drawerlayout-1.1.1\res
-com.atezhare.app-customview-poolingcontainer-1.0.0-8 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\293dcb03596f643a3ecac9cf0f33aa1e\transformed\customview-poolingcontainer-1.0.0\res
-com.atezhare.app-lifecycle-livedata-2.7.0-9 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\2aed584dc2a25e194e81b6393bbb578c\transformed\lifecycle-livedata-2.7.0\res
-com.atezhare.app-navigation-ui-ktx-2.7.6-10 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\3068501221a2004b2158e32abb501d23\transformed\navigation-ui-ktx-2.7.6\res
-com.atezhare.app-lifecycle-runtime-2.7.0-11 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\336b0a7aea5b8177c951e95755e182a0\transformed\lifecycle-runtime-2.7.0\res
-com.atezhare.app-lifecycle-viewmodel-ktx-2.7.0-12 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\35fb90e96f4af2b1e9de5cf7e53ab43e\transformed\lifecycle-viewmodel-ktx-2.7.0\res
-com.atezhare.app-navigation-common-2.7.6-13 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\3671fafee616cfa618c5a88978d22c34\transformed\navigation-common-2.7.6\res
-com.atezhare.app-lifecycle-viewmodel-2.7.0-14 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\3a5584e503b47fb562fed7469aa086c1\transformed\lifecycle-viewmodel-2.7.0\res
-com.atezhare.app-lifecycle-runtime-ktx-2.7.0-15 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\41616946a06f6d26180d15a9a1a53d95\transformed\lifecycle-runtime-ktx-2.7.0\res
-com.atezhare.app-activity-1.8.2-16 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\4bda5a992b42e17758c1e632cc271dc9\transformed\activity-1.8.2\res
-com.atezhare.app-lifecycle-livedata-core-ktx-2.7.0-17 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\5656e676cef2e6513b8a7deeda693070\transformed\lifecycle-livedata-core-ktx-2.7.0\res
-com.atezhare.app-lifecycle-viewmodel-savedstate-2.7.0-18 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\566c3a4b8339eaadbc0d322e4d20c511\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
-com.atezhare.app-navigation-fragment-ktx-2.7.6-19 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\57c4fd03c8f738137132f336d9e449f4\transformed\navigation-fragment-ktx-2.7.6\res
-com.atezhare.app-window-1.0.0-20 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\5865a1869363295136ceada72862b020\transformed\window-1.0.0\res
-com.atezhare.app-core-1.12.0-21 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\5b331c2ca5d1968b871d309d9d1af46b\transformed\core-1.12.0\res
-com.atezhare.app-camera-lifecycle-1.3.1-22 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\5c5d0e76c910add0db615c87ff354b9b\transformed\camera-lifecycle-1.3.1\res
-com.atezhare.app-annotation-experimental-1.3.1-23 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\6f956409eef0da3562d8d95c7c88927f\transformed\annotation-experimental-1.3.1\res
-com.atezhare.app-slidingpanelayout-1.2.0-24 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\741c04b0a6d39731f8165b13b70a8904\transformed\slidingpanelayout-1.2.0\res
-com.atezhare.app-emoji2-1.2.0-25 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\772ca4a89e6e324e5ff94db79251e3c1\transformed\emoji2-1.2.0\res
-com.atezhare.app-savedstate-ktx-1.2.1-26 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\7782b0d53004103dfdc3a38bc9f069ba\transformed\savedstate-ktx-1.2.1\res
-com.atezhare.app-lifecycle-livedata-core-2.7.0-27 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\7ea7d376edef0a2f3253f8bff3bb1b6d\transformed\lifecycle-livedata-core-2.7.0\res
-com.atezhare.app-fragment-1.6.2-28 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\8658731fc1783471166ce0f37c89bff9\transformed\fragment-1.6.2\res
-com.atezhare.app-transition-1.4.1-29 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\87b7d4f3e579168b161854b2e8ced8fb\transformed\transition-1.4.1\res
-com.atezhare.app-camera-video-1.3.1-30 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\897b2ddbb811ea22f3ca679bf250e709\transformed\camera-video-1.3.1\res
-com.atezhare.app-lifecycle-process-2.7.0-31 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\8de00bb73649e43da5b2ea5187ff4182\transformed\lifecycle-process-2.7.0\res
-com.atezhare.app-profileinstaller-1.3.0-32 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\8de7fa9e2d278dc974f9a0f647d18130\transformed\profileinstaller-1.3.0\res
-com.atezhare.app-lifecycle-livedata-ktx-2.7.0-33 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\98dec02868fc41f426404ab0936b2671\transformed\lifecycle-livedata-ktx-2.7.0\res
-com.atezhare.app-camera-camera2-1.3.1-34 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\98f0c7cacba96c18b60ee7d39b86b11a\transformed\camera-camera2-1.3.1\res
-com.atezhare.app-navigation-fragment-2.7.6-35 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\9969c769158a8b43969174bf8dfc25a9\transformed\navigation-fragment-2.7.6\res
-com.atezhare.app-activity-ktx-1.8.2-36 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\9f65e08275ae6069c670d45d26a1d601\transformed\activity-ktx-1.8.2\res
-com.atezhare.app-viewpager2-1.1.0-beta02-37 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a2e3283ba01e85ae4e9857b5abf22074\transformed\viewpager2-1.1.0-beta02\res
-com.atezhare.app-coordinatorlayout-1.1.0-38 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a7644b0752c9812f7f62da9d1725866d\transformed\coordinatorlayout-1.1.0\res
-com.atezhare.app-fragment-ktx-1.6.2-39 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a8b32249dc6e1317af9e0d5b9e7bb763\transformed\fragment-ktx-1.6.2\res
-com.atezhare.app-preference-ktx-1.2.1-40 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\b58a12752e22a6b940c55566196208a4\transformed\preference-ktx-1.2.1\res
-com.atezhare.app-camera-core-1.3.1-41 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\b88c26823b9ea38a920b6e441fc0b2ae\transformed\camera-core-1.3.1\res
-com.atezhare.app-startup-runtime-1.1.1-42 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\c2d491b033a7c1418b3938add65f7980\transformed\startup-runtime-1.1.1\res
-com.atezhare.app-core-runtime-2.2.0-43 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\c718b9b5d3aa7a0cc5c247dc50bfee6c\transformed\core-runtime-2.2.0\res
-com.atezhare.app-core-ktx-1.12.0-44 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\c9770f3c9ade43362396a3f2007d1fc8\transformed\core-ktx-1.12.0\res
-com.atezhare.app-navigation-ui-2.7.6-45 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d57d9a32f3635fd25d27eaaeae07848e\transformed\navigation-ui-2.7.6\res
-com.atezhare.app-navigation-runtime-2.7.6-46 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\ddbca5a9f69fc93e48beb02679e0099a\transformed\navigation-runtime-2.7.6\res
-com.atezhare.app-savedstate-1.2.1-47 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e2c9b48dae5f540d31ef5ad8911a427b\transformed\savedstate-1.2.1\res
-com.atezhare.app-constraintlayout-2.1.4-48 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e4884aad27798fbfef915fc30a48a803\transformed\constraintlayout-2.1.4\res
-com.atezhare.app-material-1.11.0-49 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f6675c20ece2d7cdb1e2b30a4cc9ebb6\transformed\material-1.11.0\res
-com.atezhare.app-zxing-android-embedded-4.3.0-50 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f6a871eae7cf145098c2455c4c9eec06\transformed\zxing-android-embedded-4.3.0\res
-com.atezhare.app-camera-view-1.3.1-51 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\fbddc952c111a1ccc5d969078c7d044f\transformed\camera-view-1.3.1\res
-com.atezhare.app-recyclerview-1.3.2-52 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\fc5de55065ca3d0bfb5806b35eef9c11\transformed\recyclerview-1.3.2\res
-com.atezhare.app-pngs-53 E:\final year project\project\android_test\springshare\atezhare\app\build\generated\res\pngs\debug
-com.atezhare.app-resValues-54 E:\final year project\project\android_test\springshare\atezhare\app\build\generated\res\resValues\debug
-com.atezhare.app-packageDebugResources-55 E:\final year project\project\android_test\springshare\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.atezhare.app-packageDebugResources-56 E:\final year project\project\android_test\springshare\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.atezhare.app-merged_res-57 E:\final year project\project\android_test\springshare\atezhare\app\build\intermediates\merged_res\debug
-com.atezhare.app-debug-58 E:\final year project\project\android_test\springshare\atezhare\app\src\debug\res
-com.atezhare.app-main-59 E:\final year project\project\android_test\springshare\atezhare\app\src\main\res
+com.atezhare.app-sqlite-framework-2.4.0-0 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\18dd15c76998868e11eb2ed066822857\transformed\sqlite-framework-2.4.0\res
+com.atezhare.app-lifecycle-runtime-ktx-2.7.0-1 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\23115d0aa0d24dfdb133409ab38ceb34\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.atezhare.app-coordinatorlayout-1.1.0-2 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\2802c0a18247116cc169ed919be53551\transformed\coordinatorlayout-1.1.0\res
+com.atezhare.app-lifecycle-runtime-2.7.0-3 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\292697c9be936b1329f5ac57d3dd1f1f\transformed\lifecycle-runtime-2.7.0\res
+com.atezhare.app-lifecycle-livedata-2.7.0-4 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\2bf84443bacfed559792a6b7d9f1df86\transformed\lifecycle-livedata-2.7.0\res
+com.atezhare.app-lifecycle-viewmodel-2.7.0-5 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\2e0404b48b7f0338749702f520232b84\transformed\lifecycle-viewmodel-2.7.0\res
+com.atezhare.app-drawerlayout-1.1.1-6 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\33a9be9e7d41aaaece893171fe099def\transformed\drawerlayout-1.1.1\res
+com.atezhare.app-startup-runtime-1.1.1-7 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\369f1422ef1a9b42bfaf29b8d32d0d14\transformed\startup-runtime-1.1.1\res
+com.atezhare.app-material-1.11.0-8 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\39a23aff869d1d7083e26fdf8d95574b\transformed\material-1.11.0\res
+com.atezhare.app-navigation-fragment-ktx-2.7.6-9 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\447dfd639ac377bf54c3dd76940cb672\transformed\navigation-fragment-ktx-2.7.6\res
+com.atezhare.app-core-runtime-2.2.0-10 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\48d6a942a74b27efab6883a081aace1d\transformed\core-runtime-2.2.0\res
+com.atezhare.app-navigation-common-ktx-2.7.6-11 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\49e85c95c645b86b323fa4b67150c888\transformed\navigation-common-ktx-2.7.6\res
+com.atezhare.app-camera-lifecycle-1.3.1-12 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\4a6bb9a16621ae3068c62b994468cadb\transformed\camera-lifecycle-1.3.1\res
+com.atezhare.app-transition-1.4.1-13 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\4c2258e96ff8b90251bb081fd4d22986\transformed\transition-1.4.1\res
+com.atezhare.app-lifecycle-viewmodel-savedstate-2.7.0-14 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\4f527bdc4c1d28ef66baa0cd91430085\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.atezhare.app-lifecycle-viewmodel-ktx-2.7.0-15 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\54fa75fbf9f1dd0ce02ff98859231a99\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.atezhare.app-activity-1.8.2-16 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\5d04d7195e71116dff9a20e1fe59a380\transformed\activity-1.8.2\res
+com.atezhare.app-recyclerview-1.3.2-17 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\5dfd4be3cac7d43bbee13ff701348ff7\transformed\recyclerview-1.3.2\res
+com.atezhare.app-savedstate-ktx-1.2.1-18 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\6027a593d9c85ebc545a1b61dfe938eb\transformed\savedstate-ktx-1.2.1\res
+com.atezhare.app-lifecycle-livedata-core-ktx-2.7.0-19 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\606354adc065b4772de987625ed0e0fd\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.atezhare.app-lifecycle-livedata-ktx-2.7.0-20 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\62e6106db84bd4bd275171d829178748\transformed\lifecycle-livedata-ktx-2.7.0\res
+com.atezhare.app-camera-view-1.3.1-21 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\67c42f042eba90126f1d505588181152\transformed\camera-view-1.3.1\res
+com.atezhare.app-savedstate-1.2.1-22 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\6cdf9c4ff9a3449dd7ad984bdbea6d4b\transformed\savedstate-1.2.1\res
+com.atezhare.app-fragment-ktx-1.6.2-23 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\7700fc44a0f92119abd46b583182371e\transformed\fragment-ktx-1.6.2\res
+com.atezhare.app-zxing-android-embedded-4.3.0-24 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\77510b23b8bd21f6bd48c800db44862b\transformed\zxing-android-embedded-4.3.0\res
+com.atezhare.app-navigation-ui-2.7.6-25 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\8091c627e51fad981a9c182f5f98efd4\transformed\navigation-ui-2.7.6\res
+com.atezhare.app-room-runtime-2.6.1-26 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\83ba8e2fb8ca8b31615723af39c124e5\transformed\room-runtime-2.6.1\res
+com.atezhare.app-navigation-runtime-2.7.6-27 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\89f467a5905cf5c478b0eca8039373ca\transformed\navigation-runtime-2.7.6\res
+com.atezhare.app-camera-core-1.3.1-28 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\8cb1be6c3bacd9875112eda80be06000\transformed\camera-core-1.3.1\res
+com.atezhare.app-preference-1.2.1-29 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\932c40fdec05c9810207d1c8d3e27f48\transformed\preference-1.2.1\res
+com.atezhare.app-annotation-experimental-1.3.1-30 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\975b5c062ecbd497b99bf7f072858b9c\transformed\annotation-experimental-1.3.1\res
+com.atezhare.app-appcompat-resources-1.6.1-31 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\99737e639b22dcab28c01959ae6a0178\transformed\appcompat-resources-1.6.1\res
+com.atezhare.app-appcompat-1.6.1-32 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\9a137d4aed66b43add98a8458860f5f1\transformed\appcompat-1.6.1\res
+com.atezhare.app-cardview-1.0.0-33 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a408459757bd25fc6b8cc97575d400cf\transformed\cardview-1.0.0\res
+com.atezhare.app-window-1.0.0-34 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a50647eab2e5174dca0a87e483999fc0\transformed\window-1.0.0\res
+com.atezhare.app-slidingpanelayout-1.2.0-35 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a63543f53bcda3b433792b562943e423\transformed\slidingpanelayout-1.2.0\res
+com.atezhare.app-sqlite-2.4.0-36 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a7e37eb42b332b7df54bc377afb61c40\transformed\sqlite-2.4.0\res
+com.atezhare.app-core-1.12.0-37 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\a8b34b2d8b8bb1060e169d14863c0c04\transformed\core-1.12.0\res
+com.atezhare.app-navigation-common-2.7.6-38 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\abadd99caec5751efa880d75625b4ff1\transformed\navigation-common-2.7.6\res
+com.atezhare.app-viewpager2-1.1.0-beta02-39 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\ad2e70e7ac4ffa2a5594824b42fee452\transformed\viewpager2-1.1.0-beta02\res
+com.atezhare.app-navigation-fragment-2.7.6-40 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\b2be2d43ac4b70110895a8bd34ff27d7\transformed\navigation-fragment-2.7.6\res
+com.atezhare.app-camera-camera2-1.3.1-41 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\c602fc81f78f76c62805459640735ccd\transformed\camera-camera2-1.3.1\res
+com.atezhare.app-constraintlayout-2.1.4-42 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\cd0c29996ec6df84df017a7c1b90b5da\transformed\constraintlayout-2.1.4\res
+com.atezhare.app-navigation-ui-ktx-2.7.6-43 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\ce0426896ea9071dba054b424eac22b3\transformed\navigation-ui-ktx-2.7.6\res
+com.atezhare.app-fragment-1.6.2-44 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d3cbd8a963fb4b72c7037da637d998cc\transformed\fragment-1.6.2\res
+com.atezhare.app-core-ktx-1.12.0-45 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d722afea6a8bec5d35fa6e118811a63d\transformed\core-ktx-1.12.0\res
+com.atezhare.app-preference-ktx-1.2.1-46 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d84f0721ad14ae21b56503b681c1f90b\transformed\preference-ktx-1.2.1\res
+com.atezhare.app-emoji2-1.2.0-47 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d89182d1ee2d70db57bd082a1b4ace6e\transformed\emoji2-1.2.0\res
+com.atezhare.app-lifecycle-livedata-core-2.7.0-48 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d8ea889f04d5c9824251d7ae36ed2f41\transformed\lifecycle-livedata-core-2.7.0\res
+com.atezhare.app-navigation-runtime-ktx-2.7.6-49 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\da4ceb54f699bcb1c46dcf862baad4f9\transformed\navigation-runtime-ktx-2.7.6\res
+com.atezhare.app-room-ktx-2.6.1-50 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\db6562cf7bcff6d1c09e8a6836d0dff5\transformed\room-ktx-2.6.1\res
+com.atezhare.app-emoji2-views-helper-1.2.0-51 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e03b58ff5ec69bc2225b778d6c76dbfa\transformed\emoji2-views-helper-1.2.0\res
+com.atezhare.app-profileinstaller-1.3.0-52 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e404639f3626178b2b4bf242b817413f\transformed\profileinstaller-1.3.0\res
+com.atezhare.app-customview-poolingcontainer-1.0.0-53 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e55575a04376afd958862fde4bbe031f\transformed\customview-poolingcontainer-1.0.0\res
+com.atezhare.app-lifecycle-process-2.7.0-54 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e8ae3089a01a871c4964ec905b6b6886\transformed\lifecycle-process-2.7.0\res
+com.atezhare.app-camera-video-1.3.1-55 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e9ce5b40fb7505dc15c6dedba1869c67\transformed\camera-video-1.3.1\res
+com.atezhare.app-activity-ktx-1.8.2-56 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f5fd29153e44ca5e84f265b9a713eda5\transformed\activity-ktx-1.8.2\res
+com.atezhare.app-pngs-57 E:\final year project\project\android_test\springshare\atezhare\app\build\generated\res\pngs\debug
+com.atezhare.app-resValues-58 E:\final year project\project\android_test\springshare\atezhare\app\build\generated\res\resValues\debug
+com.atezhare.app-packageDebugResources-59 E:\final year project\project\android_test\springshare\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.atezhare.app-packageDebugResources-60 E:\final year project\project\android_test\springshare\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.atezhare.app-merged_res-61 E:\final year project\project\android_test\springshare\atezhare\app\build\intermediates\merged_res\debug
+com.atezhare.app-debug-62 E:\final year project\project\android_test\springshare\atezhare\app\src\debug\res
+com.atezhare.app-main-63 E:\final year project\project\android_test\springshare\atezhare\app\src\main\res

@@ -43,6 +43,12 @@
         android:label="Directory"
         tools:layout="@layout/fragment_directory" />
 
+    <fragment
+        android:id="@+id/sharedDataFragment"
+        android:name="com.atezhare.ui.shareddata.SharedDataFragment"
+        android:label="Shared Data"
+        tools:layout="@layout/fragment_shared_data" />
+
     <!-- Receive — see ui/receive/ReceiveFragment -->
     <fragment
         android:id="@+id/receiveFragment"
