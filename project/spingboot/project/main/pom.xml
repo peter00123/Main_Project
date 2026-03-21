@@ -145,11 +145,12 @@
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+                            <properties>
+    <start-class>com.atezhare.AtezhareApplication</start-class>
+</properties>
                         </exclude>
                     
-                    <properties>
-    <start-class>com.atezhare.AtezhareApplication</start-class>
-</properties></excludes>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>
