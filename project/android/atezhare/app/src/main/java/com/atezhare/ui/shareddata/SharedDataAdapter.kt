@@ -1,5 +1,6 @@
 package com.atezhare.ui.shareddata
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +22,23 @@ class SharedDataAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(file: ReceivedFile) {
+            if (file.isDeleted) {
+                binding.tvFileName.text = "[Deleted by sender]"
+                binding.tvFileName.setTextColor(Color.GRAY)
+                binding.ivFileTypeIcon.alpha = 0.4f
+                binding.tvSender.text = "From: ${file.senderId}"
+                binding.tvFileSize.text = FileUtils.formatFileSize(file.fileSize)
+                binding.tvReceivedAt.text =
+                    SimpleDateFormat("MMM dd, HH:mm", Locale.getDefault()).format(Date(file.receivedAt))
+                binding.tvNewBadge.visibility = View.GONE
+                binding.root.setOnClickListener(null)
+                binding.root.isClickable = false
+                return
+            }
+
             binding.tvFileName.text = file.fileName
+            binding.tvFileName.setTextColor(Color.BLACK) // Or use a resource color
+            binding.ivFileTypeIcon.alpha = 1.0f
             binding.tvSender.text = "From: ${file.senderId}"
             binding.tvFileSize.text = FileUtils.formatFileSize(file.fileSize)
             binding.tvReceivedAt.text =

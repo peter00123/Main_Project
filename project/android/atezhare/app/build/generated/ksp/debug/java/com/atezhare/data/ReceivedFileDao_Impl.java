@@ -17,6 +17,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
 import java.lang.Exception;
 import java.lang.Integer;
+import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -42,13 +43,15 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
 
+  private final SharedSQLiteStatement __preparedStmtOfMarkDeleted;
+
   public ReceivedFileDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfReceivedFile = new EntityInsertionAdapter<ReceivedFile>(__db) {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `received_files` (`id`,`fileId`,`fileName`,`mimeType`,`fileSize`,`localPath`,`sessionId`,`senderId`,`receivedAt`,`isViewed`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `received_files` (`id`,`fileId`,`fileName`,`mimeType`,`fileSize`,`localPath`,`sessionId`,`senderId`,`receivedAt`,`isViewed`,`mode`,`isDeleted`,`expiresAt`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -65,6 +68,14 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
         statement.bindLong(9, entity.getReceivedAt());
         final int _tmp = entity.isViewed() ? 1 : 0;
         statement.bindLong(10, _tmp);
+        statement.bindString(11, entity.getMode());
+        final int _tmp_1 = entity.isDeleted() ? 1 : 0;
+        statement.bindLong(12, _tmp_1);
+        if (entity.getExpiresAt() == null) {
+          statement.bindNull(13);
+        } else {
+          statement.bindLong(13, entity.getExpiresAt());
+        }
       }
     };
     this.__deletionAdapterOfReceivedFile = new EntityDeletionOrUpdateAdapter<ReceivedFile>(__db) {
@@ -93,6 +104,14 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
       @NonNull
       public String createQuery() {
         final String _query = "DELETE FROM received_files";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfMarkDeleted = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE received_files SET isDeleted = 1 WHERE fileId = ?";
         return _query;
       }
     };
@@ -183,6 +202,31 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
   }
 
   @Override
+  public Object markDeleted(final String fileId, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfMarkDeleted.acquire();
+        int _argIndex = 1;
+        _stmt.bindString(_argIndex, fileId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfMarkDeleted.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
   public LiveData<List<ReceivedFile>> getAllFiles() {
     final String _sql = "SELECT * FROM received_files ORDER BY receivedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
@@ -202,6 +246,9 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
           final int _cursorIndexOfSenderId = CursorUtil.getColumnIndexOrThrow(_cursor, "senderId");
           final int _cursorIndexOfReceivedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "receivedAt");
           final int _cursorIndexOfIsViewed = CursorUtil.getColumnIndexOrThrow(_cursor, "isViewed");
+          final int _cursorIndexOfMode = CursorUtil.getColumnIndexOrThrow(_cursor, "mode");
+          final int _cursorIndexOfIsDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isDeleted");
+          final int _cursorIndexOfExpiresAt = CursorUtil.getColumnIndexOrThrow(_cursor, "expiresAt");
           final List<ReceivedFile> _result = new ArrayList<ReceivedFile>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final ReceivedFile _item;
@@ -227,7 +274,19 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsViewed);
             _tmpIsViewed = _tmp != 0;
-            _item = new ReceivedFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpSenderId,_tmpReceivedAt,_tmpIsViewed);
+            final String _tmpMode;
+            _tmpMode = _cursor.getString(_cursorIndexOfMode);
+            final boolean _tmpIsDeleted;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfIsDeleted);
+            _tmpIsDeleted = _tmp_1 != 0;
+            final Long _tmpExpiresAt;
+            if (_cursor.isNull(_cursorIndexOfExpiresAt)) {
+              _tmpExpiresAt = null;
+            } else {
+              _tmpExpiresAt = _cursor.getLong(_cursorIndexOfExpiresAt);
+            }
+            _item = new ReceivedFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpSenderId,_tmpReceivedAt,_tmpIsViewed,_tmpMode,_tmpIsDeleted,_tmpExpiresAt);
             _result.add(_item);
           }
           return _result;
@@ -265,6 +324,9 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
           final int _cursorIndexOfSenderId = CursorUtil.getColumnIndexOrThrow(_cursor, "senderId");
           final int _cursorIndexOfReceivedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "receivedAt");
           final int _cursorIndexOfIsViewed = CursorUtil.getColumnIndexOrThrow(_cursor, "isViewed");
+          final int _cursorIndexOfMode = CursorUtil.getColumnIndexOrThrow(_cursor, "mode");
+          final int _cursorIndexOfIsDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isDeleted");
+          final int _cursorIndexOfExpiresAt = CursorUtil.getColumnIndexOrThrow(_cursor, "expiresAt");
           final List<ReceivedFile> _result = new ArrayList<ReceivedFile>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final ReceivedFile _item;
@@ -290,7 +352,19 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsViewed);
             _tmpIsViewed = _tmp != 0;
-            _item = new ReceivedFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpSenderId,_tmpReceivedAt,_tmpIsViewed);
+            final String _tmpMode;
+            _tmpMode = _cursor.getString(_cursorIndexOfMode);
+            final boolean _tmpIsDeleted;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfIsDeleted);
+            _tmpIsDeleted = _tmp_1 != 0;
+            final Long _tmpExpiresAt;
+            if (_cursor.isNull(_cursorIndexOfExpiresAt)) {
+              _tmpExpiresAt = null;
+            } else {
+              _tmpExpiresAt = _cursor.getLong(_cursorIndexOfExpiresAt);
+            }
+            _item = new ReceivedFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpSenderId,_tmpReceivedAt,_tmpIsViewed,_tmpMode,_tmpIsDeleted,_tmpExpiresAt);
             _result.add(_item);
           }
           return _result;
@@ -365,6 +439,9 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
           final int _cursorIndexOfSenderId = CursorUtil.getColumnIndexOrThrow(_cursor, "senderId");
           final int _cursorIndexOfReceivedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "receivedAt");
           final int _cursorIndexOfIsViewed = CursorUtil.getColumnIndexOrThrow(_cursor, "isViewed");
+          final int _cursorIndexOfMode = CursorUtil.getColumnIndexOrThrow(_cursor, "mode");
+          final int _cursorIndexOfIsDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isDeleted");
+          final int _cursorIndexOfExpiresAt = CursorUtil.getColumnIndexOrThrow(_cursor, "expiresAt");
           final ReceivedFile _result;
           if (_cursor.moveToFirst()) {
             final long _tmpId;
@@ -389,7 +466,19 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsViewed);
             _tmpIsViewed = _tmp != 0;
-            _result = new ReceivedFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpSenderId,_tmpReceivedAt,_tmpIsViewed);
+            final String _tmpMode;
+            _tmpMode = _cursor.getString(_cursorIndexOfMode);
+            final boolean _tmpIsDeleted;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfIsDeleted);
+            _tmpIsDeleted = _tmp_1 != 0;
+            final Long _tmpExpiresAt;
+            if (_cursor.isNull(_cursorIndexOfExpiresAt)) {
+              _tmpExpiresAt = null;
+            } else {
+              _tmpExpiresAt = _cursor.getLong(_cursorIndexOfExpiresAt);
+            }
+            _result = new ReceivedFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpSenderId,_tmpReceivedAt,_tmpIsViewed,_tmpMode,_tmpIsDeleted,_tmpExpiresAt);
           } else {
             _result = null;
           }

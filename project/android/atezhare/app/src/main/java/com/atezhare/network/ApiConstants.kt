@@ -26,6 +26,9 @@ object ApiConstants {
     // --- File Transfer Endpoints ---
     const val ENDPOINT_UPLOAD_FILES = "files/upload"           // Multipart file upload
     const val ENDPOINT_DOWNLOAD_FILE = "files/download/{fileId}"
+    const val ENDPOINT_DELETE_FILE  = "files/delete/{fileId}"
+    const val ENDPOINT_FILE_STATUS  = "files/status/{fileId}"
+    const val ENDPOINT_SET_EXPIRY   = "files/set-expiry"
 
     // --- Pairing Endpoints ---
     const val ENDPOINT_GET_RECEIVER_QR = "pair/receiver-qr"   // Get receiver QR data

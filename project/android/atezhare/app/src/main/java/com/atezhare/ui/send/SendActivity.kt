@@ -40,6 +40,8 @@ class SendActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_FILES = "extra_files"
+        const val EXTRA_MODE = "extra_mode"
+        const val EXTRA_EXPIRES_AT = "extra_expires_at"
     }
 
     private lateinit var binding: ActivitySendBinding
@@ -72,6 +74,10 @@ class SendActivity : AppCompatActivity() {
         // See model/LocalFile (Parcelable)
         val files = intent.getParcelableArrayListExtra<LocalFile>(EXTRA_FILES) ?: arrayListOf()
         viewModel.setSelectedFiles(files)
+
+        val mode = intent.getStringExtra(EXTRA_MODE) ?: "LIVE"
+        val expiresAt = intent.getLongExtra(EXTRA_EXPIRES_AT, 0L)
+        viewModel.setMode(mode, expiresAt)
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 

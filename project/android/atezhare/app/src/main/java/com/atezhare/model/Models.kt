@@ -126,3 +126,26 @@ enum class SessionStatus {
             values().find { it.name == value } ?: UNKNOWN
     }
 }
+
+// ==================== NEW MODELS FOR ARCHITECTURE ====================
+
+// Used by SendViewModel → POST /files/set-expiry
+data class SetExpiryRequest(
+    val fileId: String,
+    val mode: String,           // "LIVE" or "COUNTDOWN"
+    val expiresAt: Long?        // null for LIVE
+)
+
+// Returned by GET /files/status/{fileId} — polled by ReceiveViewModel
+data class FileStatusResponse(
+    val fileId: String,
+    val exists: Boolean,
+    val deleted: Boolean,
+    val expiresAt: Long?
+)
+
+// Returned by DELETE /files/delete/{fileId}
+data class DeleteFileResponse(
+    val success: Boolean,
+    val message: String?
+)

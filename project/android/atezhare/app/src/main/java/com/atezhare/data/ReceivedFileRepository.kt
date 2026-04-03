@@ -22,7 +22,9 @@ class ReceivedFileRepository(context: Context) {
         mimeType: String,
         bytes: ByteArray,
         sessionId: String,
-        senderId: String
+        senderId: String,
+        mode: String = "LIVE",
+        expiresAt: Long? = null
     ): ReceivedFile {
         val destFile = File(receivedDir, "${fileId}_${fileName}")
         FileOutputStream(destFile).use { it.write(bytes) }
@@ -34,7 +36,9 @@ class ReceivedFileRepository(context: Context) {
             fileSize = bytes.size.toLong(),
             localPath = destFile.absolutePath,
             sessionId = sessionId,
-            senderId = senderId
+            senderId = senderId,
+            mode = mode,
+            expiresAt = expiresAt
         )
         dao.insert(record)
         return record
@@ -44,4 +48,17 @@ class ReceivedFileRepository(context: Context) {
     suspend fun delete(file: ReceivedFile) = dao.delete(file)
     suspend fun deleteAll() = dao.deleteAll()
     suspend fun getByFileId(fileId: String): ReceivedFile? = dao.getByFileId(fileId)
+
+    suspend fun markDeleted(fileId: String) {
+        // 1. Get the record to find localPath
+        val record = dao.getByFileId(fileId)
+
+        // 2. Delete file from disk
+        if (record != null) {
+            File(record.localPath).delete()
+        }
+
+        // 3. Mark as deleted in DB (card shows [Deleted by sender])
+        dao.markDeleted(fileId)
+    }
 }

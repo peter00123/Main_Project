@@ -99,13 +99,28 @@ class DirectoryFragment : Fragment() {
                 Toast.makeText(requireContext(), "Please select at least one file", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            // Launch SendActivity with the selected files as Parcelable list
-            // SendActivity is standalone (no toolbar/bottom nav) — see ui/send/SendActivity
-            val intent = Intent(requireContext(), SendActivity::class.java).apply {
-                putParcelableArrayListExtra(SendActivity.EXTRA_FILES, ArrayList(selectedFiles))
+
+            // Show mode selection dialog instead of launching SendActivity directly
+            val dialog = SendModeDialog()
+            dialog.listener = object : SendModeDialog.SendModeListener {
+                override fun onLiveSelected() {
+                    launchSendActivity(selectedFiles, mode = "LIVE", expiresAt = 0L)
+                }
+                override fun onCountdownSelected(expiresAtMillis: Long) {
+                    launchSendActivity(selectedFiles, mode = "COUNTDOWN", expiresAt = expiresAtMillis)
+                }
             }
-            startActivity(intent)
+            dialog.show(parentFragmentManager, "send_mode")
         }
+    }
+
+    private fun launchSendActivity(files: List<LocalFile>, mode: String, expiresAt: Long) {
+        val intent = Intent(requireContext(), SendActivity::class.java).apply {
+            putParcelableArrayListExtra(SendActivity.EXTRA_FILES, ArrayList(files))
+            putExtra(SendActivity.EXTRA_MODE, mode)
+            putExtra(SendActivity.EXTRA_EXPIRES_AT, expiresAt)
+        }
+        startActivity(intent)
     }
 
     private fun openFilePicker() {

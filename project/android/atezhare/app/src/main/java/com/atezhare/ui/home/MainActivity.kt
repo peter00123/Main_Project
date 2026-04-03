@@ -86,6 +86,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // TODO: Navigate to About fragment or show dialog
                 showAboutDialog()
             }
+            R.id.testingFragment -> {
+                navController.navigate(R.id.testingFragment)
+            }
             R.id.nav_settings -> {
                 // TODO: Navigate to Settings fragment
                 navController.navigate(R.id.settingsFragment)

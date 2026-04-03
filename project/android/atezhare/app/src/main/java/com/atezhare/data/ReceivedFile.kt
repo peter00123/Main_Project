@@ -15,5 +15,8 @@ data class ReceivedFile(
     val sessionId: String,
     val senderId: String,
     val receivedAt: Long = System.currentTimeMillis(),
-    val isViewed: Boolean = false
+    val isViewed: Boolean = false,
+    val mode: String = "LIVE",          // "LIVE" or "COUNTDOWN"
+    val isDeleted: Boolean = false,      // true when sender stops or countdown ends
+    val expiresAt: Long? = null          // for COUNTDOWN — set when file is received
 )

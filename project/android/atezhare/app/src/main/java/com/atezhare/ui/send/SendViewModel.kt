@@ -15,6 +15,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.atezhare.data.SentFileRepository
 import com.atezhare.model.*
 import com.atezhare.network.ApiConstants
 import com.atezhare.network.RetrofitClient
@@ -32,6 +33,9 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
     private var sessionId: String? = null
     private var selectedFiles: List<LocalFile> = emptyList()
     private var pollJob: Job? = null
+    private var sendMode: String = "LIVE"
+    private var expiresAt: Long = 0L
+    private var receiverId: String? = null
 
     // LiveData observed by SendActivity
     private val _shareCode = MutableLiveData<String?>()
@@ -51,10 +55,16 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
 
     // SessionManager used to get userId for API requests
     private val sessionManager = SessionManager(application)
+    private val repository = SentFileRepository(application)
 
     /** Called by SendActivity to pass selected files before session creation */
     fun setSelectedFiles(files: List<LocalFile>) {
         selectedFiles = files
+    }
+
+    fun setMode(mode: String, expiresAt: Long) {
+        this.sendMode = mode
+        this.expiresAt = expiresAt
     }
 
     // ==================== STEP 1: Create Session ====================
@@ -104,8 +114,12 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
                 try {
                     val response = RetrofitClient.apiService.getSessionStatus(sid)
                     if (response.isSuccessful && response.body() != null) {
-                        val status = SessionStatus.from(response.body()!!.status)
+                        val body = response.body()!!
+                        val status = SessionStatus.from(body.status)
                         _sessionStatus.value = status
+                        if (status == SessionStatus.PAIRED) {
+                            receiverId = body.receiverId
+                        }
                         if (status == SessionStatus.PAIRED ||
                             status == SessionStatus.DONE ||
                             status == SessionStatus.ERROR) {
@@ -191,7 +205,36 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
                 val sessionIdBody = sid.toRequestBody()
                 val uploadResp = RetrofitClient.apiService.uploadFiles(sessionIdBody, parts)
 
-                if (uploadResp.isSuccessful) {
+                if (uploadResp.isSuccessful && uploadResp.body() != null) {
+                    val uploadBody = uploadResp.body()!!
+                    val uploadedFileIds = uploadBody.fileIds
+
+                    // Register mode on server (LIVE only)
+                    if (sendMode == "LIVE") {
+                        uploadedFileIds.forEach { fileId ->
+                            RetrofitClient.apiService.setFileExpiry(
+                                SetExpiryRequest(fileId, mode = "LIVE", expiresAt = null)
+                            )
+                        }
+                    }
+
+                    // Save to local sent_files DB
+                    val rId = receiverId ?: "unknown"
+                    selectedFiles.forEachIndexed { index, localFile ->
+                        if (index < uploadedFileIds.size) {
+                            repository.saveSentFile(
+                                fileId = uploadedFileIds[index],
+                                fileName = localFile.name,
+                                mimeType = localFile.mimeType,
+                                fileSize = localFile.size,
+                                sessionId = sid,
+                                receiverId = rId,
+                                mode = sendMode,
+                                expiresAt = if (sendMode == "COUNTDOWN") expiresAt else null
+                            )
+                        }
+                    }
+
                     _sessionStatus.value = SessionStatus.DONE
                 } else {
                     _errorMessage.value = "Upload failed: ${uploadResp.code()}"

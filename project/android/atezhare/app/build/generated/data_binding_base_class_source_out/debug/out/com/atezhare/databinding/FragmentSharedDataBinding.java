@@ -4,15 +4,15 @@ package com.atezhare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.atezhare.R;
-import com.google.android.material.button.MaterialButton;
+import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,42 +22,20 @@ public final class FragmentSharedDataBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final MaterialButton btnFilterAll;
+  public final FrameLayout tabContainer;
 
   @NonNull
-  public final MaterialButton btnFilterDocs;
-
-  @NonNull
-  public final MaterialButton btnFilterImages;
-
-  @NonNull
-  public final MaterialButton btnFilterVideos;
-
-  @NonNull
-  public final LinearLayout layoutEmptyState;
-
-  @NonNull
-  public final RecyclerView recyclerSharedFiles;
-
-  @NonNull
-  public final TextView tvFileCount;
+  public final TabLayout tabLayout;
 
   @NonNull
   public final TextView tvNewCount;
 
   private FragmentSharedDataBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnFilterAll, @NonNull MaterialButton btnFilterDocs,
-      @NonNull MaterialButton btnFilterImages, @NonNull MaterialButton btnFilterVideos,
-      @NonNull LinearLayout layoutEmptyState, @NonNull RecyclerView recyclerSharedFiles,
-      @NonNull TextView tvFileCount, @NonNull TextView tvNewCount) {
+      @NonNull FrameLayout tabContainer, @NonNull TabLayout tabLayout,
+      @NonNull TextView tvNewCount) {
     this.rootView = rootView;
-    this.btnFilterAll = btnFilterAll;
-    this.btnFilterDocs = btnFilterDocs;
-    this.btnFilterImages = btnFilterImages;
-    this.btnFilterVideos = btnFilterVideos;
-    this.layoutEmptyState = layoutEmptyState;
-    this.recyclerSharedFiles = recyclerSharedFiles;
-    this.tvFileCount = tvFileCount;
+    this.tabContainer = tabContainer;
+    this.tabLayout = tabLayout;
     this.tvNewCount = tvNewCount;
   }
 
@@ -88,45 +66,15 @@ public final class FragmentSharedDataBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_filter_all;
-      MaterialButton btnFilterAll = ViewBindings.findChildViewById(rootView, id);
-      if (btnFilterAll == null) {
+      id = R.id.tab_container;
+      FrameLayout tabContainer = ViewBindings.findChildViewById(rootView, id);
+      if (tabContainer == null) {
         break missingId;
       }
 
-      id = R.id.btn_filter_docs;
-      MaterialButton btnFilterDocs = ViewBindings.findChildViewById(rootView, id);
-      if (btnFilterDocs == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_filter_images;
-      MaterialButton btnFilterImages = ViewBindings.findChildViewById(rootView, id);
-      if (btnFilterImages == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_filter_videos;
-      MaterialButton btnFilterVideos = ViewBindings.findChildViewById(rootView, id);
-      if (btnFilterVideos == null) {
-        break missingId;
-      }
-
-      id = R.id.layout_empty_state;
-      LinearLayout layoutEmptyState = ViewBindings.findChildViewById(rootView, id);
-      if (layoutEmptyState == null) {
-        break missingId;
-      }
-
-      id = R.id.recycler_shared_files;
-      RecyclerView recyclerSharedFiles = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerSharedFiles == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_file_count;
-      TextView tvFileCount = ViewBindings.findChildViewById(rootView, id);
-      if (tvFileCount == null) {
+      id = R.id.tab_layout;
+      TabLayout tabLayout = ViewBindings.findChildViewById(rootView, id);
+      if (tabLayout == null) {
         break missingId;
       }
 
@@ -136,8 +84,7 @@ public final class FragmentSharedDataBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSharedDataBinding((LinearLayout) rootView, btnFilterAll, btnFilterDocs,
-          btnFilterImages, btnFilterVideos, layoutEmptyState, recyclerSharedFiles, tvFileCount,
+      return new FragmentSharedDataBinding((LinearLayout) rootView, tabContainer, tabLayout,
           tvNewCount);
     }
     String missingId = rootView.getResources().getResourceName(id);

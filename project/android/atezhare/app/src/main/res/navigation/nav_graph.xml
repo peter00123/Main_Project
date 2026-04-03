@@ -49,6 +49,12 @@
         android:label="Shared Data"
         tools:layout="@layout/fragment_shared_data" />
 
+    <fragment
+        android:id="@+id/testingFragment"
+        android:name="com.atezhare.ui.testing.TestingFragment"
+        android:label="Testing"
+        tools:layout="@layout/fragment_testing" />
+
     <!-- Receive — see ui/receive/ReceiveFragment -->
     <fragment
         android:id="@+id/receiveFragment"

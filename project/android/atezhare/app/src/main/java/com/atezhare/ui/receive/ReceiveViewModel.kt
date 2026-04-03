@@ -116,6 +116,9 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                     val fileName = Regex("""filename="?([^";\n]+)"?""")
                         .find(contentDisposition)?.groupValues?.get(1) ?: "file_$fileId"
                     val mimeType = response.headers()["Content-Type"] ?: "application/octet-stream"
+                    
+                    // Note: Here we'd ideally get the mode/expiresAt from the session status or file info
+                    // For now, defaulting to LIVE as per requirements for saving
                     repository.saveDownloadedFile(
                         fileId = fileId,
                         fileName = fileName,
@@ -124,12 +127,30 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         sessionId = sid,
                         senderId = senderId
                     )
+                    
+                    // Start polling for deletion status
+                    startFileStatusPolling(fileId)
                 }
             } catch (e: Exception) {
                 _errorMessage.value = "Download failed: ${e.message}"
             }
         }
         _isLoading.value = false
+    }
+
+    private fun startFileStatusPolling(fileId: String) {
+        viewModelScope.launch {
+            while (isActive) {
+                delay(30_000) // poll every 30 seconds
+                try {
+                    val response = RetrofitClient.apiService.getFileStatus(fileId)
+                    if (response.isSuccessful && response.body()?.deleted == true) {
+                        repository.markDeleted(fileId)
+                        break // stop polling this file
+                    }
+                } catch (_: Exception) { }
+            }
+        }
     }
 
     override fun onCleared() { super.onCleared(); pollJob?.cancel() }

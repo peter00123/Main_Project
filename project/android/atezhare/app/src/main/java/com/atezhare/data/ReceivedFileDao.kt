@@ -29,4 +29,7 @@ interface ReceivedFileDao {
 
     @Query("SELECT * FROM received_files WHERE fileId = :fileId LIMIT 1")
     suspend fun getByFileId(fileId: String): ReceivedFile?
+
+    @Query("UPDATE received_files SET isDeleted = 1 WHERE fileId = :fileId")
+    suspend fun markDeleted(fileId: String)
 }

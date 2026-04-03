@@ -18,6 +18,10 @@ interface ApiService {
     @POST(ApiConstants.ENDPOINT_LOGIN)
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
 
+    // Health check — used by TestingViewModel.checkBackendConnection()
+    @GET("auth/test")
+    suspend fun testConnection(): Response<String>
+
     // --- Session Management ---
 
     // Sender creates a new share session; returns sessionId + 6-digit code
@@ -55,6 +59,18 @@ interface ApiService {
     // Called by: ui/receive/ReceiveViewModel after transfer confirmed
     @GET(ApiConstants.ENDPOINT_DOWNLOAD_FILE)
     suspend fun downloadFile(@Path("fileId") fileId: String): Response<okhttp3.ResponseBody>
+
+    // Called by LiveFilesViewModel.stopFile() when sender taps Stop
+    @DELETE(ApiConstants.ENDPOINT_DELETE_FILE)
+    suspend fun deleteFile(@Path("fileId") fileId: String): Response<DeleteFileResponse>
+
+    // Called by ReceiveViewModel every 30s to check if file was deleted by sender
+    @GET(ApiConstants.ENDPOINT_FILE_STATUS)
+    suspend fun getFileStatus(@Path("fileId") fileId: String): Response<FileStatusResponse>
+
+    // Called by SendViewModel after upload to register mode on server (LIVE only)
+    @POST(ApiConstants.ENDPOINT_SET_EXPIRY)
+    suspend fun setFileExpiry(@Body request: SetExpiryRequest): Response<GenericResponse>
 
     // --- Pairing ---
 

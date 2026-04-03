@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [ReceivedFile::class], version = 1, exportSchema = false)
+@Database(entities = [ReceivedFile::class, SentFile::class], version = 2, exportSchema = false)
 abstract class ReceivedFileDatabase : RoomDatabase() {
 
     abstract fun receivedFileDao(): ReceivedFileDao
+    abstract fun sentFileDao(): SentFileDao
 
     companion object {
         @Volatile
