@@ -17,27 +17,31 @@ import java.util.concurrent.TimeUnit
 class LiveFilesAdapter(
     private val onStopClick: (String) -> Unit,
     private val onCountdownExpired: (String) -> Unit
-) : ListAdapter<SentFile, LiveFilesAdapter.ViewHolder>(DiffCallback) {
+) : ListAdapter<SentFile, LiveFilesAdapter.FileViewHolder>(DiffCallback) {
 
     private val timers = mutableMapOf<String, CountDownTimer>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FileViewHolder {
         val binding = ItemSentFileBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+        return FileViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FileViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    override fun onViewRecycled(holder: ViewHolder) {
+    override fun onViewRecycled(holder: FileViewHolder) {
         super.onViewRecycled(holder)
-        val item = getItem(holder.bindingAdapterPosition)
-        timers[item.fileId]?.cancel()
-        timers.remove(item.fileId)
+        // Note: Using current position to cancel timer for recycled view
+        val position = holder.bindingAdapterPosition
+        if (position != RecyclerView.NO_POSITION) {
+            val item = getItem(position)
+            timers[item.fileId]?.cancel()
+            timers.remove(item.fileId)
+        }
     }
 
-    inner class ViewHolder(private val binding: ItemSentFileBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class FileViewHolder(private val binding: ItemSentFileBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(file: SentFile) {
             binding.tvFileName.text = file.fileName
@@ -56,7 +60,9 @@ class LiveFilesAdapter(
                 binding.tvCountdown.setTextColor(ContextCompat.getColor(binding.root.context, R.color.primary))
             }
 
-            binding.btnStop.setOnClickListener { onStopClick(file.fileId) }
+            binding.btnStop.setOnClickListener { 
+                onStopClick(file.fileId) 
+            }
         }
 
         private fun startTimer(file: SentFile) {

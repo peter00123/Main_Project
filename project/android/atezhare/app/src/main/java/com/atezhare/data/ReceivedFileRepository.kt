@@ -50,15 +50,15 @@ class ReceivedFileRepository(context: Context) {
     suspend fun getByFileId(fileId: String): ReceivedFile? = dao.getByFileId(fileId)
 
     suspend fun markDeleted(fileId: String) {
-        // 1. Get the record to find localPath
         val record = dao.getByFileId(fileId)
 
-        // 2. Delete file from disk
-        if (record != null) {
-            File(record.localPath).delete()
-        }
+        record?.let {
+            val file = File(it.localPath)
+            if (file.exists()) {
+                file.delete()
+            }
 
-        // 3. Mark as deleted in DB (card shows [Deleted by sender])
-        dao.markDeleted(fileId)
+            dao.markDeleted(fileId)
+        }
     }
 }

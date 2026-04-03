@@ -1,9 +1,9 @@
 package com.atezhare.ui.shareddata
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.atezhare.data.SentFile
 import com.atezhare.data.SentFileRepository
@@ -15,19 +15,16 @@ class LiveFilesViewModel(application: Application) : AndroidViewModel(applicatio
     private val repository = SentFileRepository(application)
     val activeSentFiles: LiveData<List<SentFile>> = repository.getActiveSentFiles()
 
-    private val _stopSuccess = MutableLiveData<String>()
-    val stopSuccess: LiveData<String> = _stopSuccess
-
     fun stopFile(fileId: String) {
         viewModelScope.launch {
             try {
                 val response = RetrofitClient.apiService.deleteFile(fileId)
-                if (response.isSuccessful && response.body()?.success == true) {
+
+                if (response.isSuccessful) {
                     repository.markInactive(fileId)
-                    _stopSuccess.postValue(fileId)
                 }
             } catch (e: Exception) {
-                // Log error
+                Log.e("LiveFilesVM", "Stop failed", e)
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.atezhare.ui.receive
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -117,8 +118,6 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         .find(contentDisposition)?.groupValues?.get(1) ?: "file_$fileId"
                     val mimeType = response.headers()["Content-Type"] ?: "application/octet-stream"
                     
-                    // Note: Here we'd ideally get the mode/expiresAt from the session status or file info
-                    // For now, defaulting to LIVE as per requirements for saving
                     repository.saveDownloadedFile(
                         fileId = fileId,
                         fileName = fileName,
@@ -128,7 +127,7 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         senderId = senderId
                     )
                     
-                    // Start polling for deletion status
+                    // Start polling for deletion status after each successful save
                     startFileStatusPolling(fileId)
                 }
             } catch (e: Exception) {
@@ -142,13 +141,21 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
         viewModelScope.launch {
             while (isActive) {
                 delay(30_000) // poll every 30 seconds
+
                 try {
                     val response = RetrofitClient.apiService.getFileStatus(fileId)
-                    if (response.isSuccessful && response.body()?.deleted == true) {
-                        repository.markDeleted(fileId)
-                        break // stop polling this file
+
+                    if (response.isSuccessful) {
+                        val body = response.body()
+
+                        if (body?.deleted == true) {
+                            repository.markDeleted(fileId)
+                            break
+                        }
                     }
-                } catch (_: Exception) { }
+                } catch (e: Exception) {
+                    Log.e("ReceiveVM", "Polling failed", e)
+                }
             }
         }
     }
