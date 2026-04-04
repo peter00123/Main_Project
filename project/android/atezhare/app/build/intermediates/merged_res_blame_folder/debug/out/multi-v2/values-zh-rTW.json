@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-60:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-61:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\74c6e3b1f9822c7a796b363a2ec634f0\\transformed\\navigation-ui-2.7.6\\res\\values-zh-rTW\\values-zh-rTW.xml",

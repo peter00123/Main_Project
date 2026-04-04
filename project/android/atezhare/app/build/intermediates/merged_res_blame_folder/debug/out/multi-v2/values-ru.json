@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-60:/values-ru/values-ru.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-61:/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\baf01d90a75db1de00fbff0a50561400\\transformed\\preference-1.2.1\\res\\values-ru\\values-ru.xml",

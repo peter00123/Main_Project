@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atezhare.data.ReceivedFile
 import com.atezhare.databinding.ItemReceivedFileBinding
 import com.atezhare.utils.FileUtils
+import com.bumptech.glide.Glide
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -44,7 +46,7 @@ class SharedDataAdapter(
             }
 
             binding.tvFileName.text = file.fileName
-            binding.tvFileName.setTextColor(Color.BLACK)
+            binding.tvFileName.setTextColor(Color.BLACK) 
             binding.ivFileTypeIcon.alpha = 1.0f
             binding.tvSender.text = "From: ${file.senderId}"
             binding.tvFileSize.text = FileUtils.formatFileSize(file.fileSize)
@@ -52,14 +54,22 @@ class SharedDataAdapter(
                 SimpleDateFormat("MMM dd, HH:mm", Locale.getDefault()).format(Date(file.receivedAt))
             binding.tvNewBadge.visibility = if (file.isViewed) View.GONE else View.VISIBLE
 
-            binding.ivFileTypeIcon.setImageResource(
-                when {
-                    file.mimeType.startsWith("image/") -> android.R.drawable.ic_menu_gallery
-                    file.mimeType.startsWith("video/") -> android.R.drawable.ic_media_play
-                    file.mimeType.contains("pdf")      -> android.R.drawable.ic_menu_agenda
-                    else                               -> android.R.drawable.ic_menu_save
-                }
-            )
+            // Image preview or icon
+            if (file.mimeType.startsWith("image/")) {
+                Glide.with(binding.ivFileTypeIcon.context)
+                    .load(File(file.localPath))
+                    .centerCrop()
+                    .placeholder(android.R.drawable.ic_menu_gallery)
+                    .into(binding.ivFileTypeIcon)
+            } else {
+                binding.ivFileTypeIcon.setImageResource(
+                    when {
+                        file.mimeType.startsWith("video/") -> android.R.drawable.ic_media_play
+                        file.mimeType.contains("pdf")      -> android.R.drawable.ic_menu_agenda
+                        else                               -> android.R.drawable.ic_menu_save
+                    }
+                )
+            }
 
             binding.root.setOnClickListener { onItemClick(file) }
             binding.root.setOnLongClickListener { onItemLongClick(file); true }

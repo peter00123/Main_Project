@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.atezhare.app-mergeDebugResources-60:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.atezhare.app-mergeDebugResources-61:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bazi\\.gradle\\caches\\9.0-milestone-1\\transforms\\5a818d335f2257349fbb6cfee30cd07f\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",

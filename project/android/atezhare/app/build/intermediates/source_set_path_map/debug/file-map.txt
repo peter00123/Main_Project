@@ -44,22 +44,23 @@ com.atezhare.app-camera-core-1.3.1-42 C:\Users\bazi\.gradle\caches\9.0-milestone
 com.atezhare.app-preference-1.2.1-43 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\baf01d90a75db1de00fbff0a50561400\transformed\preference-1.2.1\res
 com.atezhare.app-sqlite-framework-2.4.0-44 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\bb08ab9c6a9651c109fa386b3a96e7c4\transformed\sqlite-framework-2.4.0\res
 com.atezhare.app-fragment-1.6.2-45 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\c3082e7f2bfb3d3345b0fbb7048a8829\transformed\fragment-1.6.2\res
-com.atezhare.app-lifecycle-viewmodel-savedstate-2.8.6-46 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d4f1f5716679ea1c2d4f95f221f0a825\transformed\lifecycle-viewmodel-savedstate-2.8.6\res
-com.atezhare.app-lifecycle-livedata-2.8.6-47 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d670d30ab0454f3fbf6c503425b3ad87\transformed\lifecycle-livedata-2.8.6\res
-com.atezhare.app-lifecycle-viewmodel-release-48 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d7d592fe15a0dc634e19e3d306f8a454\transformed\lifecycle-viewmodel-release\res
-com.atezhare.app-lifecycle-livedata-ktx-2.8.6-49 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e539cf872a4173e8c2db258536139741\transformed\lifecycle-livedata-ktx-2.8.6\res
-com.atezhare.app-core-runtime-2.2.0-50 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e55f2d85eb57e4a0999413e1ff8894fd\transformed\core-runtime-2.2.0\res
-com.atezhare.app-core-ktx-1.12.0-51 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e6480fde9550713b9bfa74fd7646bb1a\transformed\core-ktx-1.12.0\res
-com.atezhare.app-slidingpanelayout-1.2.0-52 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e6f096d0a2a48b90f2d0b4820673806e\transformed\slidingpanelayout-1.2.0\res
-com.atezhare.app-camera-view-1.3.1-53 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\eccd43cea33f58d803fc9ab106eefa2d\transformed\camera-view-1.3.1\res
-com.atezhare.app-savedstate-1.2.1-54 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f09f74df6afbd374a6f0108f22214149\transformed\savedstate-1.2.1\res
-com.atezhare.app-startup-runtime-1.2.0-55 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f1e30fa2f26d841322dc3ab11a2e79ca\transformed\startup-runtime-1.2.0\res
-com.atezhare.app-room-ktx-2.6.1-56 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f4b55eb72e28ec3bdc019002a168a2f8\transformed\room-ktx-2.6.1\res
-com.atezhare.app-browser-1.8.0-57 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f7003147b842ed894897eb63fa0e566e\transformed\browser-1.8.0\res
-com.atezhare.app-pngs-58 E:\final year project\project\android\atezhare\app\build\generated\res\pngs\debug
-com.atezhare.app-resValues-59 E:\final year project\project\android\atezhare\app\build\generated\res\resValues\debug
-com.atezhare.app-packageDebugResources-60 E:\final year project\project\android\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.atezhare.app-packageDebugResources-61 E:\final year project\project\android\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.atezhare.app-merged_res-62 E:\final year project\project\android\atezhare\app\build\intermediates\merged_res\debug
-com.atezhare.app-debug-63 E:\final year project\project\android\atezhare\app\src\debug\res
-com.atezhare.app-main-64 E:\final year project\project\android\atezhare\app\src\main\res
+com.atezhare.app-glide-4.16.0-46 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d00c6b85338f26ef69e92aa581566b3d\transformed\glide-4.16.0\res
+com.atezhare.app-lifecycle-viewmodel-savedstate-2.8.6-47 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d4f1f5716679ea1c2d4f95f221f0a825\transformed\lifecycle-viewmodel-savedstate-2.8.6\res
+com.atezhare.app-lifecycle-livedata-2.8.6-48 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d670d30ab0454f3fbf6c503425b3ad87\transformed\lifecycle-livedata-2.8.6\res
+com.atezhare.app-lifecycle-viewmodel-release-49 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\d7d592fe15a0dc634e19e3d306f8a454\transformed\lifecycle-viewmodel-release\res
+com.atezhare.app-lifecycle-livedata-ktx-2.8.6-50 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e539cf872a4173e8c2db258536139741\transformed\lifecycle-livedata-ktx-2.8.6\res
+com.atezhare.app-core-runtime-2.2.0-51 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e55f2d85eb57e4a0999413e1ff8894fd\transformed\core-runtime-2.2.0\res
+com.atezhare.app-core-ktx-1.12.0-52 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e6480fde9550713b9bfa74fd7646bb1a\transformed\core-ktx-1.12.0\res
+com.atezhare.app-slidingpanelayout-1.2.0-53 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\e6f096d0a2a48b90f2d0b4820673806e\transformed\slidingpanelayout-1.2.0\res
+com.atezhare.app-camera-view-1.3.1-54 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\eccd43cea33f58d803fc9ab106eefa2d\transformed\camera-view-1.3.1\res
+com.atezhare.app-savedstate-1.2.1-55 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f09f74df6afbd374a6f0108f22214149\transformed\savedstate-1.2.1\res
+com.atezhare.app-startup-runtime-1.2.0-56 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f1e30fa2f26d841322dc3ab11a2e79ca\transformed\startup-runtime-1.2.0\res
+com.atezhare.app-room-ktx-2.6.1-57 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f4b55eb72e28ec3bdc019002a168a2f8\transformed\room-ktx-2.6.1\res
+com.atezhare.app-browser-1.8.0-58 C:\Users\bazi\.gradle\caches\9.0-milestone-1\transforms\f7003147b842ed894897eb63fa0e566e\transformed\browser-1.8.0\res
+com.atezhare.app-pngs-59 E:\final year project\project\android\atezhare\app\build\generated\res\pngs\debug
+com.atezhare.app-resValues-60 E:\final year project\project\android\atezhare\app\build\generated\res\resValues\debug
+com.atezhare.app-packageDebugResources-61 E:\final year project\project\android\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.atezhare.app-packageDebugResources-62 E:\final year project\project\android\atezhare\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.atezhare.app-merged_res-63 E:\final year project\project\android\atezhare\app\build\intermediates\merged_res\debug
+com.atezhare.app-debug-64 E:\final year project\project\android\atezhare\app\src\debug\res
+com.atezhare.app-main-65 E:\final year project\project\android\atezhare\app\src\main\res

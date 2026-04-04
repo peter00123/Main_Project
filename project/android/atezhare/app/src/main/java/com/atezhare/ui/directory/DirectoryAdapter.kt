@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atezhare.databinding.ItemFileBinding
 import com.atezhare.model.LocalFile
 import com.atezhare.utils.FileUtils
+import com.bumptech.glide.Glide
+import java.io.File
 
 class DirectoryAdapter(
     private val onCheckedChange: (LocalFile, Boolean) -> Unit
@@ -38,14 +40,21 @@ class DirectoryAdapter(
                 onCheckedChange(file, isChecked)
             }
 
-            // Set file type icon based on MIME type
-            val iconRes = when {
-                file.mimeType.startsWith("image/") -> android.R.drawable.ic_menu_gallery
-                file.mimeType.startsWith("video/") -> android.R.drawable.ic_media_play
-                file.mimeType.contains("pdf") -> android.R.drawable.ic_menu_agenda
-                else -> android.R.drawable.ic_menu_save
+            // Set file type icon or image preview based on MIME type
+            if (file.mimeType.startsWith("image/")) {
+                Glide.with(binding.ivFileIcon.context)
+                    .load(File(file.path))
+                    .centerCrop()
+                    .placeholder(android.R.drawable.ic_menu_gallery)
+                    .into(binding.ivFileIcon)
+            } else {
+                val iconRes = when {
+                    file.mimeType.startsWith("video/") -> android.R.drawable.ic_media_play
+                    file.mimeType.contains("pdf") -> android.R.drawable.ic_menu_agenda
+                    else -> android.R.drawable.ic_menu_save
+                }
+                binding.ivFileIcon.setImageResource(iconRes)
             }
-            binding.ivFileIcon.setImageResource(iconRes)
         }
     }
 
