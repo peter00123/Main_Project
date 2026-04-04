@@ -31,6 +31,13 @@ class LiveFilesViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun deleteExpiredCountdown(fileId: String) {
         viewModelScope.launch {
+            try {
+                // Tell server to mark deleted — receiver's 30s poll will catch this
+                RetrofitClient.apiService.deleteFile(fileId)
+            } catch (e: Exception) {
+                Log.e("LiveFilesVM", "Server delete failed on countdown expiry", e)
+            }
+            // Always mark inactive locally regardless of server response
             repository.markInactive(fileId)
         }
     }

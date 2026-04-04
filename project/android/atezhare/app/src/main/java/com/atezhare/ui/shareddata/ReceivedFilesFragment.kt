@@ -1,6 +1,7 @@
 package com.atezhare.ui.shareddata
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,6 +61,7 @@ class ReceivedFilesFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.fileList.observe(viewLifecycleOwner) { files ->
+            Log.d("ReceiverUI", "Files updated = ${files?.size ?: 0}")
             adapter.submitList(files)
             val empty = files.isNullOrEmpty()
             binding.recyclerSharedFiles.visibility = if (empty) View.GONE else View.VISIBLE

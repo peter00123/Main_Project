@@ -228,7 +228,7 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
 
   @Override
   public LiveData<List<ReceivedFile>> getAllFiles() {
-    final String _sql = "SELECT * FROM received_files WHERE isDeleted = 0 ORDER BY receivedAt DESC";
+    final String _sql = "SELECT * FROM received_files ORDER BY receivedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return __db.getInvalidationTracker().createLiveData(new String[] {"received_files"}, false, new Callable<List<ReceivedFile>>() {
       @Override
@@ -304,7 +304,7 @@ public final class ReceivedFileDao_Impl implements ReceivedFileDao {
 
   @Override
   public LiveData<List<ReceivedFile>> getFilesByType(final String mimePrefix) {
-    final String _sql = "SELECT * FROM received_files WHERE isDeleted = 0 AND mimeType LIKE ? || '%' ORDER BY receivedAt DESC";
+    final String _sql = "SELECT * FROM received_files WHERE mimeType LIKE ? || '%' ORDER BY receivedAt DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     _statement.bindString(_argIndex, mimePrefix);

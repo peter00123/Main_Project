@@ -57,8 +57,8 @@ class ReceivedFileRepository(context: Context) {
             if (file.exists()) {
                 file.delete()
             }
-
-            dao.markDeleted(fileId)
         }
+        
+        dao.markDeleted(fileId)
     }
 }

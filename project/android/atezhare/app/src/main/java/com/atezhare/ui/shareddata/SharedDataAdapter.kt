@@ -1,9 +1,11 @@
 package com.atezhare.ui.shareddata
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -22,22 +24,27 @@ class SharedDataAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(file: ReceivedFile) {
+            // Handle deleted files first
             if (file.isDeleted) {
+                Log.d("Adapter", "Showing deleted file = ${file.fileId}")
                 binding.tvFileName.text = "[Deleted by sender]"
-                binding.tvFileName.setTextColor(Color.GRAY)
-                binding.ivFileTypeIcon.alpha = 0.4f
-                binding.tvSender.text = "From: ${file.senderId}"
-                binding.tvFileSize.text = FileUtils.formatFileSize(file.fileSize)
-                binding.tvReceivedAt.text =
-                    SimpleDateFormat("MMM dd, HH:mm", Locale.getDefault()).format(Date(file.receivedAt))
+                binding.tvFileName.setTextColor(
+                    ContextCompat.getColor(binding.root.context, com.atezhare.R.color.text_secondary)
+                )
+                binding.ivFileTypeIcon.alpha = 0.35f
+                binding.tvSender.text = ""
+                binding.tvFileSize.text = ""
+                binding.tvReceivedAt.text = ""
                 binding.tvNewBadge.visibility = View.GONE
-                binding.root.setOnClickListener(null)
                 binding.root.isClickable = false
-                return
+                binding.root.isFocusable = false
+                binding.root.setOnClickListener(null)
+                binding.root.setOnLongClickListener(null)
+                return  // skip all other binding
             }
 
             binding.tvFileName.text = file.fileName
-            binding.tvFileName.setTextColor(Color.BLACK) // Or use a resource color
+            binding.tvFileName.setTextColor(Color.BLACK)
             binding.ivFileTypeIcon.alpha = 1.0f
             binding.tvSender.text = "From: ${file.senderId}"
             binding.tvFileSize.text = FileUtils.formatFileSize(file.fileSize)

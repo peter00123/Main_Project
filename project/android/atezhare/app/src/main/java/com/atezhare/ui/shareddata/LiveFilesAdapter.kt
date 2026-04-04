@@ -32,18 +32,18 @@ class LiveFilesAdapter(
 
     override fun onViewRecycled(holder: FileViewHolder) {
         super.onViewRecycled(holder)
-        // Note: Using current position to cancel timer for recycled view
-        val position = holder.bindingAdapterPosition
-        if (position != RecyclerView.NO_POSITION) {
-            val item = getItem(position)
-            timers[item.fileId]?.cancel()
-            timers.remove(item.fileId)
+        holder.boundFileId?.let { fileId ->
+            timers[fileId]?.cancel()
+            timers.remove(fileId)
         }
     }
 
     inner class FileViewHolder(private val binding: ItemSentFileBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        var boundFileId: String? = null
+
         fun bind(file: SentFile) {
+            boundFileId = file.fileId
             binding.tvFileName.text = file.fileName
             binding.tvReceiver.text = "To: ${file.receiverId}"
             

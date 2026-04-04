@@ -140,21 +140,21 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
     private fun startFileStatusPolling(fileId: String) {
         viewModelScope.launch {
             while (isActive) {
-                delay(30_000) // poll every 30 seconds
+                delay(5000) // faster for debugging
 
                 try {
                     val response = RetrofitClient.apiService.getFileStatus(fileId)
+                    val status = response.body()
+                    
+                    Log.d("ReceiverPoll", "file=$fileId deleted=${status?.deleted}")
 
-                    if (response.isSuccessful) {
-                        val body = response.body()
-
-                        if (body?.deleted == true) {
-                            repository.markDeleted(fileId)
-                            break
-                        }
+                    if (response.isSuccessful && status?.deleted == true) {
+                        repository.markDeleted(fileId)
+                        Log.d("ReceiverPoll", "Marked deleted in Room: $fileId")
+                        break
                     }
                 } catch (e: Exception) {
-                    Log.e("ReceiveVM", "Polling failed", e)
+                    Log.e("ReceiverPoll", "Polling failed for $fileId", e)
                 }
             }
         }

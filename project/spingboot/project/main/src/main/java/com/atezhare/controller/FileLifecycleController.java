@@ -3,7 +3,12 @@ package com.atezhare.controller;
 import com.atezhare.model.SetExpiryRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,17 +17,33 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
-@RequestMapping("/files")
 public class FileLifecycleController {
 
+    /**
+     * Global lifecycle map
+     * fileId -> lifecycle metadata
+     *
+     * Shared with FileController during upload
+     */
     public static final Map<String, FileLifecycleEntry> fileLifecycle =
             new ConcurrentHashMap<>();
 
-    @DeleteMapping("/delete/{fileId}")
+    /**
+     * DELETE file by sender
+     * Android sender Stop button calls this
+     */
+    @DeleteMapping("/files/delete/{fileId}")
     public ResponseEntity<?> deleteFile(
             @PathVariable String fileId,
             Authentication authentication
     ) {
+        if (authentication == null) {
+            return ResponseEntity.status(401).body(Map.of(
+                    "success", false,
+                    "message", "Unauthorized"
+            ));
+        }
+
         String senderId = authentication.getName();
         FileLifecycleEntry entry = fileLifecycle.get(fileId);
 
@@ -49,6 +70,7 @@ public class FileLifecycleController {
             ));
         }
 
+        // IMPORTANT: keep entry for receiver polling
         entry.deleted = true;
 
         return ResponseEntity.ok(Map.of(
@@ -57,7 +79,10 @@ public class FileLifecycleController {
         ));
     }
 
-    @GetMapping("/status/{fileId}")
+    /**
+     * Receiver polls this every 30s
+     */
+    @GetMapping("/files/status/{fileId}")
     public ResponseEntity<?> getFileStatus(@PathVariable String fileId) {
         FileLifecycleEntry entry = fileLifecycle.get(fileId);
 
@@ -78,11 +103,22 @@ public class FileLifecycleController {
         ));
     }
 
-    @PostMapping("/set-expiry")
+    /**
+     * Called after upload to store mode
+     * LIVE / COUNTDOWN
+     */
+    @PostMapping("/files/set-expiry")
     public ResponseEntity<?> setExpiry(
             @RequestBody SetExpiryRequest request,
             Authentication authentication
     ) {
+        if (authentication == null) {
+            return ResponseEntity.status(401).body(Map.of(
+                    "success", false,
+                    "message", "Unauthorized"
+            ));
+        }
+
         String senderId = authentication.getName();
         FileLifecycleEntry entry = fileLifecycle.get(request.getFileId());
 
@@ -109,6 +145,9 @@ public class FileLifecycleController {
         ));
     }
 
+    /**
+     * Shared lifecycle metadata
+     */
     public static class FileLifecycleEntry {
         public String fileId;
         public String filePath;
