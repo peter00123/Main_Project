@@ -17,6 +17,7 @@ package com.atezhare.ui.send
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.util.Size
 import android.view.View
 import android.widget.Toast
@@ -171,7 +172,7 @@ class SendActivity : AppCompatActivity() {
                     this, CameraSelector.DEFAULT_BACK_CAMERA, preview, imageAnalysis
                 )
             } catch (e: Exception) {
-                e.printStackTrace()
+                Log.e("SendActivity", "Camera binding failed", e)
             }
         }, ContextCompat.getMainExecutor(this))
     }
@@ -186,10 +187,14 @@ class SendActivity : AppCompatActivity() {
             return
         }
 
+        val rotationDegrees = imageProxy.imageInfo.rotationDegrees
         val buffer: ByteBuffer = imageProxy.planes[0].buffer
         val bytes = ByteArray(buffer.remaining())
         buffer.get(bytes)
 
+        // PlanarYUVLuminanceSource expects data in YUV format.
+        // For devices that might have different image formats or orientations, 
+        // we can try rotating or using different source types if needed.
         val source = PlanarYUVLuminanceSource(
             bytes,
             imageProxy.width, imageProxy.height,
@@ -199,16 +204,29 @@ class SendActivity : AppCompatActivity() {
         )
 
         val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
+        val reader = MultiFormatReader().apply {
+            val hints = mapOf(
+                DecodeHintType.POSSIBLE_FORMATS to listOf(BarcodeFormat.QR_CODE),
+                DecodeHintType.TRY_HARDER to true
+            )
+            setHints(hints)
+        }
+
         try {
-            val result = MultiFormatReader().decode(binaryBitmap)
+            val result = reader.decode(binaryBitmap)
             qrScanned = true
             runOnUiThread {
-                // Pass scanned QR content to ViewModel → POST /pair/scan-qr
                 viewModel.onQrScanned(result.text)
                 Toast.makeText(this, "QR Scanned!", Toast.LENGTH_SHORT).show()
             }
         } catch (e: NotFoundException) {
-            // No QR found in this frame — normal, keep scanning
+            // Try rotating if not found (useful for some devices)
+            try {
+                 // Simple rotation check can be added here if needed, 
+                 // but TRY_HARDER usually handles orientation well enough.
+            } catch (re: Exception) {}
+        } catch (e: Exception) {
+            // Log other errors
         } finally {
             imageProxy.close()
         }

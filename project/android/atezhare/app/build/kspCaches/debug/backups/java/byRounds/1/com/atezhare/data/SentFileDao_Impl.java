@@ -222,6 +222,71 @@ public final class SentFileDao_Impl implements SentFileDao {
   }
 
   @Override
+  public Object getActiveSentFilesSync(final Continuation<? super List<SentFile>> $completion) {
+    final String _sql = "SELECT * FROM sent_files WHERE isActive = 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<SentFile>>() {
+      @Override
+      @NonNull
+      public List<SentFile> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfFileId = CursorUtil.getColumnIndexOrThrow(_cursor, "fileId");
+          final int _cursorIndexOfFileName = CursorUtil.getColumnIndexOrThrow(_cursor, "fileName");
+          final int _cursorIndexOfMimeType = CursorUtil.getColumnIndexOrThrow(_cursor, "mimeType");
+          final int _cursorIndexOfFileSize = CursorUtil.getColumnIndexOrThrow(_cursor, "fileSize");
+          final int _cursorIndexOfSessionId = CursorUtil.getColumnIndexOrThrow(_cursor, "sessionId");
+          final int _cursorIndexOfReceiverId = CursorUtil.getColumnIndexOrThrow(_cursor, "receiverId");
+          final int _cursorIndexOfSentAt = CursorUtil.getColumnIndexOrThrow(_cursor, "sentAt");
+          final int _cursorIndexOfMode = CursorUtil.getColumnIndexOrThrow(_cursor, "mode");
+          final int _cursorIndexOfExpiresAt = CursorUtil.getColumnIndexOrThrow(_cursor, "expiresAt");
+          final int _cursorIndexOfIsActive = CursorUtil.getColumnIndexOrThrow(_cursor, "isActive");
+          final List<SentFile> _result = new ArrayList<SentFile>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final SentFile _item;
+            final long _tmpId;
+            _tmpId = _cursor.getLong(_cursorIndexOfId);
+            final String _tmpFileId;
+            _tmpFileId = _cursor.getString(_cursorIndexOfFileId);
+            final String _tmpFileName;
+            _tmpFileName = _cursor.getString(_cursorIndexOfFileName);
+            final String _tmpMimeType;
+            _tmpMimeType = _cursor.getString(_cursorIndexOfMimeType);
+            final long _tmpFileSize;
+            _tmpFileSize = _cursor.getLong(_cursorIndexOfFileSize);
+            final String _tmpSessionId;
+            _tmpSessionId = _cursor.getString(_cursorIndexOfSessionId);
+            final String _tmpReceiverId;
+            _tmpReceiverId = _cursor.getString(_cursorIndexOfReceiverId);
+            final long _tmpSentAt;
+            _tmpSentAt = _cursor.getLong(_cursorIndexOfSentAt);
+            final String _tmpMode;
+            _tmpMode = _cursor.getString(_cursorIndexOfMode);
+            final Long _tmpExpiresAt;
+            if (_cursor.isNull(_cursorIndexOfExpiresAt)) {
+              _tmpExpiresAt = null;
+            } else {
+              _tmpExpiresAt = _cursor.getLong(_cursorIndexOfExpiresAt);
+            }
+            final boolean _tmpIsActive;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsActive);
+            _tmpIsActive = _tmp != 0;
+            _item = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
   public Object getByFileId(final String fileId, final Continuation<? super SentFile> $completion) {
     final String _sql = "SELECT * FROM sent_files WHERE fileId = ? LIMIT 1";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);

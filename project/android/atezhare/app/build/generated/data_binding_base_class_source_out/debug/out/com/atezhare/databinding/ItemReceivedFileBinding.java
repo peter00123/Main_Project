@@ -24,6 +24,9 @@ public final class ItemReceivedFileBinding implements ViewBinding {
   public final ImageView ivFileTypeIcon;
 
   @NonNull
+  public final TextView tvCountdown;
+
+  @NonNull
   public final TextView tvFileName;
 
   @NonNull
@@ -39,10 +42,12 @@ public final class ItemReceivedFileBinding implements ViewBinding {
   public final TextView tvSender;
 
   private ItemReceivedFileBinding(@NonNull MaterialCardView rootView,
-      @NonNull ImageView ivFileTypeIcon, @NonNull TextView tvFileName, @NonNull TextView tvFileSize,
-      @NonNull TextView tvNewBadge, @NonNull TextView tvReceivedAt, @NonNull TextView tvSender) {
+      @NonNull ImageView ivFileTypeIcon, @NonNull TextView tvCountdown,
+      @NonNull TextView tvFileName, @NonNull TextView tvFileSize, @NonNull TextView tvNewBadge,
+      @NonNull TextView tvReceivedAt, @NonNull TextView tvSender) {
     this.rootView = rootView;
     this.ivFileTypeIcon = ivFileTypeIcon;
+    this.tvCountdown = tvCountdown;
     this.tvFileName = tvFileName;
     this.tvFileSize = tvFileSize;
     this.tvNewBadge = tvNewBadge;
@@ -83,6 +88,12 @@ public final class ItemReceivedFileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_countdown;
+      TextView tvCountdown = ViewBindings.findChildViewById(rootView, id);
+      if (tvCountdown == null) {
+        break missingId;
+      }
+
       id = R.id.tv_file_name;
       TextView tvFileName = ViewBindings.findChildViewById(rootView, id);
       if (tvFileName == null) {
@@ -113,8 +124,8 @@ public final class ItemReceivedFileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemReceivedFileBinding((MaterialCardView) rootView, ivFileTypeIcon, tvFileName,
-          tvFileSize, tvNewBadge, tvReceivedAt, tvSender);
+      return new ItemReceivedFileBinding((MaterialCardView) rootView, ivFileTypeIcon, tvCountdown,
+          tvFileName, tvFileSize, tvNewBadge, tvReceivedAt, tvSender);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -15,6 +15,9 @@ interface SentFileDao {
     @Query("SELECT * FROM sent_files WHERE isActive = 1 ORDER BY sentAt DESC")
     fun getActiveSentFiles(): LiveData<List<SentFile>>
 
+    @Query("SELECT * FROM sent_files WHERE isActive = 1")
+    suspend fun getActiveSentFilesSync(): List<SentFile>
+
     @Query("SELECT * FROM sent_files WHERE fileId = :fileId LIMIT 1")
     suspend fun getByFileId(fileId: String): SentFile?
 

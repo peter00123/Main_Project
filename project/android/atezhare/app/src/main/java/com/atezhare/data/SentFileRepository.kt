@@ -8,6 +8,8 @@ class SentFileRepository(context: Context) {
 
     fun getActiveSentFiles(): LiveData<List<SentFile>> = dao.getActiveSentFiles()
 
+    suspend fun getActiveSentFilesSync(): List<SentFile> = dao.getActiveSentFilesSync()
+
     suspend fun saveSentFile(
         fileId: String,
         fileName: String,
