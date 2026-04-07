@@ -60,6 +60,7 @@
     <string name="or_share_code">Or share this code with receiver:</string>
     <string name="scan_instruction">Point camera at receiver\'s QR code</string>
     <string name="show_qr_title">Show this QR to the sender</string>
+    <string name="version">Version 1.2</string>
     <style name="CodeInputBox">
         <item name="android:layout_width">44dp</item>
         <item name="android:layout_height">52dp</item>

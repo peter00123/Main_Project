@@ -4,7 +4,7 @@
             "outputFile": "com.atezhare.app-mergeDebugResources-61:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\7636b493f61157021cb01d05dd55dd11\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\12a1f95fd2b9260a433f613a1cc1aa04\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

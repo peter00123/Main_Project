@@ -4,7 +4,7 @@
             "outputFile": "com.atezhare.app-mergeDebugResources-61:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\7636b493f61157021cb01d05dd55dd11\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\12a1f95fd2b9260a433f613a1cc1aa04\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\7564194acc7dd3668aaa9e3b3a495e04\\transformed\\material-1.11.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\97d898165faa3def2de4595942c8712d\\transformed\\material-1.11.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

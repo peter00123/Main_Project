@@ -4,7 +4,7 @@
             "outputFile": "com.atezhare.app-mergeDebugResources-61:/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\8fb3776a42028becee3c72f55fef698f\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\bazi\\.gradle\\caches\\8.13\\transforms\\638cab61204f00aa3475afd0e27337d8\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

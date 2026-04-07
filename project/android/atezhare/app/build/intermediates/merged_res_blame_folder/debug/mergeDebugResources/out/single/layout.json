@@ -1,78 +1,82 @@
 [
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/activity_main.xml",
-        "source": "com.atezhare.app-main-65:/layout/activity_main.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\nav_header.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\nav_header.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/dialog_countdown_picker.xml",
-        "source": "com.atezhare.app-main-65:/layout/dialog_countdown_picker.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_received_files.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_received_files.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\item_received_file.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\item_received_file.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_testing.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_testing.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\dialog_countdown_picker.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\dialog_countdown_picker.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/activity_sign_up.xml",
-        "source": "com.atezhare.app-main-65:/layout/activity_sign_up.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/dialog_send_mode.xml",
-        "source": "com.atezhare.app-main-65:/layout/dialog_send_mode.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_settings.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_receive.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_receive.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_shared_data.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_shared_data.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_home.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_live_files.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_live_files.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/activity_send.xml",
-        "source": "com.atezhare.app-main-65:/layout/activity_send.xml"
-    },
-    {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/item_received_file.xml",
-        "source": "com.atezhare.app-main-65:/layout/item_received_file.xml"
-    },
-    {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/nav_header.xml",
-        "source": "com.atezhare.app-main-65:/layout/nav_header.xml"
-    },
-    {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_settings.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_settings.xml"
-    },
-    {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/item_sent_file.xml",
-        "source": "com.atezhare.app-main-65:/layout/item_sent_file.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\item_sent_file.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\item_sent_file.xml"
     },
     {
         "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_profile.xml",
         "source": "com.atezhare.app-main-65:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/activity_login.xml",
-        "source": "com.atezhare.app-main-65:/layout/activity_login.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_shared_data.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_shared_data.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_directory.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_directory.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_send.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_send.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/fragment_live_files.xml",
-        "source": "com.atezhare.app-main-65:/layout/fragment_live_files.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "com.atezhare.app-mergeDebugResources-62:/layout/item_file.xml",
-        "source": "com.atezhare.app-main-65:/layout/item_file.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\item_file.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\item_file.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_testing.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_testing.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_receive.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_receive.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_received_files.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_received_files.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\dialog_send_mode.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\dialog_send_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_directory.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_directory.xml"
     }
 ]

@@ -192,6 +192,7 @@ string navigation_drawer_open
 string or_share_code
 string scan_instruction
 string show_qr_title
+string version
 style CodeInputBox
 style Theme.Atezhare
 style Theme.Atezhare.NoActionBar
