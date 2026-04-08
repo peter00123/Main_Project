@@ -23,6 +23,7 @@
         android:text="Dark Theme"
         android:textColor="@color/on_background" />
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,4 +32,12 @@
         android:enabled="false"
         android:textColor="@color/text_secondary" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="500dp"
+        android:paddingLeft="150dp"
+        android:text="Version : 1.4 "
+        android:textSize="18sp"
+        android:textColor="@color/text_secondary" />
 </LinearLayout>

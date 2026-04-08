@@ -28,6 +28,10 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\ic_receive_file.xml"
     },
     {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_banner_three.jpg.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\banner_three.jpg"
+    },
+    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_ic_folder.xml.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\ic_folder.xml"
     },
@@ -48,12 +52,8 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_live_files.xml"
     },
     {
-        "merged": "com.atezhare.app-debug-63:/drawable_banner_one.jpg.flat",
-        "source": "com.atezhare.app-main-65:/drawable/banner_one.jpg"
-    },
-    {
-        "merged": "com.atezhare.app-debug-63:/drawable_banner_three.jpg.flat",
-        "source": "com.atezhare.app-main-65:/drawable/banner_three.jpg"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_banner_one.jpg.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\banner_one.jpg"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\mipmap-hdpi_ic_launcher.xml.flat",
@@ -130,10 +130,6 @@
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_code_box_bg.xml.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\code_box_bg.xml"
-    },
-    {
-        "merged": "com.atezhare.app-debug-63:/drawable_banner_two.jpg.flat",
-        "source": "com.atezhare.app-main-65:/drawable/banner_two.jpg"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\menu_bottom_nav_menu.xml.flat",
@@ -244,6 +240,10 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "com.atezhare.app-debug-63:/layout_activity_settings.xml.flat",
+        "source": "com.atezhare.app-main-65:/layout/activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\ic_launcher_foreground.xml"
     },
@@ -252,11 +252,15 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_received_files.xml"
     },
     {
-        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_activity_send.xml.flat",
-        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_send.xml"
-    },
-    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_activity_settings.xml.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_banner_two.jpg.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\banner_two.jpg"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_activity_send.xml.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_send.xml"
     }
 ]

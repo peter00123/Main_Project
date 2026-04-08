@@ -1,0 +1,7 @@
+com.atezhare.test.app-annotation-experimental-1.4.0-0 C:\Users\bazi\.gradle\caches\8.13\transforms\1387157ec8da451a21d45a5373973c64\transformed\annotation-experimental-1.4.0\res
+com.atezhare.test.app-core-1.5.0-1 C:\Users\bazi\.gradle\caches\8.13\transforms\3f22de36e9ce112ebd8f6ea910d3ace7\transformed\core-1.5.0\res
+com.atezhare.test.app-androidTest-2 E:\final year project\project\android\atezhare\app\build\generated\res\resValues\androidTest\debug
+com.atezhare.test.app-updated_navigation_xml-3 E:\final year project\project\android\atezhare\app\build\generated\updated_navigation_xml\debugAndroidTest
+com.atezhare.test.app-mergeDebugAndroidTestResources-4 E:\final year project\project\android\atezhare\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.atezhare.test.app-mergeDebugAndroidTestResources-5 E:\final year project\project\android\atezhare\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.atezhare.test.app-debugAndroidTest-6 E:\final year project\project\android\atezhare\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

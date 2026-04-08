@@ -1,3 +1,13 @@
+// ui/home/MainActivity.kt
+// Main host activity containing:
+//   - Top Toolbar with burger menu button (left) and app name
+//   - DrawerLayout with NavigationView (burger menu slide-out panel)
+//   - BottomNavigationView (Home | Directory | Profile)
+//   - NavHostFragment for fragment navigation
+// Burger menu items: About, Settings, Logout
+// Logout clears session via utils/SessionManager and returns to LoginActivity
+// Depends on: utils/SessionManager (logout), navigation/nav_graph.xml
+
 package com.atezhare.ui.home
 
 import android.os.Bundle
