@@ -4,37 +4,72 @@ package com.atezhare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.atezhare.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView tvAppVersion;
+  public final MaterialButton btnAbout;
 
   @NonNull
-  public final TextView tvUserId;
+  public final MaterialButton btnLogout;
 
-  private FragmentProfileBinding(@NonNull LinearLayout rootView, @NonNull TextView tvAppVersion,
-      @NonNull TextView tvUserId) {
+  @NonNull
+  public final MaterialButton btnSettings;
+
+  @NonNull
+  public final MaterialButton btnTesting;
+
+  @NonNull
+  public final FrameLayout headerContainer;
+
+  @NonNull
+  public final ImageView ivHeaderBg;
+
+  @NonNull
+  public final TextView tvProfileLetter;
+
+  @NonNull
+  public final TextView tvUserEmail;
+
+  @NonNull
+  public final TextView tvUserName;
+
+  private FragmentProfileBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnAbout, @NonNull MaterialButton btnLogout,
+      @NonNull MaterialButton btnSettings, @NonNull MaterialButton btnTesting,
+      @NonNull FrameLayout headerContainer, @NonNull ImageView ivHeaderBg,
+      @NonNull TextView tvProfileLetter, @NonNull TextView tvUserEmail,
+      @NonNull TextView tvUserName) {
     this.rootView = rootView;
-    this.tvAppVersion = tvAppVersion;
-    this.tvUserId = tvUserId;
+    this.btnAbout = btnAbout;
+    this.btnLogout = btnLogout;
+    this.btnSettings = btnSettings;
+    this.btnTesting = btnTesting;
+    this.headerContainer = headerContainer;
+    this.ivHeaderBg = ivHeaderBg;
+    this.tvProfileLetter = tvProfileLetter;
+    this.tvUserEmail = tvUserEmail;
+    this.tvUserName = tvUserName;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -59,19 +94,63 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.tv_app_version;
-      TextView tvAppVersion = ViewBindings.findChildViewById(rootView, id);
-      if (tvAppVersion == null) {
+      id = R.id.btn_about;
+      MaterialButton btnAbout = ViewBindings.findChildViewById(rootView, id);
+      if (btnAbout == null) {
         break missingId;
       }
 
-      id = R.id.tv_user_id;
-      TextView tvUserId = ViewBindings.findChildViewById(rootView, id);
-      if (tvUserId == null) {
+      id = R.id.btn_logout;
+      MaterialButton btnLogout = ViewBindings.findChildViewById(rootView, id);
+      if (btnLogout == null) {
         break missingId;
       }
 
-      return new FragmentProfileBinding((LinearLayout) rootView, tvAppVersion, tvUserId);
+      id = R.id.btn_settings;
+      MaterialButton btnSettings = ViewBindings.findChildViewById(rootView, id);
+      if (btnSettings == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_testing;
+      MaterialButton btnTesting = ViewBindings.findChildViewById(rootView, id);
+      if (btnTesting == null) {
+        break missingId;
+      }
+
+      id = R.id.header_container;
+      FrameLayout headerContainer = ViewBindings.findChildViewById(rootView, id);
+      if (headerContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_header_bg;
+      ImageView ivHeaderBg = ViewBindings.findChildViewById(rootView, id);
+      if (ivHeaderBg == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_profile_letter;
+      TextView tvProfileLetter = ViewBindings.findChildViewById(rootView, id);
+      if (tvProfileLetter == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_user_email;
+      TextView tvUserEmail = ViewBindings.findChildViewById(rootView, id);
+      if (tvUserEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_user_name;
+      TextView tvUserName = ViewBindings.findChildViewById(rootView, id);
+      if (tvUserName == null) {
+        break missingId;
+      }
+
+      return new FragmentProfileBinding((ConstraintLayout) rootView, btnAbout, btnLogout,
+          btnSettings, btnTesting, headerContainer, ivHeaderBg, tvProfileLetter, tvUserEmail,
+          tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -51,10 +51,16 @@
             android:name=".ui.auth.SignUpActivity"
             android:exported="false" />
 
-        <!-- MainActivity — hosts NavController, BottomNav, Toolbar, DrawerLayout -->
+        <!-- MainActivity — hosts NavController, BottomNav -->
         <activity
             android:name=".ui.home.MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
+
+        <activity
+            android:name=".ui.profile.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
 
         <!-- SendActivity — standalone QR scanner screen (no toolbar/bottom nav) -->
         <activity

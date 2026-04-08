@@ -1,16 +1,15 @@
-// ui/profile/ProfileFragment.kt
-// Profile screen accessible from the bottom navigation bar.
-// Currently shows the logged-in userId and a placeholder for future profile features.
-// Depends on: utils/SessionManager (getUserId)
-
 package com.atezhare.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.atezhare.R
 import com.atezhare.databinding.FragmentProfileBinding
+import com.atezhare.ui.auth.LoginActivity
 import com.atezhare.utils.SessionManager
 
 class ProfileFragment : Fragment() {
@@ -30,10 +29,26 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Display the logged-in userId — retrieved from utils/SessionManager
         val sessionManager = SessionManager(requireContext())
-        binding.tvUserId.text = "User ID: ${sessionManager.getUserId()}"
-        binding.tvAppVersion.text = "Atezhare v1.3"
+        val userId = sessionManager.getUserId() ?: "User"
+        
+        binding.tvUserName.text = userId.substringBefore("@")
+        binding.tvUserEmail.text = userId
+        binding.tvProfileLetter.text = userId.firstOrNull()?.toString()?.uppercase() ?: "U"
+
+        binding.btnSettings.setOnClickListener {
+            startActivity(Intent(requireContext(), SettingsActivity::class.java))
+        }
+
+        binding.btnLogout.setOnClickListener {
+            sessionManager.clearSession()
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
+            requireActivity().finishAffinity()
+        }
+
+        binding.btnTesting.setOnClickListener {
+            findNavController().navigate(R.id.testingFragment)
+        }
     }
 
     override fun onDestroyView() {

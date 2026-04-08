@@ -31,7 +31,17 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupBanner()
         setupClickListeners()
+    }
+
+    private fun setupBanner() {
+        val bannerImages = listOf(
+            R.drawable.banner_one,
+            R.drawable.banner_two,
+            R.drawable.banner_three
+        )
+        binding.viewPagerBanner.adapter = BannerAdapter(bannerImages)
     }
 
     private fun setupClickListeners() {

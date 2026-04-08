@@ -4,11 +4,12 @@ package com.atezhare.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.atezhare.R;
 import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
@@ -17,7 +18,7 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final MaterialCardView btnReceive;
@@ -25,16 +26,21 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final MaterialCardView btnSend;
 
-  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull MaterialCardView btnReceive,
-      @NonNull MaterialCardView btnSend) {
+  @NonNull
+  public final ViewPager2 viewPagerBanner;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialCardView btnReceive, @NonNull MaterialCardView btnSend,
+      @NonNull ViewPager2 viewPagerBanner) {
     this.rootView = rootView;
     this.btnReceive = btnReceive;
     this.btnSend = btnSend;
+    this.viewPagerBanner = viewPagerBanner;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -71,7 +77,14 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, btnReceive, btnSend);
+      id = R.id.viewPagerBanner;
+      ViewPager2 viewPagerBanner = ViewBindings.findChildViewById(rootView, id);
+      if (viewPagerBanner == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, btnReceive, btnSend,
+          viewPagerBanner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -20,12 +20,13 @@
         <item name="android:navigationBarColor">@color/surface</item>
     </style>
 
-    <!-- No-ActionBar variant used by SendActivity -->
+    <!-- No-ActionBar variant used by SendActivity and others -->
     <style name="Theme.Atezhare.NoActionBar" parent="Theme.Atezhare">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
     </style>
 
     <!-- Splash screen theme — shown briefly during SplashActivity -->
