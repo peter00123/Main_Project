@@ -8,7 +8,11 @@ import java.io.FileOutputStream
 class ReceivedFileRepository(context: Context) {
 
     private val dao = ReceivedFileDatabase.getInstance(context).receivedFileDao()
-    private val receivedDir = File(context.filesDir, "received").also { it.mkdirs() }
+    private val receivedDir = File(context.filesDir, "received").also { 
+        it.mkdirs() 
+        // Create .nomedia file to hide from gallery
+        File(it, ".nomedia").createNewFile()
+    }
 
     val allFiles: LiveData<List<ReceivedFile>> = dao.getAllFiles()
     val unviewedCount: LiveData<Int> = dao.getUnviewedCount()

@@ -3548,6 +3548,8 @@ int id inward 0x7f090110
 int id is_pooling_container_tag 0x7f090111
 int id italic 0x7f090112
 int id item_touch_helper_previous_elevation 0x7f090113
+int id iv_arrow 0x7f09026e
+int id iv_delete 0x7f09026f
 int id iv_file_icon 0x7f090114
 int id iv_file_type_icon 0x7f090115
 int id iv_qr_code 0x7f090116
@@ -3699,6 +3701,7 @@ int id profileFragment 0x7f0901a7
 int id progress_bar 0x7f0901a8
 int id progress_circular 0x7f0901a9
 int id progress_horizontal 0x7f0901aa
+int id pv_full_image 0x7f090271
 int id radio 0x7f0901ab
 int id ratio 0x7f0901ac
 int id receiveFragment 0x7f0901ad
@@ -4011,6 +4014,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
+int layout activity_image_viewer 0x7f0c0094
 int layout activity_login 0x7f0c001c
 int layout activity_main 0x7f0c001d
 int layout activity_send 0x7f0c001e

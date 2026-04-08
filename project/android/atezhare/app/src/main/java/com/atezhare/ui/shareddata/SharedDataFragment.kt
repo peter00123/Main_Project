@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.atezhare.R
 import com.atezhare.databinding.FragmentSharedDataBinding
 import com.google.android.material.tabs.TabLayout
+import kotlinx.coroutines.launch
 
 class SharedDataFragment : Fragment() {
 
@@ -27,6 +30,22 @@ class SharedDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // LIBRARIAN CHECK: every time this screen opens, check for expired files
+        // LibrarianRepository.checkAndDelete() finds files where deleteAt <= now,
+        // deletes them from disk, marks them deleted in the received_files DB,
+        // and removes them from the librarian table. No backend call needed.
+        lifecycleScope.launch {
+            try {
+                val librarian = com.atezhare.data.LibrarianRepository(requireContext())
+                val deleted = librarian.checkAndDelete()
+                if (deleted > 0) {
+                    android.util.Log.d("SharedData", "Librarian deleted $deleted expired file(s)")
+                }
+            } catch (e: Exception) {
+                android.util.Log.e("SharedData", "Librarian check failed", e)
+            }
+        }
 
         setupTabs()
         observeViewModel()
@@ -60,6 +79,18 @@ class SharedDataFragment : Fragment() {
             binding.tvNewCount.visibility = if (count > 0) View.VISIBLE else View.GONE
             binding.tvNewCount.text = "$count new"
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Prevent screenshots when this fragment is visible
+        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Allow screenshots again when leaving this screen
+        activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
     }
 
     override fun onDestroyView() {

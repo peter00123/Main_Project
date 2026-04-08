@@ -7,6 +7,7 @@
 package com.atezhare.utils
 
 import android.content.Context
+import com.atezhare.utils.FileNameEncoder
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.webkit.MimeTypeMap
@@ -84,5 +85,34 @@ object FileUtils {
         bytes < 1024 * 1024 -> "${bytes / 1024} KB"
         bytes < 1024 * 1024 * 1024 -> "${bytes / (1024 * 1024)} MB"
         else -> "${bytes / (1024 * 1024 * 1024)} GB"
+    }
+
+    /**
+     * Renames a LocalFile using the Atezhare encoded format before upload.
+     *
+     * Called by SendViewModel.confirmAndUpload() before building MultipartBody parts.
+     *
+     * Steps:
+     *   1. Generates encoded filename using FileNameEncoder.encode()
+     *   2. Copies the cached file to a new cached file with the encoded name
+     *   3. Returns a new LocalFile pointing to the renamed cached copy
+     *
+     * @param context      For cacheDir access
+     * @param localFile    The original LocalFile picked by user
+     * @param expiresAtMillis  0L for LIVE (timer=00.00.00), future ms for COUNTDOWN
+     * @return A new LocalFile with the encoded filename and path
+     */
+    fun renameForSending(context: Context, localFile: LocalFile, expiresAtMillis: Long): LocalFile {
+        val encodedName = FileNameEncoder.encode(localFile.name, expiresAtMillis)
+        val originalFile = File(localFile.path)
+        val renamedFile = File(context.cacheDir, encodedName)
+
+        // Copy the cached file to the new encoded name
+        originalFile.copyTo(renamedFile, overwrite = true)
+
+        return localFile.copy(
+            name = encodedName,
+            path = renamedFile.absolutePath
+        )
     }
 }

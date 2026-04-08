@@ -99,6 +99,10 @@
             android:name="com.atezhare.ui.send.SendActivity"
             android:exported="false"
             android:theme="@style/Theme.Atezhare.NoActionBar" />
+        <activity
+            android:name="com.atezhare.ui.shareddata.ImageViewerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

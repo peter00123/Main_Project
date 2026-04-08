@@ -11,6 +11,7 @@ data class SentFile(
     val fileName: String,
     val mimeType: String,
     val fileSize: Long,
+    val localPath: String,               // ADDED: path to local cached file
     val sessionId: String,
     val receiverId: String,
     val sentAt: Long,

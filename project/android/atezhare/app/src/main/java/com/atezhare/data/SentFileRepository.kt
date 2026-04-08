@@ -15,6 +15,7 @@ class SentFileRepository(context: Context) {
         fileName: String,
         mimeType: String,
         fileSize: Long,
+        localPath: String,               // ADDED
         sessionId: String,
         receiverId: String,
         mode: String,
@@ -25,6 +26,7 @@ class SentFileRepository(context: Context) {
             fileName = fileName,
             mimeType = mimeType,
             fileSize = fileSize,
+            localPath = localPath,       // ADDED
             sessionId = sessionId,
             receiverId = receiverId,
             sentAt = System.currentTimeMillis(),

@@ -195,8 +195,17 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
                 }
 
                 // Step 4b: Upload files — prepare MultipartBody.Part list
-                // See utils/FileUtils.localFilesToMultipart()
-                val parts = FileUtils.localFilesToMultipart(selectedFiles)
+                // Rename each file with encoded format BEFORE building multipart
+                // FileNameEncoder embeds the timer into the filename
+                // FileUtils.renameForSending() creates a renamed copy in cache
+                val renamedFiles = selectedFiles.map { file ->
+                    FileUtils.renameForSending(
+                        getApplication(),
+                        file,
+                        if (sendMode == "COUNTDOWN") expiresAt else 0L
+                    )
+                }
+                val parts = FileUtils.localFilesToMultipart(renamedFiles)
                 if (parts.isEmpty()) {
                     _errorMessage.value = "No files to upload"
                     return@launch
@@ -220,13 +229,14 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
 
                     // Save to local sent_files DB
                     val rId = receiverId ?: "unknown"
-                    selectedFiles.forEachIndexed { index, localFile ->
+                    renamedFiles.forEachIndexed { index, localFile ->
                         if (index < uploadedFileIds.size) {
                             repository.saveSentFile(
                                 fileId = uploadedFileIds[index],
-                                fileName = localFile.name,
+                                fileName = localFile.name,   // now the encoded name
                                 mimeType = localFile.mimeType,
                                 fileSize = localFile.size,
+                                localPath = localFile.path,
                                 sessionId = sid,
                                 receiverId = rId,
                                 mode = sendMode,

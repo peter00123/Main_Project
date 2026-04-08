@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
 
 class SharedDataAdapter(
     private val onItemClick: (ReceivedFile) -> Unit,
-    private val onItemLongClick: (ReceivedFile) -> Unit
+    private val onItemDelete: (ReceivedFile) -> Unit
 ) : ListAdapter<ReceivedFile, SharedDataAdapter.ViewHolder>(DiffCallback()) {
 
     private val timers = mutableMapOf<String, CountDownTimer>()
@@ -42,17 +42,26 @@ class SharedDataAdapter(
                     ContextCompat.getColor(binding.root.context, com.atezhare.R.color.text_secondary)
                 )
                 binding.ivFileTypeIcon.alpha = 0.35f
+                binding.ivFileTypeIcon.setImageResource(android.R.drawable.ic_menu_save) // Reset to icon
                 binding.tvSender.text = ""
                 binding.tvFileSize.text = ""
                 binding.tvReceivedAt.text = ""
                 binding.tvNewBadge.visibility = View.GONE
                 binding.tvCountdown.visibility = View.GONE
+                
+                binding.ivArrow.visibility = View.GONE
+                binding.ivDelete.visibility = View.VISIBLE
+                binding.ivDelete.setOnClickListener { onItemDelete(file) }
+                
                 binding.root.isClickable = false
                 binding.root.isFocusable = false
                 binding.root.setOnClickListener(null)
-                binding.root.setOnLongClickListener(null)
                 return
             }
+
+            binding.ivArrow.visibility = View.VISIBLE
+            binding.ivDelete.visibility = View.VISIBLE
+            binding.ivDelete.setOnClickListener { onItemDelete(file) }
 
             binding.tvFileName.text = file.fileName
             binding.tvFileName.setTextColor(Color.BLACK) 
@@ -89,7 +98,6 @@ class SharedDataAdapter(
             }
 
             binding.root.setOnClickListener { onItemClick(file) }
-            binding.root.setOnLongClickListener { onItemLongClick(file); true }
         }
 
         private fun startTimer(file: ReceivedFile) {

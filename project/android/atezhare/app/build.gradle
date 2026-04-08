@@ -103,6 +103,9 @@ dependencies {
     implementation 'androidx.room:room-ktx:2.6.1'
     ksp 'androidx.room:room-compiler:2.6.1'
 
+    // PhotoView for Zooming
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
     // Supabase
     implementation platform('io.github.jan-tennert.supabase:bom:3.0.0')
     implementation 'io.github.jan-tennert.supabase:auth-kt'

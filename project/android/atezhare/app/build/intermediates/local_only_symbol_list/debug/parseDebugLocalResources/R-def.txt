@@ -93,6 +93,8 @@ id et_user_id
 id et_username
 id fab_add_file
 id homeFragment
+id iv_arrow
+id iv_delete
 id iv_file_icon
 id iv_file_type_icon
 id iv_qr_code
@@ -108,6 +110,7 @@ id picker_hours
 id picker_minutes
 id profileFragment
 id progress_bar
+id pv_full_image
 id receiveFragment
 id recycler_files
 id recycler_sent_files
@@ -141,6 +144,7 @@ id tv_share_code
 id tv_status
 id tv_testing_value
 id tv_user_id
+layout activity_image_viewer
 layout activity_login
 layout activity_main
 layout activity_send

@@ -45,7 +45,7 @@ public final class SentFileDao_Impl implements SentFileDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `sent_files` (`id`,`fileId`,`fileName`,`mimeType`,`fileSize`,`sessionId`,`receiverId`,`sentAt`,`mode`,`expiresAt`,`isActive`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `sent_files` (`id`,`fileId`,`fileName`,`mimeType`,`fileSize`,`localPath`,`sessionId`,`receiverId`,`sentAt`,`mode`,`expiresAt`,`isActive`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -56,17 +56,18 @@ public final class SentFileDao_Impl implements SentFileDao {
         statement.bindString(3, entity.getFileName());
         statement.bindString(4, entity.getMimeType());
         statement.bindLong(5, entity.getFileSize());
-        statement.bindString(6, entity.getSessionId());
-        statement.bindString(7, entity.getReceiverId());
-        statement.bindLong(8, entity.getSentAt());
-        statement.bindString(9, entity.getMode());
+        statement.bindString(6, entity.getLocalPath());
+        statement.bindString(7, entity.getSessionId());
+        statement.bindString(8, entity.getReceiverId());
+        statement.bindLong(9, entity.getSentAt());
+        statement.bindString(10, entity.getMode());
         if (entity.getExpiresAt() == null) {
-          statement.bindNull(10);
+          statement.bindNull(11);
         } else {
-          statement.bindLong(10, entity.getExpiresAt());
+          statement.bindLong(11, entity.getExpiresAt());
         }
         final int _tmp = entity.isActive() ? 1 : 0;
-        statement.bindLong(11, _tmp);
+        statement.bindLong(12, _tmp);
       }
     };
     this.__preparedStmtOfMarkInactive = new SharedSQLiteStatement(__db) {
@@ -168,6 +169,7 @@ public final class SentFileDao_Impl implements SentFileDao {
           final int _cursorIndexOfFileName = CursorUtil.getColumnIndexOrThrow(_cursor, "fileName");
           final int _cursorIndexOfMimeType = CursorUtil.getColumnIndexOrThrow(_cursor, "mimeType");
           final int _cursorIndexOfFileSize = CursorUtil.getColumnIndexOrThrow(_cursor, "fileSize");
+          final int _cursorIndexOfLocalPath = CursorUtil.getColumnIndexOrThrow(_cursor, "localPath");
           final int _cursorIndexOfSessionId = CursorUtil.getColumnIndexOrThrow(_cursor, "sessionId");
           final int _cursorIndexOfReceiverId = CursorUtil.getColumnIndexOrThrow(_cursor, "receiverId");
           final int _cursorIndexOfSentAt = CursorUtil.getColumnIndexOrThrow(_cursor, "sentAt");
@@ -187,6 +189,8 @@ public final class SentFileDao_Impl implements SentFileDao {
             _tmpMimeType = _cursor.getString(_cursorIndexOfMimeType);
             final long _tmpFileSize;
             _tmpFileSize = _cursor.getLong(_cursorIndexOfFileSize);
+            final String _tmpLocalPath;
+            _tmpLocalPath = _cursor.getString(_cursorIndexOfLocalPath);
             final String _tmpSessionId;
             _tmpSessionId = _cursor.getString(_cursorIndexOfSessionId);
             final String _tmpReceiverId;
@@ -205,7 +209,7 @@ public final class SentFileDao_Impl implements SentFileDao {
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsActive);
             _tmpIsActive = _tmp != 0;
-            _item = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
+            _item = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
             _result.add(_item);
           }
           return _result;
@@ -237,6 +241,7 @@ public final class SentFileDao_Impl implements SentFileDao {
           final int _cursorIndexOfFileName = CursorUtil.getColumnIndexOrThrow(_cursor, "fileName");
           final int _cursorIndexOfMimeType = CursorUtil.getColumnIndexOrThrow(_cursor, "mimeType");
           final int _cursorIndexOfFileSize = CursorUtil.getColumnIndexOrThrow(_cursor, "fileSize");
+          final int _cursorIndexOfLocalPath = CursorUtil.getColumnIndexOrThrow(_cursor, "localPath");
           final int _cursorIndexOfSessionId = CursorUtil.getColumnIndexOrThrow(_cursor, "sessionId");
           final int _cursorIndexOfReceiverId = CursorUtil.getColumnIndexOrThrow(_cursor, "receiverId");
           final int _cursorIndexOfSentAt = CursorUtil.getColumnIndexOrThrow(_cursor, "sentAt");
@@ -256,6 +261,8 @@ public final class SentFileDao_Impl implements SentFileDao {
             _tmpMimeType = _cursor.getString(_cursorIndexOfMimeType);
             final long _tmpFileSize;
             _tmpFileSize = _cursor.getLong(_cursorIndexOfFileSize);
+            final String _tmpLocalPath;
+            _tmpLocalPath = _cursor.getString(_cursorIndexOfLocalPath);
             final String _tmpSessionId;
             _tmpSessionId = _cursor.getString(_cursorIndexOfSessionId);
             final String _tmpReceiverId;
@@ -274,7 +281,7 @@ public final class SentFileDao_Impl implements SentFileDao {
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsActive);
             _tmpIsActive = _tmp != 0;
-            _item = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
+            _item = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
             _result.add(_item);
           }
           return _result;
@@ -304,6 +311,7 @@ public final class SentFileDao_Impl implements SentFileDao {
           final int _cursorIndexOfFileName = CursorUtil.getColumnIndexOrThrow(_cursor, "fileName");
           final int _cursorIndexOfMimeType = CursorUtil.getColumnIndexOrThrow(_cursor, "mimeType");
           final int _cursorIndexOfFileSize = CursorUtil.getColumnIndexOrThrow(_cursor, "fileSize");
+          final int _cursorIndexOfLocalPath = CursorUtil.getColumnIndexOrThrow(_cursor, "localPath");
           final int _cursorIndexOfSessionId = CursorUtil.getColumnIndexOrThrow(_cursor, "sessionId");
           final int _cursorIndexOfReceiverId = CursorUtil.getColumnIndexOrThrow(_cursor, "receiverId");
           final int _cursorIndexOfSentAt = CursorUtil.getColumnIndexOrThrow(_cursor, "sentAt");
@@ -322,6 +330,8 @@ public final class SentFileDao_Impl implements SentFileDao {
             _tmpMimeType = _cursor.getString(_cursorIndexOfMimeType);
             final long _tmpFileSize;
             _tmpFileSize = _cursor.getLong(_cursorIndexOfFileSize);
+            final String _tmpLocalPath;
+            _tmpLocalPath = _cursor.getString(_cursorIndexOfLocalPath);
             final String _tmpSessionId;
             _tmpSessionId = _cursor.getString(_cursorIndexOfSessionId);
             final String _tmpReceiverId;
@@ -340,7 +350,7 @@ public final class SentFileDao_Impl implements SentFileDao {
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsActive);
             _tmpIsActive = _tmp != 0;
-            _result = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
+            _result = new SentFile(_tmpId,_tmpFileId,_tmpFileName,_tmpMimeType,_tmpFileSize,_tmpLocalPath,_tmpSessionId,_tmpReceiverId,_tmpSentAt,_tmpMode,_tmpExpiresAt,_tmpIsActive);
           } else {
             _result = null;
           }

@@ -92,6 +92,17 @@ class SharedDataViewModel(application: Application) : AndroidViewModel(applicati
             Toast.makeText(context, "File not found on device", Toast.LENGTH_SHORT).show()
             return
         }
+
+        // For images, use our secure internal viewer
+        if (file.mimeType.startsWith("image/")) {
+            val intent = Intent(context, ImageViewerActivity::class.java).apply {
+                putExtra("image_path", file.localPath)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(intent)
+            return
+        }
+
         try {
             val uri: Uri = FileProvider.getUriForFile(
                 context, "${context.packageName}.provider", localFile

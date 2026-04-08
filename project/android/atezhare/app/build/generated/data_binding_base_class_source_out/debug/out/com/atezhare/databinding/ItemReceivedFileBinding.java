@@ -21,6 +21,12 @@ public final class ItemReceivedFileBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
+  public final ImageView ivArrow;
+
+  @NonNull
+  public final ImageView ivDelete;
+
+  @NonNull
   public final ImageView ivFileTypeIcon;
 
   @NonNull
@@ -41,11 +47,13 @@ public final class ItemReceivedFileBinding implements ViewBinding {
   @NonNull
   public final TextView tvSender;
 
-  private ItemReceivedFileBinding(@NonNull MaterialCardView rootView,
-      @NonNull ImageView ivFileTypeIcon, @NonNull TextView tvCountdown,
+  private ItemReceivedFileBinding(@NonNull MaterialCardView rootView, @NonNull ImageView ivArrow,
+      @NonNull ImageView ivDelete, @NonNull ImageView ivFileTypeIcon, @NonNull TextView tvCountdown,
       @NonNull TextView tvFileName, @NonNull TextView tvFileSize, @NonNull TextView tvNewBadge,
       @NonNull TextView tvReceivedAt, @NonNull TextView tvSender) {
     this.rootView = rootView;
+    this.ivArrow = ivArrow;
+    this.ivDelete = ivDelete;
     this.ivFileTypeIcon = ivFileTypeIcon;
     this.tvCountdown = tvCountdown;
     this.tvFileName = tvFileName;
@@ -82,6 +90,18 @@ public final class ItemReceivedFileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.iv_arrow;
+      ImageView ivArrow = ViewBindings.findChildViewById(rootView, id);
+      if (ivArrow == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_delete;
+      ImageView ivDelete = ViewBindings.findChildViewById(rootView, id);
+      if (ivDelete == null) {
+        break missingId;
+      }
+
       id = R.id.iv_file_type_icon;
       ImageView ivFileTypeIcon = ViewBindings.findChildViewById(rootView, id);
       if (ivFileTypeIcon == null) {
@@ -124,8 +144,8 @@ public final class ItemReceivedFileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemReceivedFileBinding((MaterialCardView) rootView, ivFileTypeIcon, tvCountdown,
-          tvFileName, tvFileSize, tvNewBadge, tvReceivedAt, tvSender);
+      return new ItemReceivedFileBinding((MaterialCardView) rootView, ivArrow, ivDelete,
+          ivFileTypeIcon, tvCountdown, tvFileName, tvFileSize, tvNewBadge, tvReceivedAt, tvSender);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

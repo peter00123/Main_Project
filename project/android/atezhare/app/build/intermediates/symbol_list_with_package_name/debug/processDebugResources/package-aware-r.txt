@@ -3549,6 +3549,8 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id iv_arrow
+id iv_delete
 id iv_file_icon
 id iv_file_type_icon
 id iv_qr_code
@@ -3700,6 +3702,7 @@ id profileFragment
 id progress_bar
 id progress_circular
 id progress_horizontal
+id pv_full_image
 id radio
 id ratio
 id receiveFragment
@@ -4012,6 +4015,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_image_viewer
 layout activity_login
 layout activity_main
 layout activity_send

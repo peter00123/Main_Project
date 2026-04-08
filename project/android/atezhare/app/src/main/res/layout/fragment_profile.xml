@@ -25,10 +25,10 @@
         android:id="@+id/tv_user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:layout_marginBottom="8dp"
         android:textColor="@color/on_background"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_app_version"

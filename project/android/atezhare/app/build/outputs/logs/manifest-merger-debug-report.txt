@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:65:9-73:20
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:70:9-78:20
 	android:grantUriPermissions
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:69:13-47
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:74:13-47
 	android:authorities
 		INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:67:13-60
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:72:13-60
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:73:13-37
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:66:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:71:13-62
 manifest
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-77:12
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-77:12
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-77:12
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-77:12
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-82:12
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-82:12
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-82:12
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-82:12
 MERGED from [androidx.databinding:viewbinding:8.13.2] C:\Users\bazi\.gradle\caches\8.13\transforms\c72f8b3793a3d3bbe4636d081e3f0057\transformed\viewbinding-8.13.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.6] C:\Users\bazi\.gradle\caches\8.13\transforms\c331308bbc5291a4950a1dbee199d491\transformed\navigation-common-2.7.6\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.6] C:\Users\bazi\.gradle\caches\8.13\transforms\ace7da3e79e6fc387a50a8a74488d3a1\transformed\navigation-common-ktx-2.7.6\AndroidManifest.xml:2:1-7:12
@@ -33,6 +33,7 @@ MERGED from [androidx.camera:camera-lifecycle:1.3.1] C:\Users\bazi\.gradle\cache
 MERGED from [androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:17:1-36:12
 MERGED from [androidx.camera:camera-core:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\79785dd48b9dca6a50a61e03ce01d2cf\transformed\camera-core-1.3.1\AndroidManifest.xml:17:1-36:12
 MERGED from [androidx.camera:camera-view:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\00d01addcbf679ddbd61decfc042e513\transformed\camera-view-1.3.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.chrisbanes:PhotoView:2.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\534a264116b5e8e23484113606eec661\transformed\PhotoView-2.3.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\eccc6bc9cf16b07b8a3e886c5065dac7\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.preference:preference-ktx:1.2.1] C:\Users\bazi\.gradle\caches\8.13\transforms\77452cfd2f903d909958a229b47fe0e4\transformed\preference-ktx-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\bazi\.gradle\caches\8.13\transforms\8fb3776a42028becee3c72f55fef698f\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
@@ -147,8 +148,8 @@ ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidMa
 	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:22:22-72
 application
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:24:5-75:19
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:24:5-75:19
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:24:5-80:19
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:24:5-80:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7564194acc7dd3668aaa9e3b3a495e04\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7564194acc7dd3668aaa9e3b3a495e04\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:23:5-29:19
@@ -243,12 +244,20 @@ ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidMa
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:63:13-62
 	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:61:13-49
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:70:13-72:54
-	android:resource
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:72:17-51
+activity#com.atezhare.ui.shareddata.ImageViewerActivity
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:65:9-68:65
+	android:exported
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:67:13-37
+	android:theme
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:13-62
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:71:17-67
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:66:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:75:13-77:54
+	android:resource
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:77:17-51
+	android:name
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:76:17-67
 uses-sdk
 INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml
@@ -289,6 +298,8 @@ MERGED from [androidx.camera:camera-core:1.3.1] C:\Users\bazi\.gradle\caches\8.1
 MERGED from [androidx.camera:camera-core:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\79785dd48b9dca6a50a61e03ce01d2cf\transformed\camera-core-1.3.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.camera:camera-view:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\00d01addcbf679ddbd61decfc042e513\transformed\camera-view-1.3.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.camera:camera-view:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\00d01addcbf679ddbd61decfc042e513\transformed\camera-view-1.3.1\AndroidManifest.xml:5:5-44
+MERGED from [com.github.chrisbanes:PhotoView:2.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\534a264116b5e8e23484113606eec661\transformed\PhotoView-2.3.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chrisbanes:PhotoView:2.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\534a264116b5e8e23484113606eec661\transformed\PhotoView-2.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\eccc6bc9cf16b07b8a3e886c5065dac7\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\eccc6bc9cf16b07b8a3e886c5065dac7\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.preference:preference-ktx:1.2.1] C:\Users\bazi\.gradle\caches\8.13\transforms\77452cfd2f903d909958a229b47fe0e4\transformed\preference-ktx-1.2.1\AndroidManifest.xml:20:5-22:41

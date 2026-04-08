@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.atezhare.data.ReceivedFile
 import com.atezhare.databinding.FragmentReceivedFilesBinding
+import kotlinx.coroutines.launch
 
 class ReceivedFilesFragment : Fragment() {
 
@@ -34,10 +36,23 @@ class ReceivedFilesFragment : Fragment() {
         observeViewModel()
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Re-run Librarian check when tab is resumed (covers tab switches)
+        lifecycleScope.launch {
+            try {
+                val librarian = com.atezhare.data.LibrarianRepository(requireContext())
+                librarian.checkAndDelete()
+            } catch (e: Exception) {
+                android.util.Log.e("ReceivedFiles", "Librarian resume check failed", e)
+            }
+        }
+    }
+
     private fun setupRecyclerView() {
         adapter = SharedDataAdapter(
             onItemClick = { viewModel.openFile(requireContext(), it) },
-            onItemLongClick = { showDeleteDialog(it) }
+            onItemDelete = { showDeleteDialog(it) }
         )
         binding.recyclerSharedFiles.adapter = adapter
     }

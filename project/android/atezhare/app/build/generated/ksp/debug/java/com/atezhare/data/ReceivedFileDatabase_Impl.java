@@ -30,22 +30,26 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
 
   private volatile SentFileDao _sentFileDao;
 
+  private volatile LibrarianDao _librarianDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `received_files` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fileId` TEXT NOT NULL, `fileName` TEXT NOT NULL, `mimeType` TEXT NOT NULL, `fileSize` INTEGER NOT NULL, `localPath` TEXT NOT NULL, `sessionId` TEXT NOT NULL, `senderId` TEXT NOT NULL, `receivedAt` INTEGER NOT NULL, `isViewed` INTEGER NOT NULL, `mode` TEXT NOT NULL, `isDeleted` INTEGER NOT NULL, `expiresAt` INTEGER)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `sent_files` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fileId` TEXT NOT NULL, `fileName` TEXT NOT NULL, `mimeType` TEXT NOT NULL, `fileSize` INTEGER NOT NULL, `sessionId` TEXT NOT NULL, `receiverId` TEXT NOT NULL, `sentAt` INTEGER NOT NULL, `mode` TEXT NOT NULL, `expiresAt` INTEGER, `isActive` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `sent_files` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fileId` TEXT NOT NULL, `fileName` TEXT NOT NULL, `mimeType` TEXT NOT NULL, `fileSize` INTEGER NOT NULL, `localPath` TEXT NOT NULL, `sessionId` TEXT NOT NULL, `receiverId` TEXT NOT NULL, `sentAt` INTEGER NOT NULL, `mode` TEXT NOT NULL, `expiresAt` INTEGER, `isActive` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `librarian` (`fileName` TEXT NOT NULL, `localPath` TEXT NOT NULL, `fileId` TEXT NOT NULL, `deleteAt` INTEGER NOT NULL, `addedAt` INTEGER NOT NULL, PRIMARY KEY(`fileName`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd16ce071784359ba821d3cca4fbebdf1')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '97624eb536e164aa828cc33eabd794f5')");
       }
 
       @Override
       public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS `received_files`");
         db.execSQL("DROP TABLE IF EXISTS `sent_files`");
+        db.execSQL("DROP TABLE IF EXISTS `librarian`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -112,12 +116,13 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
                   + " Expected:\n" + _infoReceivedFiles + "\n"
                   + " Found:\n" + _existingReceivedFiles);
         }
-        final HashMap<String, TableInfo.Column> _columnsSentFiles = new HashMap<String, TableInfo.Column>(11);
+        final HashMap<String, TableInfo.Column> _columnsSentFiles = new HashMap<String, TableInfo.Column>(12);
         _columnsSentFiles.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("fileId", new TableInfo.Column("fileId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("fileName", new TableInfo.Column("fileName", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("mimeType", new TableInfo.Column("mimeType", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("fileSize", new TableInfo.Column("fileSize", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSentFiles.put("localPath", new TableInfo.Column("localPath", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("sessionId", new TableInfo.Column("sessionId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("receiverId", new TableInfo.Column("receiverId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSentFiles.put("sentAt", new TableInfo.Column("sentAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -133,9 +138,24 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
                   + " Expected:\n" + _infoSentFiles + "\n"
                   + " Found:\n" + _existingSentFiles);
         }
+        final HashMap<String, TableInfo.Column> _columnsLibrarian = new HashMap<String, TableInfo.Column>(5);
+        _columnsLibrarian.put("fileName", new TableInfo.Column("fileName", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsLibrarian.put("localPath", new TableInfo.Column("localPath", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsLibrarian.put("fileId", new TableInfo.Column("fileId", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsLibrarian.put("deleteAt", new TableInfo.Column("deleteAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsLibrarian.put("addedAt", new TableInfo.Column("addedAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysLibrarian = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesLibrarian = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoLibrarian = new TableInfo("librarian", _columnsLibrarian, _foreignKeysLibrarian, _indicesLibrarian);
+        final TableInfo _existingLibrarian = TableInfo.read(db, "librarian");
+        if (!_infoLibrarian.equals(_existingLibrarian)) {
+          return new RoomOpenHelper.ValidationResult(false, "librarian(com.atezhare.data.LibrarianEntry).\n"
+                  + " Expected:\n" + _infoLibrarian + "\n"
+                  + " Found:\n" + _existingLibrarian);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "d16ce071784359ba821d3cca4fbebdf1", "c578b20c89f7b61d18cf243f31837562");
+    }, "97624eb536e164aa828cc33eabd794f5", "e27f5696e7adb9077fc79d5f3b6f749c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -146,7 +166,7 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "received_files","sent_files");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "received_files","sent_files","librarian");
   }
 
   @Override
@@ -157,6 +177,7 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `received_files`");
       _db.execSQL("DELETE FROM `sent_files`");
+      _db.execSQL("DELETE FROM `librarian`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -173,6 +194,7 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(ReceivedFileDao.class, ReceivedFileDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(SentFileDao.class, SentFileDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(LibrarianDao.class, LibrarianDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -215,6 +237,20 @@ public final class ReceivedFileDatabase_Impl extends ReceivedFileDatabase {
           _sentFileDao = new SentFileDao_Impl(this);
         }
         return _sentFileDao;
+      }
+    }
+  }
+
+  @Override
+  public LibrarianDao librarianDao() {
+    if (_librarianDao != null) {
+      return _librarianDao;
+    } else {
+      synchronized(this) {
+        if(_librarianDao == null) {
+          _librarianDao = new LibrarianDao_Impl(this);
+        }
+        return _librarianDao;
       }
     }
   }

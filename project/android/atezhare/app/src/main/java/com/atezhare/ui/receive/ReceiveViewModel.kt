@@ -15,6 +15,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import java.io.File
 
 class ReceiveViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -127,6 +128,19 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         senderId = senderId
                     )
                     
+                    // Register the file with the Librarian for timer-based expiry
+                    // LibrarianRepository reads the timer from the encoded filename
+                    // and stores a deleteAt timestamp in the librarian SQLite table
+                    val librarian = com.atezhare.data.LibrarianRepository(getApplication())
+                    librarian.registerFile(
+                        fileName = fileName,
+                        localPath = File(
+                            getApplication<android.app.Application>().filesDir,
+                            "received/${fileId}_${fileName}"
+                        ).absolutePath,
+                        fileId = fileId
+                    )
+
                     // Start polling for deletion status after each successful save
                     startFileStatusPolling(fileId)
                 }

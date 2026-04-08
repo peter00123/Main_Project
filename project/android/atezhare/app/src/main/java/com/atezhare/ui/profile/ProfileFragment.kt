@@ -33,7 +33,7 @@ class ProfileFragment : Fragment() {
         // Display the logged-in userId — retrieved from utils/SessionManager
         val sessionManager = SessionManager(requireContext())
         binding.tvUserId.text = "User ID: ${sessionManager.getUserId()}"
-        binding.tvAppVersion.text = "Atezhare v1.0"
+        binding.tvAppVersion.text = "Atezhare v1.3"
     }
 
     override fun onDestroyView() {

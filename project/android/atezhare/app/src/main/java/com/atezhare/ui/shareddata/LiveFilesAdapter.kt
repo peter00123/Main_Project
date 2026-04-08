@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atezhare.R
 import com.atezhare.data.SentFile
 import com.atezhare.databinding.ItemSentFileBinding
+import com.bumptech.glide.Glide
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -49,6 +51,17 @@ class LiveFilesAdapter(
             
             val sdf = SimpleDateFormat("MMM dd, h:mm a", Locale.getDefault())
             binding.tvSentAt.text = "Sent at ${sdf.format(Date(file.sentAt))}"
+
+            // Image preview or icon
+            if (file.mimeType.startsWith("image/")) {
+                Glide.with(binding.ivFileIcon.context)
+                    .load(File(file.localPath))
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_folder)
+                    .into(binding.ivFileIcon)
+            } else {
+                binding.ivFileIcon.setImageResource(R.drawable.ic_folder)
+            }
 
             binding.tvModeBadge.text = file.mode
             if (file.mode == "COUNTDOWN") {
