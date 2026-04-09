@@ -17,6 +17,7 @@ class SessionManager(context: Context) {
         private const val KEY_IS_LOGGED_IN = "is_logged_in"
         private const val KEY_USER_ID = "user_id"
         private const val KEY_TOKEN = "token"
+        private const val KEY_DARK_MODE = "dark_mode"
     }
 
     private val prefs: SharedPreferences =
@@ -53,4 +54,12 @@ class SessionManager(context: Context) {
     fun restoreSession() {
         SessionTokenHolder.token = getToken()
     }
+
+    /** Save theme preference */
+    fun setDarkMode(enabled: Boolean) {
+        prefs.edit().putBoolean(KEY_DARK_MODE, enabled).apply()
+    }
+
+    /** Get theme preference. Defaults to false (light) */
+    fun isDarkMode(): Boolean = prefs.getBoolean(KEY_DARK_MODE, false)
 }

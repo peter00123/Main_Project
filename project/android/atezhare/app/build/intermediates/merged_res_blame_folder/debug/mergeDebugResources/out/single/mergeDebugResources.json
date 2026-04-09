@@ -16,12 +16,12 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\anim\\slide_out_left.xml"
     },
     {
-        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_qr_scan_overlay.xml.flat",
-        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\qr_scan_overlay.xml"
-    },
-    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_qr_scan_overlay.xml.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\qr_scan_overlay.xml"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_ic_receive_file.xml.flat",
@@ -48,20 +48,20 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_fragment_live_files.xml.flat",
-        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_live_files.xml"
-    },
-    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\drawable_banner_one.jpg.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\drawable\\banner_one.jpg"
     },
     {
-        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\mipmap-hdpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\mipmap-hdpi\\ic_launcher.xml"
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_fragment_live_files.xml.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_live_files.xml"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\mipmap-mdpi_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\mipmap-mdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\mipmap-hdpi\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-debug-63:\\layout_nav_header.xml.flat",

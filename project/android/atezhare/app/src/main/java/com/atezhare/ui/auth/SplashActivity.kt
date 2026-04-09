@@ -3,6 +3,7 @@ package com.atezhare.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import com.atezhare.ui.home.MainActivity
 import com.atezhare.utils.SessionManager
@@ -13,9 +14,16 @@ import kotlinx.coroutines.launch
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         val sessionManager = SessionManager(this)
+        
+        // Apply saved theme preference
+        if (sessionManager.isDarkMode()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
+        super.onCreate(savedInstanceState)
 
         lifecycleScope.launch {
             try {

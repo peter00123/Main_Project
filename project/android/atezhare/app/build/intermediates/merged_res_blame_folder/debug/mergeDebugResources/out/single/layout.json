@@ -12,12 +12,12 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\item_received_file.xml"
     },
     {
-        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_login.xml"
-    },
-    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\dialog_countdown_picker.xml",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\dialog_countdown_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\item_banner_image.xml",
@@ -60,16 +60,16 @@
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_image_viewer.xml"
     },
     {
+        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_profile.xml",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\item_file.xml",
         "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\item_file.xml"
-    },
-    {
-        "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\activity_settings.xml",
-        "source": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-main-65:\\layout\\activity_settings.xml"
     },
     {
         "merged": "C:\\Users\\bazi\\.gradle\\daemon\\8.13\\com.atezhare.app-mergeDebugResources-62:\\layout\\fragment_testing.xml",
