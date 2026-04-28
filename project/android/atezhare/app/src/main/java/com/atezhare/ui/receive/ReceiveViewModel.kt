@@ -94,8 +94,10 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         _sessionStatus.value = status
                         if (!body.receiverId.isNullOrEmpty()) senderId = body.receiverId
                         if (status == SessionStatus.DONE) {
+                            Log.d("ReceiveViewModel", "Session DONE, downloading files: ${body.fileIds}")
                             val fileIds = body.fileIds ?: emptyList()
                             if (fileIds.isNotEmpty()) downloadAndSaveFiles(sid, fileIds)
+                            else Log.w("ReceiveViewModel", "DONE status but fileIds is empty")
                             break
                         }
                         if (status == SessionStatus.ERROR) break
@@ -123,7 +125,7 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         fileId = fileId,
                         fileName = fileName,
                         mimeType = mimeType,
-                        bytes = body.bytes(),
+                        inputStream = body.byteStream(),
                         sessionId = sid,
                         senderId = senderId
                     )

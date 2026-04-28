@@ -213,9 +213,10 @@ class SendActivity : AppCompatActivity() {
 
         val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
         val reader = MultiFormatReader().apply {
-            val hints = mapOf(
+            val hints = mutableMapOf<DecodeHintType, Any>(
                 DecodeHintType.POSSIBLE_FORMATS to listOf(BarcodeFormat.QR_CODE),
-                DecodeHintType.TRY_HARDER to true
+                DecodeHintType.TRY_HARDER to true,
+                DecodeHintType.CHARACTER_SET to "UTF-8"
             )
             setHints(hints)
         }
@@ -225,16 +226,12 @@ class SendActivity : AppCompatActivity() {
             qrScanned = true
             runOnUiThread {
                 viewModel.onQrScanned(result.text)
-                Toast.makeText(this, "QR Scanned!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "QR Scanned: ${result.text.take(8)}...", Toast.LENGTH_SHORT).show()
             }
         } catch (e: NotFoundException) {
-            // Try rotating if not found (useful for some devices)
-            try {
-                 // Simple rotation check can be added here if needed, 
-                 // but TRY_HARDER usually handles orientation well enough.
-            } catch (re: Exception) {}
+            // Try again on next frame
         } catch (e: Exception) {
-            // Log other errors
+            Log.e("SendActivity", "QR Decoding error", e)
         } finally {
             imageProxy.close()
         }

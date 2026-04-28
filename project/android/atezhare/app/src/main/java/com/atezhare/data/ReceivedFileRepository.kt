@@ -24,20 +24,29 @@ class ReceivedFileRepository(context: Context) {
         fileId: String,
         fileName: String,
         mimeType: String,
-        bytes: ByteArray,
+        inputStream: java.io.InputStream,
         sessionId: String,
         senderId: String,
         mode: String = "LIVE",
         expiresAt: Long? = null
     ): ReceivedFile {
         val destFile = File(receivedDir, "${fileId}_${fileName}")
-        FileOutputStream(destFile).use { it.write(bytes) }
+        var fileSize = 0L
+        
+        destFile.outputStream().use { output ->
+            val buffer = ByteArray(8 * 1024)
+            var bytesRead: Int
+            while (inputStream.read(buffer).also { bytesRead = it } != -1) {
+                output.write(buffer, 0, bytesRead)
+                fileSize += bytesRead
+            }
+        }
 
         val record = ReceivedFile(
             fileId = fileId,
             fileName = fileName,
             mimeType = mimeType,
-            fileSize = bytes.size.toLong(),
+            fileSize = fileSize,
             localPath = destFile.absolutePath,
             sessionId = sessionId,
             senderId = senderId,

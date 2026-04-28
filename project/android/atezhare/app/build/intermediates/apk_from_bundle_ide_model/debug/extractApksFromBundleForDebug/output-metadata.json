@@ -29,7 +29,7 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "outputFile": "../../../extracted_apks/debug/extractApksFromBundleForDebug/base-xhdpi.apk"
+      "outputFile": "../../../extracted_apks/debug/extractApksFromBundleForDebug/base-xxhdpi.apk"
     }
   ],
   "elementType": "File"

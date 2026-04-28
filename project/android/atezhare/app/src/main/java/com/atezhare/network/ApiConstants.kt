@@ -35,10 +35,10 @@ object ApiConstants {
     const val ENDPOINT_SCAN_QR = "pair/scan-qr"               // Sender scans receiver QR
     const val ENDPOINT_SUBMIT_CODE = "pair/submit-code"        // Receiver submits 6-digit code
 
-    // Network timeouts (seconds)
-    const val CONNECT_TIMEOUT = 30L
-    const val READ_TIMEOUT = 60L
-    const val WRITE_TIMEOUT = 60L
+    // Network timeouts (seconds) - Increased for large file transfers
+    const val CONNECT_TIMEOUT = 60L
+    const val READ_TIMEOUT = 300L
+    const val WRITE_TIMEOUT = 300L
 
     // Polling interval for session status (milliseconds)
     const val POLL_INTERVAL_MS = 2000L
