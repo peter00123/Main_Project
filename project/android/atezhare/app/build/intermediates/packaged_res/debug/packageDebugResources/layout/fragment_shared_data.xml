@@ -54,6 +54,10 @@
             android:text="Received" />
     </com.google.android.material.tabs.TabLayout>
 
+    <include
+        android:id="@+id/layout_progress"
+        layout="@layout/item_transfer_progress" />
+
     <FrameLayout
         android:id="@+id/tab_container"
         android:layout_width="match_parent"

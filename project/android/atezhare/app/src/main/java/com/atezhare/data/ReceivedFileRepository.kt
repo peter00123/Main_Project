@@ -32,7 +32,7 @@ class ReceivedFileRepository(context: Context) {
     ): ReceivedFile {
         val destFile = File(receivedDir, "${fileId}_${fileName}")
         var fileSize = 0L
-        
+
         destFile.outputStream().use { output ->
             val buffer = ByteArray(8 * 1024)
             var bytesRead: Int
@@ -42,12 +42,28 @@ class ReceivedFileRepository(context: Context) {
             }
         }
 
+        return saveDownloadedFileRecord(
+            fileId, fileName, mimeType, fileSize, destFile.absolutePath, sessionId, senderId, mode, expiresAt
+        )
+    }
+
+    suspend fun saveDownloadedFileRecord(
+        fileId: String,
+        fileName: String,
+        mimeType: String,
+        fileSize: Long,
+        localPath: String,
+        sessionId: String,
+        senderId: String,
+        mode: String = "LIVE",
+        expiresAt: Long? = null
+    ): ReceivedFile {
         val record = ReceivedFile(
             fileId = fileId,
             fileName = fileName,
             mimeType = mimeType,
             fileSize = fileSize,
-            localPath = destFile.absolutePath,
+            localPath = localPath,
             sessionId = sessionId,
             senderId = senderId,
             mode = mode,

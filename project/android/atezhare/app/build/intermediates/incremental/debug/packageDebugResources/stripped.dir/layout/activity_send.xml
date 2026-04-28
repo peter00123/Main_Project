@@ -101,10 +101,19 @@
             android:fontFamily="monospace"
             android:layout_marginBottom="8dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_share_link"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share Link"
+            app:icon="@drawable/ic_share_logo"
+            android:layout_marginBottom="8dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Share this code with the receiver"
+            android:text="Share this code or link with the receiver"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:layout_marginBottom="8dp" />

@@ -38,6 +38,27 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigation()
         setupBottomNav()
+        handleIntent(intent)
+    }
+
+    override fun onNewIntent(intent: android.content.Intent?) {
+        super.onNewIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: android.content.Intent?) {
+        val data = intent?.data
+        if (data != null) {
+            val raw = data.toString()
+            if (raw.startsWith("atezhare://R")) {
+                val code = raw.removePrefix("atezhare://R")
+                // Pass code to ReceiveFragment via NavController or ViewModel
+                val bundle = Bundle().apply {
+                    putString("pairing_code", code)
+                }
+                navController.navigate(R.id.receiveFragment, bundle)
+            }
+        }
     }
 
     private fun setupNavigation() {

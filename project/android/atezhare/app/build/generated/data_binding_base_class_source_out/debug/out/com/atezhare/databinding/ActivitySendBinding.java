@@ -14,6 +14,7 @@ import androidx.camera.view.PreviewView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.atezhare.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,6 +25,9 @@ public final class ActivitySendBinding implements ViewBinding {
 
   @NonNull
   public final ImageButton btnClose;
+
+  @NonNull
+  public final MaterialButton btnShareLink;
 
   @NonNull
   public final PreviewView cameraPreview;
@@ -38,10 +42,12 @@ public final class ActivitySendBinding implements ViewBinding {
   public final TextView tvShareCode;
 
   private ActivitySendBinding(@NonNull FrameLayout rootView, @NonNull ImageButton btnClose,
-      @NonNull PreviewView cameraPreview, @NonNull ProgressBar progressBar,
-      @NonNull TextView tvNoCameraPermission, @NonNull TextView tvShareCode) {
+      @NonNull MaterialButton btnShareLink, @NonNull PreviewView cameraPreview,
+      @NonNull ProgressBar progressBar, @NonNull TextView tvNoCameraPermission,
+      @NonNull TextView tvShareCode) {
     this.rootView = rootView;
     this.btnClose = btnClose;
+    this.btnShareLink = btnShareLink;
     this.cameraPreview = cameraPreview;
     this.progressBar = progressBar;
     this.tvNoCameraPermission = tvNoCameraPermission;
@@ -81,6 +87,12 @@ public final class ActivitySendBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_share_link;
+      MaterialButton btnShareLink = ViewBindings.findChildViewById(rootView, id);
+      if (btnShareLink == null) {
+        break missingId;
+      }
+
       id = R.id.camera_preview;
       PreviewView cameraPreview = ViewBindings.findChildViewById(rootView, id);
       if (cameraPreview == null) {
@@ -105,8 +117,8 @@ public final class ActivitySendBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySendBinding((FrameLayout) rootView, btnClose, cameraPreview, progressBar,
-          tvNoCameraPermission, tvShareCode);
+      return new ActivitySendBinding((FrameLayout) rootView, btnClose, btnShareLink, cameraPreview,
+          progressBar, tvNoCameraPermission, tvShareCode);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

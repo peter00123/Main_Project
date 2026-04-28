@@ -61,9 +61,15 @@ drawable ic_share_logo
 drawable ic_timer
 drawable qr_scan_overlay
 font app_font_bold
+id aboutText
 id action_home_to_directory
 id action_home_to_receive
+id appIcon
+id appName
 id bottom_nav
+id btnAboutApp
+id btnAboutVersion
+id btnTesting
 id btn_about
 id btn_check_connection
 id btn_close
@@ -77,6 +83,7 @@ id btn_receive
 id btn_send
 id btn_send_countdown
 id btn_settings
+id btn_share_link
 id btn_sign_up
 id btn_stop
 id btn_submit_code
@@ -84,6 +91,7 @@ id btn_testing
 id camera_preview
 id card_countdown
 id card_live
+id card_progress
 id cb_file_selected
 id directoryFragment
 id et_code_1
@@ -108,6 +116,7 @@ id iv_file_type_icon
 id iv_header_bg
 id iv_qr_code
 id layout_empty_state
+id layout_progress
 id nav_about
 id nav_graph
 id nav_host_fragment
@@ -118,6 +127,7 @@ id picker_hours
 id picker_minutes
 id profileFragment
 id progress_bar
+id progress_indicator
 id pv_full_image
 id receiveFragment
 id recycler_files
@@ -143,6 +153,9 @@ id tv_new_badge
 id tv_new_count
 id tv_no_camera_permission
 id tv_profile_letter
+id tv_progress_filename
+id tv_progress_percent
+id tv_progress_speed
 id tv_qr_label
 id tv_received_at
 id tv_receiver
@@ -154,7 +167,13 @@ id tv_testing_value
 id tv_user_email
 id tv_user_id
 id tv_user_name
+id tv_version_profile
+id versionDetails
+id versionText
 id viewPagerBanner
+layout activity_about
+layout activity_about_description
+layout activity_about_version
 layout activity_image_viewer
 layout activity_login
 layout activity_main
@@ -176,6 +195,7 @@ layout item_banner_image
 layout item_file
 layout item_received_file
 layout item_sent_file
+layout item_transfer_progress
 layout nav_header
 menu bottom_nav_menu
 menu drawer_menu

@@ -8,6 +8,7 @@
 
 package com.atezhare.ui.receive
 
+import com.atezhare.R
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -47,8 +48,26 @@ class ReceiveFragment : Fragment() {
         setupClickListeners()
         observeViewModel()
 
+        // Handle Deep Link code if passed
+        arguments?.getString("pairing_code")?.let { code ->
+            fillCodeBoxes(code)
+            viewModel.submitCode(code)
+        }
+
         // Request receiver QR from backend → POST /pair/receiver-qr
         viewModel.requestReceiverQr()
+    }
+
+    private fun fillCodeBoxes(code: String) {
+        if (code.length == 6) {
+            val boxes = listOf(
+                binding.etCode1, binding.etCode2, binding.etCode3,
+                binding.etCode4, binding.etCode5, binding.etCode6
+            )
+            code.forEachIndexed { index, char ->
+                boxes[index].setText(char.toString())
+            }
+        }
     }
 
     // ==================== QR DISPLAY ====================
@@ -87,6 +106,11 @@ class ReceiveFragment : Fragment() {
                     binding.progressBar.visibility = View.VISIBLE
                     binding.tvStatus.text = "Receiving files..."
                     binding.tvStatus.visibility = View.VISIBLE
+                    // Trigger navigation to SharedData to show progress
+                    try {
+                        val navController = androidx.navigation.fragment.NavHostFragment.findNavController(this)
+                        navController.navigate(R.id.sharedDataFragment)
+                    } catch (e: Exception) {}
                 }
                 else -> {}
             }

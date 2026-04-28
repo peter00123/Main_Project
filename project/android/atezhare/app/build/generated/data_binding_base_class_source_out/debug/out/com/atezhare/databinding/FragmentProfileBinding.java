@@ -49,12 +49,15 @@ public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
   public final TextView tvUserName;
 
+  @NonNull
+  public final TextView tvVersionProfile;
+
   private FragmentProfileBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton btnAbout, @NonNull MaterialButton btnLogout,
       @NonNull MaterialButton btnSettings, @NonNull MaterialButton btnTesting,
       @NonNull FrameLayout headerContainer, @NonNull ImageView ivHeaderBg,
       @NonNull TextView tvProfileLetter, @NonNull TextView tvUserEmail,
-      @NonNull TextView tvUserName) {
+      @NonNull TextView tvUserName, @NonNull TextView tvVersionProfile) {
     this.rootView = rootView;
     this.btnAbout = btnAbout;
     this.btnLogout = btnLogout;
@@ -65,6 +68,7 @@ public final class FragmentProfileBinding implements ViewBinding {
     this.tvProfileLetter = tvProfileLetter;
     this.tvUserEmail = tvUserEmail;
     this.tvUserName = tvUserName;
+    this.tvVersionProfile = tvVersionProfile;
   }
 
   @Override
@@ -148,9 +152,15 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_version_profile;
+      TextView tvVersionProfile = ViewBindings.findChildViewById(rootView, id);
+      if (tvVersionProfile == null) {
+        break missingId;
+      }
+
       return new FragmentProfileBinding((ConstraintLayout) rootView, btnAbout, btnLogout,
           btnSettings, btnTesting, headerContainer, ivHeaderBg, tvProfileLetter, tvUserEmail,
-          tvUserName);
+          tvUserName, tvVersionProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

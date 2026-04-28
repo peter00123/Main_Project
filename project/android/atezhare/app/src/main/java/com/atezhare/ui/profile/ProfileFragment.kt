@@ -32,13 +32,30 @@ class ProfileFragment : Fragment() {
         val sessionManager = SessionManager(requireContext())
         val userId = sessionManager.getUserId() ?: "User"
         
-        binding.tvUserName.text = userId.substringBefore("@")
+        val displayName = if (userId.contains("@")) {
+            userId.substringBefore("@")
+        } else {
+            userId.takeLast(6)
+        }
+        
+        binding.tvUserName.text = displayName
         binding.tvUserEmail.text = userId
-        binding.tvProfileLetter.text = userId.firstOrNull()?.toString()?.uppercase() ?: "U"
+        binding.tvProfileLetter.text = displayName.firstOrNull()?.toString()?.uppercase() ?: "U"
 
+        val packageInfo = requireContext().packageManager.getPackageInfo(requireContext().packageName, 0)
+        val version = packageInfo.versionName
+        binding.tvVersionProfile.text = "Version $version"
+        
         binding.btnSettings.setOnClickListener {
             startActivity(Intent(requireContext(), SettingsActivity::class.java))
         }
+
+        binding.btnAbout.isEnabled = true
+        binding.btnAbout.setOnClickListener {
+            startActivity(Intent(requireContext(), AboutActivity::class.java))
+        }
+
+        binding.btnTesting.visibility = View.GONE
 
         binding.btnLogout.setOnClickListener {
             sessionManager.clearSession()

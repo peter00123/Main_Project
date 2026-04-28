@@ -22,6 +22,9 @@ public final class FragmentSharedDataBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ItemTransferProgressBinding layoutProgress;
+
+  @NonNull
   public final FrameLayout tabContainer;
 
   @NonNull
@@ -31,9 +34,10 @@ public final class FragmentSharedDataBinding implements ViewBinding {
   public final TextView tvNewCount;
 
   private FragmentSharedDataBinding(@NonNull LinearLayout rootView,
-      @NonNull FrameLayout tabContainer, @NonNull TabLayout tabLayout,
-      @NonNull TextView tvNewCount) {
+      @NonNull ItemTransferProgressBinding layoutProgress, @NonNull FrameLayout tabContainer,
+      @NonNull TabLayout tabLayout, @NonNull TextView tvNewCount) {
     this.rootView = rootView;
+    this.layoutProgress = layoutProgress;
     this.tabContainer = tabContainer;
     this.tabLayout = tabLayout;
     this.tvNewCount = tvNewCount;
@@ -66,6 +70,13 @@ public final class FragmentSharedDataBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.layout_progress;
+      View layoutProgress = ViewBindings.findChildViewById(rootView, id);
+      if (layoutProgress == null) {
+        break missingId;
+      }
+      ItemTransferProgressBinding binding_layoutProgress = ItemTransferProgressBinding.bind(layoutProgress);
+
       id = R.id.tab_container;
       FrameLayout tabContainer = ViewBindings.findChildViewById(rootView, id);
       if (tabContainer == null) {
@@ -84,8 +95,8 @@ public final class FragmentSharedDataBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSharedDataBinding((LinearLayout) rootView, tabContainer, tabLayout,
-          tvNewCount);
+      return new FragmentSharedDataBinding((LinearLayout) rootView, binding_layoutProgress,
+          tabContainer, tabLayout, tvNewCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

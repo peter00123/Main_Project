@@ -108,6 +108,23 @@ class SendActivity : AppCompatActivity() {
     private fun setupClickListeners() {
         // Back / close button
         binding.btnClose.setOnClickListener { finish() }
+
+        binding.btnShareLink.setOnClickListener {
+            val code = viewModel.shareCode.value ?: return@setOnClickListener
+            val link = "atezhare://R$code"
+            
+            // 1. Copy to Clipboard
+            val clipboard = getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+            val clip = android.content.ClipData.newPlainText("AtezShare Link", link)
+            clipboard.setPrimaryClip(clip)
+            
+            // 2. Share Intent
+            val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(android.content.Intent.EXTRA_TEXT, "Pair with me on AtezShare: $link")
+            }
+            startActivity(android.content.Intent.createChooser(intent, "Share Pairing Link"))
+        }
     }
 
     private fun observeViewModel() {

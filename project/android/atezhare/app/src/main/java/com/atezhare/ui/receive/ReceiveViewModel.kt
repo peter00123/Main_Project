@@ -1,5 +1,6 @@
 package com.atezhare.ui.receive
 
+import com.atezhare.service.TransferService
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -7,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.atezhare.data.ReceivedFileRepository
+import com.atezhare.data.TransferProgress
 import com.atezhare.model.*
 import com.atezhare.network.ApiConstants
 import com.atezhare.network.RetrofitClient
@@ -93,13 +95,20 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
                         val status = SessionStatus.from(body.status)
                         _sessionStatus.value = status
                         if (!body.receiverId.isNullOrEmpty()) senderId = body.receiverId
-                        if (status == SessionStatus.DONE) {
-                            Log.d("ReceiveViewModel", "Session DONE, downloading files: ${body.fileIds}")
-                            val fileIds = body.fileIds ?: emptyList()
-                            if (fileIds.isNotEmpty()) downloadAndSaveFiles(sid, fileIds)
-                            else Log.w("ReceiveViewModel", "DONE status but fileIds is empty")
-                            break
+                        
+                        // Automatically start downloading if PAIRED or TRANSFERRING and we have fileIds
+                        val fileIds = body.fileIds ?: emptyList()
+                        if (fileIds.isNotEmpty() && (status == SessionStatus.PAIRED || status == SessionStatus.TRANSFERRING || status == SessionStatus.DONE)) {
+                             // Offload download to Foreground Service
+                             TransferService.startDownload(
+                                 getApplication(),
+                                 sid,
+                                 senderId,
+                                 ArrayList(fileIds)
+                             )
+                             if (status == SessionStatus.DONE) break
                         }
+
                         if (status == SessionStatus.ERROR) break
                     }
                 } catch (_: Exception) {}
@@ -108,73 +117,11 @@ class ReceiveViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
-    private suspend fun downloadAndSaveFiles(sid: String, fileIds: List<String>) {
-        _isLoading.value = true
-        for (fileId in fileIds) {
-            try {
-                if (repository.getByFileId(fileId) != null) continue
-                val response = RetrofitClient.apiService.downloadFile(fileId)
-                if (response.isSuccessful && response.body() != null) {
-                    val body = response.body()!!
-                    val contentDisposition = response.headers()["Content-Disposition"] ?: ""
-                    val fileName = Regex("""filename="?([^";\n]+)"?""")
-                        .find(contentDisposition)?.groupValues?.get(1) ?: "file_$fileId"
-                    val mimeType = response.headers()["Content-Type"] ?: "application/octet-stream"
-                    
-                    repository.saveDownloadedFile(
-                        fileId = fileId,
-                        fileName = fileName,
-                        mimeType = mimeType,
-                        inputStream = body.byteStream(),
-                        sessionId = sid,
-                        senderId = senderId
-                    )
-                    
-                    // Register the file with the Librarian for timer-based expiry
-                    // LibrarianRepository reads the timer from the encoded filename
-                    // and stores a deleteAt timestamp in the librarian SQLite table
-                    val librarian = com.atezhare.data.LibrarianRepository(getApplication())
-                    librarian.registerFile(
-                        fileName = fileName,
-                        localPath = File(
-                            getApplication<android.app.Application>().filesDir,
-                            "received/${fileId}_${fileName}"
-                        ).absolutePath,
-                        fileId = fileId
-                    )
+    private val _progress = MutableLiveData<TransferProgress?>()
+    val progress: LiveData<TransferProgress?> = _progress
 
-                    // Start polling for deletion status after each successful save
-                    startFileStatusPolling(fileId)
-                }
-            } catch (e: Exception) {
-                _errorMessage.value = "Download failed: ${e.message}"
-            }
-        }
-        _isLoading.value = false
+    override fun onCleared() {
+        super.onCleared()
+        pollJob?.cancel()
     }
-
-    private fun startFileStatusPolling(fileId: String) {
-        viewModelScope.launch {
-            while (isActive) {
-                delay(5000) // faster for debugging
-
-                try {
-                    val response = RetrofitClient.apiService.getFileStatus(fileId)
-                    val status = response.body()
-                    
-                    Log.d("ReceiverPoll", "file=$fileId deleted=${status?.deleted}")
-
-                    if (response.isSuccessful && status?.deleted == true) {
-                        repository.markDeleted(fileId)
-                        Log.d("ReceiverPoll", "Marked deleted in Room: $fileId")
-                        break
-                    }
-                } catch (e: Exception) {
-                    Log.e("ReceiverPoll", "Polling failed for $fileId", e)
-                }
-            }
-        }
-    }
-
-    override fun onCleared() { super.onCleared(); pollJob?.cancel() }
 }

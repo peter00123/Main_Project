@@ -19,324 +19,396 @@
 18-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:11:5-67
 18-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:11:22-64
 19
-20    <!-- Camera permission — required for QR scanning in ui/send/SendFragment -->
-21    <uses-permission android:name="android.permission.CAMERA" />
-21-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:14:5-65
-21-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:14:22-62
-22
-23    <uses-feature
-23-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:15:5-85
-24        android:name="android.hardware.camera"
-24-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:15:19-57
-25        android:required="false" />
-25-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:15:58-82
-26
-27    <!-- Storage permissions — required for file picking in ui/directory/DirectoryFragment -->
-28    <uses-permission
-28-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:18:5-19:38
-29        android:name="android.permission.READ_EXTERNAL_STORAGE"
-29-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:18:22-77
-30        android:maxSdkVersion="32" />
-30-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:19:9-35
-31    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-31-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:20:5-76
-31-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:20:22-73
-32    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-32-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:21:5-75
-32-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:21:22-72
-33    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-33-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:22:5-75
-33-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:22:22-72
-34
-35    <permission
-35-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-36        android:name="com.atezhare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-36-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
-37        android:protectionLevel="signature" />
-37-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
-38
-39    <uses-permission android:name="com.atezhare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-39-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-39-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
-40
-41    <uses-feature
-41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
-42        android:name="android.hardware.camera.front"
-42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
-43        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-43-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
-44    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
-45    <uses-feature
-45-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
-46        android:name="android.hardware.camera.autofocus"
-46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
-47        android:required="false" />
-47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
-48    <uses-feature
-48-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
-49        android:name="android.hardware.camera.flash"
-49-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
-50        android:required="false" />
-50-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
-51    <uses-feature
-51-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
-52        android:name="android.hardware.screen.landscape"
-52-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
-53        android:required="false" />
-53-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
-54    <uses-feature
-54-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
-55        android:name="android.hardware.wifi"
-55-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
-56        android:required="false" />
-56-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
-57
-58    <application
-58-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:24:5-86:19
-59        android:allowBackup="true"
-59-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:25:9-35
-60        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-60-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
-61        android:debuggable="true"
-62        android:extractNativeLibs="false"
-63        android:icon="@mipmap/ic_launcher"
-63-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:26:9-43
-64        android:label="@string/app_name"
-64-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:28:9-41
-65        android:roundIcon="@mipmap/ic_launcher_round"
-65-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:27:9-54
-66        android:supportsRtl="true"
-66-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:29:9-35
-67        android:theme="@style/Theme.Atezhare"
-67-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:30:9-46
-68        android:usesCleartextTraffic="true" >
-68-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:31:9-44
-69
-70        <!-- SplashActivity — entry point, checks session via utils/SessionManager -->
-71        <activity
-71-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:34:9-42:20
-72            android:name="com.atezhare.ui.auth.SplashActivity"
-72-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:35:13-51
-73            android:exported="true"
-73-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:36:13-36
-74            android:theme="@style/Theme.Atezhare.Splash" >
-74-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:37:13-57
-75            <intent-filter>
-75-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:38:13-41:29
-76                <action android:name="android.intent.action.MAIN" />
-76-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:39:17-69
-76-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:39:25-66
-77
-78                <category android:name="android.intent.category.LAUNCHER" />
-78-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:40:17-77
-78-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:40:27-74
-79            </intent-filter>
-80        </activity>
-81
-82        <!-- LoginActivity — shown if user is not logged in -->
-83        <activity
-83-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:45:9-47:40
-84            android:name="com.atezhare.ui.auth.LoginActivity"
-84-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:46:13-50
-85            android:exported="false" />
-85-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:47:13-37
+20    <!-- Foreground Service permissions -->
+21    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+21-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:14:5-77
+21-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:14:22-74
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+22-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:15:5-87
+22-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:15:22-84
+23    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+23-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:16:5-77
+23-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:16:22-74
+24
+25    <!-- Camera permission — required for QR scanning in ui/send/SendFragment -->
+26    <uses-permission android:name="android.permission.CAMERA" />
+26-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:19:5-65
+26-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:19:22-62
+27
+28    <uses-feature
+28-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:20:5-85
+29        android:name="android.hardware.camera"
+29-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:20:19-57
+30        android:required="false" />
+30-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:20:58-82
+31
+32    <!-- Storage permissions — required for file picking in ui/directory/DirectoryFragment -->
+33    <uses-permission
+33-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:23:5-24:38
+34        android:name="android.permission.READ_EXTERNAL_STORAGE"
+34-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:23:22-77
+35        android:maxSdkVersion="32" />
+35-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:24:9-35
+36    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+36-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:25:5-76
+36-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:25:22-73
+37    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+37-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:26:5-75
+37-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:26:22-72
+38    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+38-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:27:5-75
+38-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:27:22-72
+39
+40    <permission
+40-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+41        android:name="com.atezhare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+41-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+42        android:protectionLevel="signature" />
+42-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+43
+44    <uses-permission android:name="com.atezhare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+44-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+44-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+45
+46    <uses-feature
+46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+47        android:name="android.hardware.camera.front"
+47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+48        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+48-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+49    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+50    <uses-feature
+50-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+51        android:name="android.hardware.camera.autofocus"
+51-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
+52        android:required="false" />
+52-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
+53    <uses-feature
+53-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+54        android:name="android.hardware.camera.flash"
+54-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+55        android:required="false" />
+55-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+56    <uses-feature
+56-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+57        android:name="android.hardware.screen.landscape"
+57-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+58        android:required="false" />
+58-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+59    <uses-feature
+59-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+60        android:name="android.hardware.wifi"
+60-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+61        android:required="false" />
+61-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+62
+63    <application
+63-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:29:5-124:19
+64        android:allowBackup="true"
+64-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:30:9-35
+65        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+65-->[androidx.core:core:1.12.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7c28d67006facf1ff51e4ef9ed92b357\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+66        android:debuggable="true"
+67        android:extractNativeLibs="false"
+68        android:icon="@mipmap/ic_launcher"
+68-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:31:9-43
+69        android:label="@string/app_name"
+69-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:33:9-41
+70        android:roundIcon="@mipmap/ic_launcher_round"
+70-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:32:9-54
+71        android:supportsRtl="true"
+71-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:34:9-35
+72        android:theme="@style/Theme.Atezhare"
+72-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:35:9-46
+73        android:usesCleartextTraffic="true" >
+73-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:36:9-44
+74
+75        <!-- SplashActivity — entry point, checks session via utils/SessionManager -->
+76        <activity
+76-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:39:9-47:20
+77            android:name="com.atezhare.ui.auth.SplashActivity"
+77-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:40:13-51
+78            android:exported="true"
+78-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:41:13-36
+79            android:theme="@style/Theme.Atezhare.Splash" >
+79-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:42:13-57
+80            <intent-filter>
+80-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:43:13-46:29
+81                <action android:name="android.intent.action.MAIN" />
+81-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:44:17-69
+81-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:44:25-66
+82
+83                <category android:name="android.intent.category.LAUNCHER" />
+83-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:45:17-77
+83-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:45:27-74
+84            </intent-filter>
+85        </activity>
 86
-87        <!-- SignUpActivity — register new users via Supabase Auth -->
+87        <!-- LoginActivity — shown if user is not logged in -->
 88        <activity
 88-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:50:9-52:40
-89            android:name="com.atezhare.ui.auth.SignUpActivity"
-89-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:51:13-51
+89            android:name="com.atezhare.ui.auth.LoginActivity"
+89-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:51:13-50
 90            android:exported="false" />
 90-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:52:13-37
 91
-92        <!-- MainActivity — hosts NavController, BottomNav -->
+92        <!-- SignUpActivity — register new users via Supabase Auth -->
 93        <activity
-93-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:55:9-58:65
-94            android:name="com.atezhare.ui.home.MainActivity"
-94-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:56:13-49
-95            android:exported="false"
+93-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:55:9-57:40
+94            android:name="com.atezhare.ui.auth.SignUpActivity"
+94-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:56:13-51
+95            android:exported="false" />
 95-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:57:13-37
-96            android:theme="@style/Theme.Atezhare.NoActionBar" />
-96-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:58:13-62
-97        <activity
-97-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:60:9-63:65
-98            android:name="com.atezhare.ui.profile.SettingsActivity"
-98-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:61:13-56
-99            android:exported="false"
-99-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:62:13-37
-100            android:theme="@style/Theme.Atezhare.NoActionBar" />
-100-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:63:13-62
-101
-102        <!-- SendActivity — standalone QR scanner screen (no toolbar/bottom nav) -->
-103        <activity
-103-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:66:9-69:65
-104            android:name="com.atezhare.ui.send.SendActivity"
-104-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:67:13-49
-105            android:exported="false"
-105-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:13-37
-106            android:theme="@style/Theme.Atezhare.NoActionBar" />
-106-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:69:13-62
-107        <activity
-107-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:71:9-74:65
-108            android:name="com.atezhare.ui.shareddata.ImageViewerActivity"
-108-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:72:13-62
-109            android:exported="false"
-109-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:73:13-37
-110            android:theme="@style/Theme.Atezhare.NoActionBar" />
-110-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:74:13-62
-111
-112        <provider
-113            android:name="androidx.core.content.FileProvider"
-113-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:77:13-62
-114            android:authorities="com.atezhare.provider"
-114-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:78:13-60
-115            android:exported="false"
-115-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:79:13-37
-116            android:grantUriPermissions="true" >
-116-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:80:13-47
-117            <meta-data
-117-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:81:13-83:54
-118                android:name="android.support.FILE_PROVIDER_PATHS"
-118-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:82:17-67
-119                android:resource="@xml/file_paths" />
-119-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:83:17-51
-120        </provider>
-121
-122        <service
-122-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-123            android:name="androidx.room.MultiInstanceInvalidationService"
-123-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-124            android:directBootAware="true"
-124-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-125            android:exported="false" />
-125-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-126        <service
-126-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:24:9-33:19
-127            android:name="androidx.camera.core.impl.MetadataHolderService"
-127-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:25:13-75
-128            android:enabled="false"
-128-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:26:13-36
-129            android:exported="false" >
-129-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:27:13-37
-130            <meta-data
-130-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:30:13-32:89
-131                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-131-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:31:17-103
-132                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-132-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:32:17-86
-133        </service>
-134
-135        <provider
-135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-136            android:name="androidx.startup.InitializationProvider"
-136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-137            android:authorities="com.atezhare.androidx-startup"
-137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-138            android:exported="false" >
-138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-139            <meta-data
-139-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-140                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-141                android:value="androidx.startup" />
-141-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-142            <meta-data
-142-->[io.github.jan-tennert.supabase:storage-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\3e5e297f4567f410273fa3ec3857e35a\transformed\storage-kt-debug\AndroidManifest.xml:14:13-16:52
-143                android:name="io.github.jan.supabase.storage.SupabaseInitializer"
-143-->[io.github.jan-tennert.supabase:storage-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\3e5e297f4567f410273fa3ec3857e35a\transformed\storage-kt-debug\AndroidManifest.xml:15:17-82
-144                android:value="androidx.startup" />
-144-->[io.github.jan-tennert.supabase:storage-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\3e5e297f4567f410273fa3ec3857e35a\transformed\storage-kt-debug\AndroidManifest.xml:16:17-49
-145            <meta-data
-145-->[io.github.jan-tennert.supabase:auth-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\d7838ed8db8a61e7c8064e7692940d37\transformed\auth-kt-debug\AndroidManifest.xml:14:13-16:52
-146                android:name="io.github.jan.supabase.auth.SupabaseInitializer"
-146-->[io.github.jan-tennert.supabase:auth-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\d7838ed8db8a61e7c8064e7692940d37\transformed\auth-kt-debug\AndroidManifest.xml:15:17-79
-147                android:value="androidx.startup" />
-147-->[io.github.jan-tennert.supabase:auth-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\d7838ed8db8a61e7c8064e7692940d37\transformed\auth-kt-debug\AndroidManifest.xml:16:17-49
-148            <meta-data
-148-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\bazi\.gradle\caches\8.13\transforms\4671c59b4ac70c96ec4f8e4b0ca5873f\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
-149                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-149-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\bazi\.gradle\caches\8.13\transforms\4671c59b4ac70c96ec4f8e4b0ca5873f\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
-150                android:value="androidx.startup" />
-150-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\bazi\.gradle\caches\8.13\transforms\4671c59b4ac70c96ec4f8e4b0ca5873f\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
-151            <meta-data
-151-->[com.russhwolf:multiplatform-settings-no-arg-android-debug:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\008d81a0e368299169450b0cc94a9576\transformed\multiplatform-settings-no-arg-debug\AndroidManifest.xml:29:13-31:52
-152                android:name="com.russhwolf.settings.SettingsInitializer"
-152-->[com.russhwolf:multiplatform-settings-no-arg-android-debug:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\008d81a0e368299169450b0cc94a9576\transformed\multiplatform-settings-no-arg-debug\AndroidManifest.xml:30:17-74
-153                android:value="androidx.startup" />
-153-->[com.russhwolf:multiplatform-settings-no-arg-android-debug:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\008d81a0e368299169450b0cc94a9576\transformed\multiplatform-settings-no-arg-debug\AndroidManifest.xml:31:17-49
-154            <meta-data
-154-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-155                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-156                android:value="androidx.startup" />
-156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-157        </provider>
-158
-159        <uses-library
-159-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-160            android:name="androidx.window.extensions"
-160-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-161            android:required="false" />
-161-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-162        <uses-library
-162-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-163            android:name="androidx.window.sidecar"
-163-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-164            android:required="false" />
-164-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-165
-166        <receiver
-166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-167            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-167-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-168            android:directBootAware="false"
-168-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-169            android:enabled="true"
-169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-170            android:exported="true"
-170-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-171            android:permission="android.permission.DUMP" >
-171-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-172            <intent-filter>
-172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-173                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-173-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-173-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-174            </intent-filter>
-175            <intent-filter>
-175-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-176                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-176-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-176-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-177            </intent-filter>
-178            <intent-filter>
-178-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-179                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-179-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-179-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-180            </intent-filter>
-181            <intent-filter>
-181-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-182                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-182-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-182-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-183            </intent-filter>
-184        </receiver>
-185
-186        <activity
-186-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
-187            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-187-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
-188            android:clearTaskOnLaunch="true"
-188-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
-189            android:screenOrientation="sensorLandscape"
-189-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
-190            android:stateNotNeeded="true"
-190-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
-191            android:theme="@style/zxing_CaptureTheme"
-191-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
-192            android:windowSoftInputMode="stateAlwaysHidden" />
-192-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
-193    </application>
+96
+97        <!-- MainActivity — hosts NavController, BottomNav -->
+98        <activity
+98-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:60:9-70:20
+99            android:name="com.atezhare.ui.home.MainActivity"
+99-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:61:13-49
+100            android:exported="true"
+100-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:62:13-36
+101            android:theme="@style/Theme.Atezhare.NoActionBar" >
+101-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:63:13-62
+102            <intent-filter>
+102-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:64:13-69:29
+103                <action android:name="android.intent.action.VIEW" />
+103-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:65:17-69
+103-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:65:25-66
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:66:17-76
+105-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:66:27-73
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:67:17-78
+106-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:67:27-75
+107
+108                <data android:scheme="atezhare" />
+108-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:17-51
+108-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:23-48
+109            </intent-filter>
+110        </activity>
+111        <activity
+111-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:72:9-75:65
+112            android:name="com.atezhare.ui.profile.SettingsActivity"
+112-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:73:13-56
+113            android:exported="false"
+113-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:74:13-37
+114            android:theme="@style/Theme.Atezhare.NoActionBar" />
+114-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:75:13-62
+115        <activity
+115-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:77:9-80:65
+116            android:name="com.atezhare.ui.profile.AboutActivity"
+116-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:78:13-53
+117            android:exported="false"
+117-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:79:13-37
+118            android:theme="@style/Theme.Atezhare.NoActionBar" />
+118-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:80:13-62
+119        <activity
+119-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:82:9-85:65
+120            android:name="com.atezhare.ui.profile.AboutDescriptionActivity"
+120-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:83:13-64
+121            android:exported="false"
+121-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:84:13-37
+122            android:theme="@style/Theme.Atezhare.NoActionBar" />
+122-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:85:13-62
+123        <activity
+123-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:87:9-90:65
+124            android:name="com.atezhare.ui.profile.AboutVersionActivity"
+124-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:88:13-60
+125            android:exported="false"
+125-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:89:13-37
+126            android:theme="@style/Theme.Atezhare.NoActionBar" />
+126-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:90:13-62
+127        <activity
+127-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:92:9-95:65
+128            android:name="com.atezhare.ui.profile.TestingActivity"
+128-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:93:13-55
+129            android:exported="false"
+129-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:94:13-37
+130            android:theme="@style/Theme.Atezhare.NoActionBar" />
+130-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:95:13-62
+131
+132        <!-- SendActivity — standalone QR scanner screen (no toolbar/bottom nav) -->
+133        <activity
+133-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:98:9-101:65
+134            android:name="com.atezhare.ui.send.SendActivity"
+134-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:99:13-49
+135            android:exported="false"
+135-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:100:13-37
+136            android:theme="@style/Theme.Atezhare.NoActionBar" />
+136-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:101:13-62
+137        <activity
+137-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:103:9-106:65
+138            android:name="com.atezhare.ui.shareddata.ImageViewerActivity"
+138-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:104:13-62
+139            android:exported="false"
+139-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:105:13-37
+140            android:theme="@style/Theme.Atezhare.NoActionBar" />
+140-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:106:13-62
+141
+142        <service
+142-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:108:9-112:56
+143            android:name="com.atezhare.service.TransferService"
+143-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:109:13-52
+144            android:enabled="true"
+144-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:110:13-35
+145            android:exported="false"
+145-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:111:13-37
+146            android:foregroundServiceType="dataSync" />
+146-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:112:13-53
+147
+148        <provider
+149            android:name="androidx.core.content.FileProvider"
+149-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:115:13-62
+150            android:authorities="com.atezhare.provider"
+150-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:116:13-60
+151            android:exported="false"
+151-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:117:13-37
+152            android:grantUriPermissions="true" >
+152-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:118:13-47
+153            <meta-data
+153-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:119:13-121:54
+154                android:name="android.support.FILE_PROVIDER_PATHS"
+154-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:120:17-67
+155                android:resource="@xml/file_paths" />
+155-->E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:121:17-51
+156        </provider>
+157
+158        <service
+158-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+159            android:name="androidx.room.MultiInstanceInvalidationService"
+159-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+160            android:directBootAware="true"
+160-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+161            android:exported="false" />
+161-->[androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+162        <service
+162-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:24:9-33:19
+163            android:name="androidx.camera.core.impl.MetadataHolderService"
+163-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:25:13-75
+164            android:enabled="false"
+164-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:26:13-36
+165            android:exported="false" >
+165-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:27:13-37
+166            <meta-data
+166-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:30:13-32:89
+167                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+167-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:31:17-103
+168                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+168-->[androidx.camera:camera-camera2:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\6199ea4bad7253e264ee8e46343504b9\transformed\camera-camera2-1.3.1\AndroidManifest.xml:32:17-86
+169        </service>
+170
+171        <provider
+171-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+172            android:name="androidx.startup.InitializationProvider"
+172-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+173            android:authorities="com.atezhare.androidx-startup"
+173-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+174            android:exported="false" >
+174-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+175            <meta-data
+175-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+176                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+176-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+177                android:value="androidx.startup" />
+177-->[androidx.emoji2:emoji2:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\1690b5b4a50102e654a74fe7491bf66d\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+178            <meta-data
+178-->[io.github.jan-tennert.supabase:storage-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\3e5e297f4567f410273fa3ec3857e35a\transformed\storage-kt-debug\AndroidManifest.xml:14:13-16:52
+179                android:name="io.github.jan.supabase.storage.SupabaseInitializer"
+179-->[io.github.jan-tennert.supabase:storage-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\3e5e297f4567f410273fa3ec3857e35a\transformed\storage-kt-debug\AndroidManifest.xml:15:17-82
+180                android:value="androidx.startup" />
+180-->[io.github.jan-tennert.supabase:storage-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\3e5e297f4567f410273fa3ec3857e35a\transformed\storage-kt-debug\AndroidManifest.xml:16:17-49
+181            <meta-data
+181-->[io.github.jan-tennert.supabase:auth-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\d7838ed8db8a61e7c8064e7692940d37\transformed\auth-kt-debug\AndroidManifest.xml:14:13-16:52
+182                android:name="io.github.jan.supabase.auth.SupabaseInitializer"
+182-->[io.github.jan-tennert.supabase:auth-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\d7838ed8db8a61e7c8064e7692940d37\transformed\auth-kt-debug\AndroidManifest.xml:15:17-79
+183                android:value="androidx.startup" />
+183-->[io.github.jan-tennert.supabase:auth-kt-android-debug:3.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\d7838ed8db8a61e7c8064e7692940d37\transformed\auth-kt-debug\AndroidManifest.xml:16:17-49
+184            <meta-data
+184-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\bazi\.gradle\caches\8.13\transforms\4671c59b4ac70c96ec4f8e4b0ca5873f\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+185                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+185-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\bazi\.gradle\caches\8.13\transforms\4671c59b4ac70c96ec4f8e4b0ca5873f\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+186                android:value="androidx.startup" />
+186-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\bazi\.gradle\caches\8.13\transforms\4671c59b4ac70c96ec4f8e4b0ca5873f\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+187            <meta-data
+187-->[com.russhwolf:multiplatform-settings-no-arg-android-debug:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\008d81a0e368299169450b0cc94a9576\transformed\multiplatform-settings-no-arg-debug\AndroidManifest.xml:29:13-31:52
+188                android:name="com.russhwolf.settings.SettingsInitializer"
+188-->[com.russhwolf:multiplatform-settings-no-arg-android-debug:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\008d81a0e368299169450b0cc94a9576\transformed\multiplatform-settings-no-arg-debug\AndroidManifest.xml:30:17-74
+189                android:value="androidx.startup" />
+189-->[com.russhwolf:multiplatform-settings-no-arg-android-debug:1.2.0] C:\Users\bazi\.gradle\caches\8.13\transforms\008d81a0e368299169450b0cc94a9576\transformed\multiplatform-settings-no-arg-debug\AndroidManifest.xml:31:17-49
+190            <meta-data
+190-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+191                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+191-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+192                android:value="androidx.startup" />
+192-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+193        </provider>
 194
-195</manifest>
+195        <uses-library
+195-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+196            android:name="androidx.window.extensions"
+196-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+197            android:required="false" />
+197-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+198        <uses-library
+198-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+199            android:name="androidx.window.sidecar"
+199-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+200            android:required="false" />
+200-->[androidx.window:window:1.0.0] C:\Users\bazi\.gradle\caches\8.13\transforms\c9c8e47dd5fbf9989ac435964f3ef9fb\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+201
+202        <receiver
+202-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+203            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+203-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+204            android:directBootAware="false"
+204-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+205            android:enabled="true"
+205-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+206            android:exported="true"
+206-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+207            android:permission="android.permission.DUMP" >
+207-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+208            <intent-filter>
+208-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+209                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+209-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+209-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+210            </intent-filter>
+211            <intent-filter>
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+212                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+212-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+212-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+213            </intent-filter>
+214            <intent-filter>
+214-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+215                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+215-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+215-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+216            </intent-filter>
+217            <intent-filter>
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+218                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+218-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+218-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\bazi\.gradle\caches\8.13\transforms\e51862e2bfb59c45358edc13abf5acbf\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+219            </intent-filter>
+220        </receiver>
+221
+222        <activity
+222-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+223            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+223-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+224            android:clearTaskOnLaunch="true"
+224-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+225            android:screenOrientation="sensorLandscape"
+225-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+226            android:stateNotNeeded="true"
+226-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+227            android:theme="@style/zxing_CaptureTheme"
+227-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+228            android:windowSoftInputMode="stateAlwaysHidden" />
+228-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7499e80d19e4d44cb6c2b3491c5926ee\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+229    </application>
+230
+231</manifest>

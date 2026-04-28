@@ -30,6 +30,7 @@ class SharedDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observeTransferProgress()
 
         // LIBRARIAN CHECK: every time this screen opens, check for expired files
         // LibrarianRepository.checkAndDelete() finds files where deleteAt <= now,
@@ -66,6 +67,20 @@ class SharedDataFragment : Fragment() {
         // Default to Received tab (index 1)
         binding.tabLayout.getTabAt(1)?.select()
         replaceFragment(ReceivedFilesFragment())
+    }
+
+    private fun observeTransferProgress() {
+        com.atezhare.utils.TransferProgressManager.progress.observe(viewLifecycleOwner) { progress ->
+            if (progress != null && progress.isDownloading) {
+                binding.layoutProgress.cardProgress.visibility = View.VISIBLE
+                binding.layoutProgress.tvProgressFilename.text = "Downloading: ${progress.fileName}"
+                binding.layoutProgress.tvProgressPercent.text = "${progress.progress}%"
+                binding.layoutProgress.progressIndicator.progress = progress.progress
+                binding.layoutProgress.tvProgressSpeed.text = progress.speed
+            } else {
+                binding.layoutProgress.cardProgress.visibility = View.GONE
+            }
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {

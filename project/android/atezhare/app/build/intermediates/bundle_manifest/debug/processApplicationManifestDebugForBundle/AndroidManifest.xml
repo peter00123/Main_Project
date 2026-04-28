@@ -17,6 +17,11 @@
     <!-- Network permission — required for all Retrofit calls in network/ApiService -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Foreground Service permissions -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <!-- Camera permission — required for QR scanning in ui/send/SendFragment -->
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -92,10 +97,35 @@
         <!-- MainActivity — hosts NavController, BottomNav -->
         <activity
             android:name="com.atezhare.ui.home.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Atezhare.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="atezhare" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atezhare.ui.profile.SettingsActivity"
             android:exported="false"
             android:theme="@style/Theme.Atezhare.NoActionBar" />
         <activity
-            android:name="com.atezhare.ui.profile.SettingsActivity"
+            android:name="com.atezhare.ui.profile.AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
+        <activity
+            android:name="com.atezhare.ui.profile.AboutDescriptionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
+        <activity
+            android:name="com.atezhare.ui.profile.AboutVersionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Atezhare.NoActionBar" />
+        <activity
+            android:name="com.atezhare.ui.profile.TestingActivity"
             android:exported="false"
             android:theme="@style/Theme.Atezhare.NoActionBar" />
 
@@ -108,6 +138,12 @@
             android:name="com.atezhare.ui.shareddata.ImageViewerActivity"
             android:exported="false"
             android:theme="@style/Theme.Atezhare.NoActionBar" />
+
+        <service
+            android:name="com.atezhare.service.TransferService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
