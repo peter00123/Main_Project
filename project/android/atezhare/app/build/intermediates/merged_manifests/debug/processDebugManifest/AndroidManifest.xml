@@ -8,7 +8,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.atezhare"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.4.5" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -99,13 +99,16 @@
             android:name="com.atezhare.ui.home.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Atezhare.NoActionBar" >
-            <intent-filter>
+            <intent-filter android:autoVerify="true" >
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="atezhare" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="atezhare.com" />
+                <data android:pathPrefix="/R" />
             </intent-filter>
         </activity>
         <activity

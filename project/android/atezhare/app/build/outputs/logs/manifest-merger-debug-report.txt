@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:114:9-122:20
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:117:9-125:20
 	android:grantUriPermissions
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:118:13-47
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:121:13-47
 	android:authorities
 		INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:116:13-60
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:119:13-60
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:117:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:120:13-37
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:115:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:118:13-62
 manifest
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-126:12
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-126:12
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-126:12
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-126:12
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-129:12
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-129:12
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-129:12
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:8:1-129:12
 MERGED from [androidx.databinding:viewbinding:8.13.2] C:\Users\bazi\.gradle\caches\8.13\transforms\c72f8b3793a3d3bbe4636d081e3f0057\transformed\viewbinding-8.13.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.6] C:\Users\bazi\.gradle\caches\8.13\transforms\c331308bbc5291a4950a1dbee199d491\transformed\navigation-common-2.7.6\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.6] C:\Users\bazi\.gradle\caches\8.13\transforms\ace7da3e79e6fc387a50a8a74488d3a1\transformed\navigation-common-ktx-2.7.6\AndroidManifest.xml:2:1-7:12
@@ -160,8 +160,8 @@ ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidMa
 	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:27:22-72
 application
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:29:5-124:19
-INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:29:5-124:19
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:29:5-127:19
+INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:29:5-127:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7564194acc7dd3668aaa9e3b3a495e04\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\bazi\.gradle\caches\8.13\transforms\7564194acc7dd3668aaa9e3b3a495e04\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\bazi\.gradle\caches\8.13\transforms\c70ba18e0162206c4df1baefc1a2696b\transformed\room-runtime-2.6.1\AndroidManifest.xml:23:5-29:19
@@ -243,15 +243,17 @@ ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidMa
 	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:56:13-51
 activity#com.atezhare.ui.home.MainActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:60:9-70:20
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:60:9-73:20
 	android:exported
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:62:13-36
 	android:theme
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:63:13-62
 	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:61:13-49
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:atezhare
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:64:13-69:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:atezhare.com+data:pathPrefix:/R+data:scheme:http+data:scheme:https
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:64:13-72:29
+	android:autoVerify
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:64:28-53
 action#android.intent.action.VIEW
 ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
@@ -265,81 +267,85 @@ ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidMa
 	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:67:27-75
 data
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:17-51
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:17-47
+	android:host
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:70:23-50
 	android:scheme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:23-48
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:68:23-44
+	android:pathPrefix
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:71:23-46
 activity#com.atezhare.ui.profile.SettingsActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:72:9-75:65
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:75:9-78:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:74:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:77:13-37
 	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:75:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:78:13-62
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:73:13-56
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:76:13-56
 activity#com.atezhare.ui.profile.AboutActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:77:9-80:65
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:80:9-83:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:79:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:82:13-37
 	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:80:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:83:13-62
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:78:13-53
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:81:13-53
 activity#com.atezhare.ui.profile.AboutDescriptionActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:82:9-85:65
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:85:9-88:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:84:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:87:13-37
 	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:85:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:88:13-62
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:83:13-64
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:86:13-64
 activity#com.atezhare.ui.profile.AboutVersionActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:87:9-90:65
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:90:9-93:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:89:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:92:13-37
 	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:90:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:93:13-62
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:88:13-60
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:91:13-60
 activity#com.atezhare.ui.profile.TestingActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:92:9-95:65
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:95:9-98:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:94:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:97:13-37
 	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:95:13-62
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:98:13-62
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:93:13-55
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:96:13-55
 activity#com.atezhare.ui.send.SendActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:98:9-101:65
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:101:9-104:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:100:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:103:13-37
 	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:101:13-62
-	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:99:13-49
-activity#com.atezhare.ui.shareddata.ImageViewerActivity
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:103:9-106:65
-	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:105:13-37
-	android:theme
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:106:13-62
-	android:name
 		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:104:13-62
-service#com.atezhare.service.TransferService
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:108:9-112:56
-	android:enabled
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:110:13-35
+	android:name
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:102:13-49
+activity#com.atezhare.ui.shareddata.ImageViewerActivity
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:106:9-109:65
 	android:exported
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:111:13-37
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:108:13-37
+	android:theme
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:109:13-62
+	android:name
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:107:13-62
+service#com.atezhare.service.TransferService
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:111:9-115:56
+	android:enabled
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:113:13-35
+	android:exported
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:114:13-37
 	android:foregroundServiceType
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:112:13-53
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:115:13-53
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:109:13-52
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:112:13-52
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:119:13-121:54
+ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:122:13-124:54
 	android:resource
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:121:17-51
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:124:17-51
 	android:name
-		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:120:17-67
+		ADDED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml:123:17-67
 uses-sdk
 INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\final year project\project\android\atezhare\app\src\main\AndroidManifest.xml

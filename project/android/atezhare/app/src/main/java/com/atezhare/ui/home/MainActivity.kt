@@ -17,6 +17,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.atezhare.R
+import android.widget.Toast
+import com.atezhare.utils.DeepLinkManager
 import com.atezhare.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -47,17 +49,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleIntent(intent: android.content.Intent?) {
-        val data = intent?.data
-        if (data != null) {
-            val raw = data.toString()
-            if (raw.startsWith("atezhare://R")) {
-                val code = raw.removePrefix("atezhare://R")
-                // Pass code to ReceiveFragment via NavController or ViewModel
-                val bundle = Bundle().apply {
-                    putString("pairing_code", code)
-                }
-                navController.navigate(R.id.receiveFragment, bundle)
+        val code = DeepLinkManager.extractPairCode(intent)
+        if (code != null) {
+            val bundle = Bundle().apply {
+                putString("pairing_code", code)
             }
+            // Ensure we are on a fragment that allows navigation to ReceiveFragment or just navigate
+            try {
+                navController.navigate(R.id.receiveFragment, bundle)
+            } catch (e: Exception) {
+                // If already on ReceiveFragment or other navigation issues
+                Toast.makeText(this, "Opening pairing: $code", Toast.LENGTH_SHORT).show()
+            }
+        } else if (intent?.data != null) {
+            Toast.makeText(this, "Invalid pairing link", Toast.LENGTH_SHORT).show()
         }
     }
 

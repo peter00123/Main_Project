@@ -32,6 +32,7 @@ import androidx.core.content.ContextCompat
 import com.atezhare.databinding.ActivitySendBinding
 import com.atezhare.model.LocalFile
 import com.atezhare.model.SessionStatus
+import com.atezhare.utils.DeepLinkManager
 import com.google.zxing.*
 import com.google.zxing.common.HybridBinarizer
 import java.nio.ByteBuffer
@@ -111,12 +112,13 @@ class SendActivity : AppCompatActivity() {
 
         binding.btnShareLink.setOnClickListener {
             val code = viewModel.shareCode.value ?: return@setOnClickListener
-            val link = "atezhare://R$code"
+            val link = DeepLinkManager.generateDeepLink(code)
             
             // 1. Copy to Clipboard
             val clipboard = getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
             val clip = android.content.ClipData.newPlainText("AtezShare Link", link)
             clipboard.setPrimaryClip(clip)
+            Toast.makeText(this, "Link copied to clipboard", Toast.LENGTH_SHORT).show()
             
             // 2. Share Intent
             val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
