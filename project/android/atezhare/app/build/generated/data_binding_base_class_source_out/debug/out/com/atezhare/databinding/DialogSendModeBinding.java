@@ -24,17 +24,12 @@ public final class DialogSendModeBinding implements ViewBinding {
   public final MaterialCardView cardCountdown;
 
   @NonNull
-  public final MaterialCardView cardLive;
-
-  @NonNull
   public final TextView tvCancel;
 
   private DialogSendModeBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialCardView cardCountdown, @NonNull MaterialCardView cardLive,
-      @NonNull TextView tvCancel) {
+      @NonNull MaterialCardView cardCountdown, @NonNull TextView tvCancel) {
     this.rootView = rootView;
     this.cardCountdown = cardCountdown;
-    this.cardLive = cardLive;
     this.tvCancel = tvCancel;
   }
 
@@ -71,19 +66,13 @@ public final class DialogSendModeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.card_live;
-      MaterialCardView cardLive = ViewBindings.findChildViewById(rootView, id);
-      if (cardLive == null) {
-        break missingId;
-      }
-
       id = R.id.tv_cancel;
       TextView tvCancel = ViewBindings.findChildViewById(rootView, id);
       if (tvCancel == null) {
         break missingId;
       }
 
-      return new DialogSendModeBinding((LinearLayout) rootView, cardCountdown, cardLive, tvCancel);
+      return new DialogSendModeBinding((LinearLayout) rootView, cardCountdown, tvCancel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

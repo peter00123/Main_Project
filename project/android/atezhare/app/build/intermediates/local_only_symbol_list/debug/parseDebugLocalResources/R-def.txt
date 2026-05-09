@@ -90,7 +90,6 @@ id btn_submit_code
 id btn_testing
 id camera_preview
 id card_countdown
-id card_live
 id card_progress
 id cb_file_selected
 id directoryFragment

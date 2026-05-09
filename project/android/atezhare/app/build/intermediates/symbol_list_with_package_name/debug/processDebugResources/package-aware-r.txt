@@ -3413,7 +3413,6 @@ id callMeasure
 id camera_preview
 id cancel_button
 id card_countdown
-id card_live
 id card_progress
 id carryVelocity
 id cb_file_selected

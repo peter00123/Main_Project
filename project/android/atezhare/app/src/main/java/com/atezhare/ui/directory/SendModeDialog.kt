@@ -13,7 +13,7 @@ class SendModeDialog : DialogFragment() {
     private val binding get() = _binding!!
 
     interface SendModeListener {
-        fun onLiveSelected()
+//        fun onLiveSelected()
         fun onCountdownSelected(expiresAtMillis: Long)
     }
 
@@ -31,10 +31,10 @@ class SendModeDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.cardLive.setOnClickListener {
-            listener?.onLiveSelected()
-            dismiss()
-        }
+//        binding.cardLive.setOnClickListener {
+//            listener?.onLiveSelected()
+//            dismiss()
+//        }
 
         binding.cardCountdown.setOnClickListener {
             val countdownPicker = CountdownPickerDialog()
